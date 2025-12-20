@@ -16,8 +16,8 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #0f0f0f;
-  color: #e8e8e8;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 45%, #e9e9ec 100%);
+  color: #111111;
 }
 
 /* Custom Scrollbar */
@@ -146,4 +146,137 @@ select {
   h2 {
     font-size: 1.875rem;
   }
+}
+
+/* Animated background: white -> silver gradient + sparkles */
+.animated-bg-root {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.animated-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 40%, #e9e9ec 100%);
+  opacity: 0.9;
+  filter: saturate(0.9) contrast(0.98);
+}
+
+.animated-bg-sparkles {
+  position: absolute;
+  inset: 0;
+}
+
+/* Hex / sparkle base */
+.sparkle {
+  position: absolute;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 200, 120, 0.98) 0%,
+    rgba(255, 150, 40, 0.95) 45%,
+    rgba(200, 90, 10, 0.85) 100%
+  );
+  clip-path: polygon(
+    25% 6.7%,
+    75% 6.7%,
+    100% 50%,
+    75% 93.3%,
+    25% 93.3%,
+    0% 50%
+  );
+  transform-origin: center center;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 6px 12px rgba(200, 90, 10, 0.15));
+  animation-name: sparkleRise, sparklePulse;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+
+/* layers tweak visual weight */
+.animated-bg-layer {
+  position: absolute;
+  inset: 0;
+}
+.animated-bg-layer .sparkle {
+  will-change: transform, opacity;
+}
+.layer-0 .sparkle {
+  filter: blur(1.6px) drop-shadow(0 6px 18px rgba(220, 120, 40, 0.12));
+}
+.layer-1 .sparkle {
+  filter: blur(1.2px) drop-shadow(0 8px 20px rgba(200, 100, 40, 0.11));
+}
+.layer-2 .sparkle {
+  filter: blur(0.6px) drop-shadow(0 12px 28px rgba(180, 80, 30, 0.12));
+}
+
+@keyframes sparkleRise {
+  0% {
+    transform: translate(-50%, 20%) scale(0.9) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate(-50%, -30%) scale(1.05) rotate(22deg);
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -120%) scale(1.1) rotate(60deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sparklePulse {
+  0% {
+    filter: blur(0px);
+  }
+  40% {
+    filter: blur(1.4px);
+  }
+  100% {
+    filter: blur(2.2px);
+  }
+}
+
+/* vignette and glow to match reference */
+.animated-bg-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    rgba(255, 150, 40, 0.08) 0%,
+    rgba(0, 0, 0, 0.28) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  pointer-events: none;
+}
+
+.animated-bg-glow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6%;
+  height: 40%;
+  background: radial-gradient(
+    closest-side,
+    rgba(255, 160, 56, 0.24),
+    rgba(255, 140, 30, 0.06),
+    transparent 50%
+  );
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Ensure app content sits above background */
+body > #root > div {
+  position: relative;
+  z-index: 1;
 }

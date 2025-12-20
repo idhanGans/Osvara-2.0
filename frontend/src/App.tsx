@@ -8,11 +8,13 @@ import { GalleryPage } from "./pages/Gallery";
 import { AboutPage } from "./pages/About";
 import { ContactPage } from "./pages/Contact";
 import "./index.css";
+import AnimatedBackground from "./components/AnimatedBackground";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-dark text-silver flex flex-col">
+      <div className="min-h-screen flex flex-col text-gray-900">
+        <AnimatedBackground />
         <Navbar />
         <main className="flex-1">
           <Routes>
