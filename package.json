@@ -1,0 +1,11 @@
+{
+  "name": "osvara",
+  "version": "2.0.0",
+  "description": "Elegant e-commerce platform for muslimah clothing",
+  "private": true,
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm run preview"
+  }
+}
