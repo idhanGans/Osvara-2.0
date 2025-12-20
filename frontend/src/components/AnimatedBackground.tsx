@@ -1,9 +1,9 @@
 import React from "react";
 
 const layers = [
-  { count: 60, min: 6, max: 18, speedMin: 6, speedMax: 14, blur: 1.6 },
-  { count: 28, min: 10, max: 28, speedMin: 10, speedMax: 22, blur: 1.2 },
-  { count: 12, min: 18, max: 42, speedMin: 18, speedMax: 36, blur: 0.6 },
+  { count: 20, min: 6, max: 18, speedMin: 8, speedMax: 16, blur: 1.6 },
+  { count: 10, min: 10, max: 28, speedMin: 12, speedMax: 24, blur: 1.2 },
+  { count: 5, min: 18, max: 42, speedMin: 20, speedMax: 40, blur: 0.6 },
 ];
 
 function rand(min: number, max: number) {
