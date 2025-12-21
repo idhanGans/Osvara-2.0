@@ -20,42 +20,33 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <motion.div
-      className="bg-dark border border-gold/30 rounded-lg overflow-hidden hover:border-gold transition-colors cursor-pointer group"
-      whileHover={{ y: -10 }}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
+      className="bg-[#0f0f12] border border-gold/20 rounded-2xl overflow-hidden shadow-lg shadow-black/30 hover:shadow-gold/10 transition-all cursor-pointer group"
+      whileHover={{ y: -6 }}
+      transition={{ duration: 0.2 }}
     >
-      {/* Image Container */}
-      <div className="relative overflow-hidden h-64 bg-dark/50">
+      <div className="relative overflow-hidden h-64 bg-black">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        <motion.div
-          className="absolute top-4 right-4 bg-gold text-dark px-3 py-1 rounded-full text-sm font-bold"
-          whileHover={{ scale: 1.1 }}
-        >
+        <span className="absolute top-4 left-4 bg-[#0f0f12]/90 backdrop-blur text-xs font-medium text-silver px-3 py-1 rounded-full border border-gold/30">
           {category}
-        </motion.div>
-        <motion.button
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-gold text-dark px-6 py-2 rounded-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          View Product
-        </motion.button>
+        </span>
+        <span className="absolute top-4 right-4 bg-gold text-dark text-xs font-semibold px-3 py-1 rounded-full">
+          Baru
+        </span>
+        <button className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-gold text-dark px-5 py-2 rounded-full text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
+          Lihat Detail
+        </button>
       </div>
 
-      {/* Content */}
-      <div className="p-4">
-        <h3 className="text-gold font-bold text-lg mb-2 line-clamp-2">
+      <div className="p-4 space-y-2">
+        <h3 className="text-silver font-semibold text-base line-clamp-2">
           {name}
         </h3>
 
-        {/* Rating */}
-        <div className="flex items-center mb-3">
+        <div className="flex items-center gap-2 text-xs text-silver/60">
           {[...Array(5)].map((_, i) => (
             <span
               key={i}
@@ -66,23 +57,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               ★
             </span>
           ))}
-          <span className="text-silver/50 text-sm ml-2">
-            ({rating.toFixed(1)})
-          </span>
+          <span className="text-silver/60">{rating.toFixed(1)}</span>
         </div>
 
-        {/* Price and Button */}
-        <div className="flex justify-between items-center">
-          <span className="text-2xl font-bold text-gold">
+        <div className="flex items-center justify-between pt-2">
+          <span className="text-xl font-semibold text-gold">
             Rp {price.toLocaleString("id-ID")}
           </span>
-          <motion.button
-            className="bg-gold/20 text-gold border border-gold p-2 rounded-lg hover:bg-gold hover:text-dark transition-colors"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <button className="rounded-full border border-gold/30 px-3 py-2 text-sm text-gold hover:border-gold">
             🛒
-          </motion.button>
+          </button>
         </div>
       </div>
     </motion.div>

@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
 
   return (
     <motion.footer
-      className="bg-dark border-t border-gold/20 py-12"
+      className="relative z-10 bg-dark border-t border-gold/25 py-12"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
     >
