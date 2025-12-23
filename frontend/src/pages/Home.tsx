@@ -149,7 +149,7 @@ export const HomePage: React.FC = () => {
             View All Products
           </button>
         </div>
-      </motion.section>
+      </section>
 
       {/* Why Choose Us */}
       <section className="py-20 px-4 bg-dark">
