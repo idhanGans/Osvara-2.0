@@ -4,10 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        gold: "#D4AF37",
-        dark: "#0F0F0F",
-        silver: "#E8E8E8",
-        cream: "#FFF8F0",
+        primary: "#1a1a1a",
+        secondary: "#4a4a4a",
+        accent: "#808080",
+        dark: "#000000",
+        silver: "#C0C0C0",
+        lightGrey: "#e8e8e8",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-in",

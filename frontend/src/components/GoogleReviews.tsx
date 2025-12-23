@@ -37,7 +37,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
     >
-      <h2 className="text-3xl font-bold text-gold mb-8 text-center">
+      <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
         Google Reviews
       </h2>
 
@@ -45,8 +45,14 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
         {mockReviews.map((review, idx) => (
           <motion.div
             key={idx}
-            className="bg-dark border border-gold/30 rounded-lg p-6"
-            whileHover={{ y: -5 }}
+            className="bg-white border border-gray-200 rounded-lg p-6"
+            style={{
+              boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08)'
+            }}
+            whileHover={{ 
+              y: -5,
+              boxShadow: '0 15px 50px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.12)'
+            }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
@@ -55,8 +61,8 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
             <div className="flex items-center mb-4">
               <span className="text-3xl mr-3">{review.image}</span>
               <div>
-                <h4 className="text-gold font-bold">{review.name}</h4>
-                <p className="text-silver/50 text-sm">{review.date}</p>
+                <h4 className="text-gray-900 font-bold">{review.name}</h4>
+                <p className="text-gray-500 text-sm">{review.date}</p>
               </div>
             </div>
 
@@ -67,8 +73,8 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
                   key={i}
                   className={
                     i < review.rating
-                      ? "text-gold text-lg"
-                      : "text-silver/30 text-lg"
+                      ? "text-black text-lg"
+                      : "text-gray-300 text-lg"
                   }
                 >
                   ★
@@ -77,7 +83,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
             </div>
 
             {/* Review Text */}
-            <p className="text-silver/70 text-sm leading-relaxed">
+            <p className="text-gray-600 text-sm leading-relaxed">
               {review.text}
             </p>
           </motion.div>
@@ -86,8 +92,14 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
 
       {/* View More Button */}
       <motion.button
-        className="mx-auto block mt-8 bg-gold text-dark px-8 py-3 rounded-lg font-bold hover:bg-gold/90 transition-colors"
-        whileHover={{ scale: 1.05 }}
+        className="mx-auto block mt-8 bg-gradient-to-r from-black to-gray-800 text-white px-8 py-3 rounded-lg font-bold transition-colors"
+        style={{
+          boxShadow: '0 10px 35px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2)'
+        }}
+        whileHover={{ 
+          scale: 1.05,
+          boxShadow: '0 15px 50px rgba(0, 0, 0, 0.4), 0 6px 18px rgba(0, 0, 0, 0.3)'
+        }}
         whileTap={{ scale: 0.95 }}
       >
         View More Reviews on Google

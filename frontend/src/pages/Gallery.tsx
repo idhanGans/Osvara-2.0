@@ -57,12 +57,12 @@ export const GalleryPage: React.FC = () => {
   return (
     <div className="pt-20 pb-20">
       <motion.div
-        className="bg-gradient-to-r from-dark to-dark/80 py-16 px-4"
+        className="bg-gray-100 py-16 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <h1 className="text-5xl font-bold text-gold text-center">Gallery</h1>
-        <p className="text-silver/70 text-center mt-4">
+        <h1 className="text-5xl font-bold text-black text-center">Gallery</h1>
+        <p className="text-gray-600 text-center mt-4">
           Explore our stunning collection
         </p>
       </motion.div>
@@ -90,7 +90,7 @@ export const GalleryPage: React.FC = () => {
                 initial={{ opacity: 0 }}
               >
                 <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-gold font-bold text-lg">{item.title}</h3>
+                  <h3 className="text-white font-bold text-lg">{item.title}</h3>
                 </div>
               </motion.div>
             </motion.div>
@@ -119,11 +119,11 @@ export const GalleryPage: React.FC = () => {
             />
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 text-gold text-3xl hover:text-silver"
+              className="absolute top-4 right-4 text-white text-3xl hover:text-gray-300"
             >
               ✕
             </button>
-            <h2 className="text-gold text-2xl font-bold mt-4 text-center">
+            <h2 className="text-white text-2xl font-bold mt-4 text-center">
               {selectedImage.title}
             </h2>
           </motion.div>

@@ -13,7 +13,7 @@ import AnimatedBackground from "./components/AnimatedBackground";
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col text-silver bg-[#0b0b0f] relative">
+      <div className="min-h-screen flex flex-col text-gray-900 bg-white relative">
         <AnimatedBackground />
         <Navbar />
         <main className="flex-1 relative z-10">

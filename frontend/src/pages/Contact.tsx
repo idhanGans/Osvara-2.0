@@ -41,12 +41,12 @@ export const ContactPage: React.FC = () => {
   return (
     <div className="pt-20 pb-20">
       <motion.div
-        className="bg-gradient-to-r from-dark to-dark/80 py-16 px-4"
+        className="bg-gray-100 py-16 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <h1 className="text-5xl font-bold text-gold text-center">Contact Us</h1>
-        <p className="text-silver/70 text-center mt-4">
+        <h1 className="text-5xl font-bold text-black text-center">Contact Us</h1>
+        <p className="text-gray-600 text-center mt-4">
           We'd love to hear from you
         </p>
       </motion.div>
@@ -76,18 +76,18 @@ export const ContactPage: React.FC = () => {
           ].map((contact, idx) => (
             <motion.div
               key={idx}
-              className="bg-dark border border-gold/30 rounded-lg p-8 text-center"
+              className="bg-white border border-gray-300 rounded-lg p-8 text-center"
               whileHover={{ y: -5 }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
             >
-              <contact.icon className="text-gold text-4xl mx-auto mb-4" />
-              <h3 className="text-gold font-bold text-xl mb-2">
+              <contact.icon className="text-black text-4xl mx-auto mb-4" />
+              <h3 className="text-black font-bold text-xl mb-2">
                 {contact.title}
               </h3>
-              <p className="text-silver text-lg mb-2">{contact.content}</p>
-              <p className="text-silver/50 text-sm">{contact.desc}</p>
+              <p className="text-gray-900 text-lg mb-2">{contact.content}</p>
+              <p className="text-gray-500 text-sm">{contact.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -98,14 +98,14 @@ export const ContactPage: React.FC = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
           >
-            <h2 className="text-3xl font-bold text-gold mb-8">
+            <h2 className="text-3xl font-bold text-black mb-8">
               Send us a Message
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name */}
               <div>
-                <label className="text-gold font-bold block mb-2">
+                <label className="text-black font-bold block mb-2">
                   Full Name
                 </label>
                 <motion.input
@@ -114,7 +114,7 @@ export const ContactPage: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-dark border border-gold/30 rounded-lg text-silver focus:outline-none focus:border-gold transition-colors"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-black transition-colors"
                   placeholder="Your name"
                   whileFocus={{ scale: 1.01 }}
                 />
@@ -122,7 +122,7 @@ export const ContactPage: React.FC = () => {
 
               {/* Email */}
               <div>
-                <label className="text-gold font-bold block mb-2">
+                <label className="text-black font-bold block mb-2">
                   Email Address
                 </label>
                 <motion.input
@@ -131,7 +131,7 @@ export const ContactPage: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-dark border border-gold/30 rounded-lg text-silver focus:outline-none focus:border-gold transition-colors"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-black transition-colors"
                   placeholder="Your email"
                   whileFocus={{ scale: 1.01 }}
                 />
@@ -139,7 +139,7 @@ export const ContactPage: React.FC = () => {
 
               {/* Phone */}
               <div>
-                <label className="text-gold font-bold block mb-2">
+                <label className="text-black font-bold block mb-2">
                   Phone Number
                 </label>
                 <motion.input
@@ -147,7 +147,7 @@ export const ContactPage: React.FC = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-dark border border-gold/30 rounded-lg text-silver focus:outline-none focus:border-gold transition-colors"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-black transition-colors"
                   placeholder="Your phone number"
                   whileFocus={{ scale: 1.01 }}
                 />
@@ -155,7 +155,7 @@ export const ContactPage: React.FC = () => {
 
               {/* Subject */}
               <div>
-                <label className="text-gold font-bold block mb-2">
+                <label className="text-black font-bold block mb-2">
                   Subject
                 </label>
                 <motion.select
@@ -163,7 +163,7 @@ export const ContactPage: React.FC = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-dark border border-gold/30 rounded-lg text-silver focus:outline-none focus:border-gold transition-colors"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-black transition-colors"
                   whileFocus={{ scale: 1.01 }}
                 >
                   <option value="">Select a subject</option>
@@ -177,7 +177,7 @@ export const ContactPage: React.FC = () => {
 
               {/* Message */}
               <div>
-                <label className="text-gold font-bold block mb-2">
+                <label className="text-black font-bold block mb-2">
                   Message
                 </label>
                 <motion.textarea
@@ -186,7 +186,7 @@ export const ContactPage: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-dark border border-gold/30 rounded-lg text-silver focus:outline-none focus:border-gold transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-black transition-colors resize-none"
                   placeholder="Your message..."
                   whileFocus={{ scale: 1.01 }}
                 />
@@ -195,7 +195,7 @@ export const ContactPage: React.FC = () => {
               {/* Submit Button */}
               <motion.button
                 type="submit"
-                className="w-full bg-gold text-dark py-3 rounded-lg font-bold hover:bg-gold/90 transition-colors"
+                className="w-full bg-black text-white py-3 rounded-lg font-bold hover:bg-gray-800 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -205,7 +205,7 @@ export const ContactPage: React.FC = () => {
               {/* Success Message */}
               {submitted && (
                 <motion.div
-                  className="bg-gold/20 border border-gold text-gold p-4 rounded-lg text-center"
+                  className="bg-green-50 border border-green-500 text-green-700 p-4 rounded-lg text-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                 >
@@ -221,12 +221,12 @@ export const ContactPage: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             className="space-y-8"
           >
-            <div className="bg-dark border border-gold/30 rounded-lg p-8">
-              <h3 className="text-gold text-2xl font-bold mb-6 flex items-center gap-2">
+            <div className="bg-white border border-gray-300 rounded-lg p-8">
+              <h3 className="text-black text-2xl font-bold mb-6 flex items-center gap-2">
                 <FaMapMarkerAlt /> Visit Our Boutique
               </h3>
-              <p className="text-silver/80 mb-4">
-                <strong className="text-gold">Osvara Boutique</strong>
+              <p className="text-gray-700 mb-4">
+                <strong className="text-black">Osvara Boutique</strong>
                 <br />
                 Jl. Kemang Raya No. 123
                 <br />
@@ -234,9 +234,9 @@ export const ContactPage: React.FC = () => {
                 <br />
                 Indonesia
               </p>
-              <div className="mt-6 pt-6 border-t border-gold/30">
-                <h4 className="text-gold font-bold mb-3">Store Hours</h4>
-                <div className="text-silver/70 space-y-1 text-sm">
+              <div className="mt-6 pt-6 border-t border-gray-300">
+                <h4 className="text-black font-bold mb-3">Store Hours</h4>
+                <div className="text-gray-600 space-y-1 text-sm">
                   <p>Monday - Friday: 10:00 AM - 7:00 PM</p>
                   <p>Saturday: 10:00 AM - 8:00 PM</p>
                   <p>Sunday: 12:00 PM - 6:00 PM</p>
@@ -244,34 +244,34 @@ export const ContactPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-dark border border-gold/30 rounded-lg p-8">
-              <h3 className="text-gold text-2xl font-bold mb-6">
+            <div className="bg-white border border-gray-300 rounded-lg p-8">
+              <h3 className="text-black text-2xl font-bold mb-6">
                 Quick Contact
               </h3>
               <div className="space-y-4">
                 <motion.a
                   href="https://wa.me/6281234567890"
-                  className="flex items-center gap-4 p-4 bg-dark border border-gold/30 rounded-lg hover:border-gold transition-colors"
+                  className="flex items-center gap-4 p-4 bg-white border border-gray-300 rounded-lg hover:border-black transition-colors"
                   whileHover={{ x: 5 }}
                 >
-                  <FaWhatsapp className="text-gold text-2xl" />
-                  <span className="text-silver">Chat on WhatsApp</span>
+                  <FaWhatsapp className="text-black text-2xl" />
+                  <span className="text-gray-900">Chat on WhatsApp</span>
                 </motion.a>
                 <motion.a
                   href="tel:+6281234567890"
-                  className="flex items-center gap-4 p-4 bg-dark border border-gold/30 rounded-lg hover:border-gold transition-colors"
+                  className="flex items-center gap-4 p-4 bg-white border border-gray-300 rounded-lg hover:border-black transition-colors"
                   whileHover={{ x: 5 }}
                 >
-                  <FaPhone className="text-gold text-2xl" />
-                  <span className="text-silver">Call Us</span>
+                  <FaPhone className="text-black text-2xl" />
+                  <span className="text-gray-900">Call Us</span>
                 </motion.a>
                 <motion.a
                   href="mailto:hello@osvara.com"
-                  className="flex items-center gap-4 p-4 bg-dark border border-gold/30 rounded-lg hover:border-gold transition-colors"
+                  className="flex items-center gap-4 p-4 bg-white border border-gray-300 rounded-lg hover:border-black transition-colors"
                   whileHover={{ x: 5 }}
                 >
-                  <FaEnvelope className="text-gold text-2xl" />
-                  <span className="text-silver">Send Email</span>
+                  <FaEnvelope className="text-black text-2xl" />
+                  <span className="text-gray-900">Send Email</span>
                 </motion.a>
               </div>
             </div>

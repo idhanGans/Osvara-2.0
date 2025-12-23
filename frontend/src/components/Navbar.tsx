@@ -22,9 +22,14 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-40 bg-[#0b0b0f]/90 backdrop-blur border-b border-gold/15 text-silver">
+    <nav className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-200 text-gray-900 shadow-lg">
+      <style>{`
+        nav {
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+      `}</style>
       {/* Top info bar */}
-      <div className="hidden md:flex h-10 items-center justify-center text-xs tracking-[0.08em] uppercase text-silver/70 border-b border-gold/10">
+      <div className="hidden md:flex h-10 items-center justify-center text-xs tracking-[0.08em] uppercase text-gray-600 border-b border-gray-200">
         Gratis ongkir Jabodetabek • Pengembalian mudah 30 hari • Belanja aman
       </div>
 
@@ -32,7 +37,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center gap-4 py-4">
           {/* Mobile menu toggle */}
           <button
-            className="md:hidden text-gold text-2xl"
+            className="md:hidden text-black text-2xl"
             aria-label="Toggle menu"
             onClick={() => setIsOpen((prev) => !prev)}
           >
@@ -41,7 +46,7 @@ export const Navbar: React.FC = () => {
 
           {/* Logo */}
           <a
-            className="text-2xl font-semibold tracking-tight text-gold"
+            className="text-2xl font-semibold tracking-tight text-black"
             href="/"
           >
             OSVARA
@@ -52,30 +57,30 @@ export const Navbar: React.FC = () => {
             <input
               type="search"
               placeholder="Cari gamis, khimar, abaya, aksesoris..."
-              className="w-full rounded-full border border-gold/20 bg-[#0f0f12] px-4 py-2 text-sm text-silver focus:border-gold/50 focus:ring-0"
+              className="w-full rounded-full border border-gray-300 bg-gray-50 px-4 py-2 text-sm text-gray-900 focus:border-black focus:ring-0"
             />
           </div>
 
           {/* Actions */}
-          <div className="flex items-center gap-4 text-silver">
+          <div className="flex items-center gap-4 text-gray-900">
             <a
               href="/account"
-              className="hidden sm:inline text-sm hover:text-gold"
+              className="hidden sm:inline text-sm hover:text-gray-600"
             >
               Akun
             </a>
             <a
               href="/wishlist"
-              className="hidden sm:inline text-sm hover:text-gold"
+              className="hidden sm:inline text-sm hover:text-gray-600"
             >
               Favorit
             </a>
             <a
               href="/cart"
-              className="relative text-sm font-semibold text-gold"
+              className="relative text-sm font-semibold text-black"
             >
               🛒
-              <span className="absolute -top-2 -right-2 bg-gold text-dark rounded-full w-5 h-5 text-[11px] flex items-center justify-center">
+              <span className="absolute -top-2 -right-2 bg-black text-white rounded-full w-5 h-5 text-[11px] flex items-center justify-center">
                 0
               </span>
             </a>
@@ -83,12 +88,12 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Category rail */}
-        <div className="flex items-center gap-3 overflow-x-auto pb-3 text-sm font-medium text-silver">
+        <div className="flex items-center gap-3 overflow-x-auto pb-3 text-sm font-medium text-gray-900">
           {categories.map((cat) => (
             <a
               key={cat}
               href="#"
-              className="whitespace-nowrap px-3 py-2 rounded-full bg-[#0f0f12] border border-gold/15 hover:border-gold/40 shadow-sm"
+              className="whitespace-nowrap px-3 py-2 rounded-full bg-gray-100 border border-gray-300 hover:border-black shadow-sm"
             >
               {cat}
             </a>
@@ -101,7 +106,7 @@ export const Navbar: React.FC = () => {
             <input
               type="search"
               placeholder="Cari produk..."
-              className="w-full rounded-full border border-gold/20 bg-[#0f0f12] px-4 py-3 text-sm text-silver focus:border-gold/50 focus:ring-0"
+              className="w-full rounded-full border border-gray-300 bg-gray-50 px-4 py-3 text-sm text-gray-900 focus:border-black focus:ring-0"
             />
 
             <div className="grid grid-cols-2 gap-2 text-sm">
@@ -109,7 +114,7 @@ export const Navbar: React.FC = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="rounded-lg border border-gold/15 px-3 py-2 text-silver hover:border-gold/40"
+                  className="rounded-lg border border-gray-300 px-3 py-2 text-gray-900 hover:border-black"
                 >
                   {item.name}
                 </a>
