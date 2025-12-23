@@ -79,9 +79,13 @@ export const HomePage: React.FC = () => {
     <div className="pt-24 space-y-20">
       {/* Hero */}
       <section className="relative px-4">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center bg-gradient-to-br from-white via-gray-50 to-gray-100 border border-gray-300 rounded-3xl p-8 lg:p-12" style={{
-          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8)'
-        }}>
+        <div
+          className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center bg-gradient-to-br from-white via-gray-50 to-gray-100 border border-gray-300 rounded-3xl p-8 lg:p-12"
+          style={{
+            boxShadow:
+              "0 20px 60px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8)",
+          }}
+        >
           <div className="space-y-6">
             <span className="text-xs uppercase tracking-[0.2em] text-gray-500">
               Osvara Collection • New Season
@@ -95,14 +99,22 @@ export const HomePage: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <button className="px-6 py-3 rounded-full bg-gradient-to-r from-black to-gray-800 text-white text-sm font-semibold" style={{
-                boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)'
-              }}>
+              <button
+                className="px-6 py-3 rounded-full bg-gradient-to-r from-black to-gray-800 text-white text-sm font-semibold"
+                style={{
+                  boxShadow:
+                    "0 8px 25px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)",
+                }}
+              >
                 Belanja sekarang
               </button>
-              <button className="px-6 py-3 rounded-full border-2 border-gray-400 text-sm font-semibold text-gray-900 hover:border-black bg-gradient-to-b from-white to-gray-50" style={{
-                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.08)'
-              }}>
+              <button
+                className="px-6 py-3 rounded-full border-2 border-gray-400 text-sm font-semibold text-gray-900 hover:border-black bg-gradient-to-b from-white to-gray-50"
+                style={{
+                  boxShadow:
+                    "0 4px 15px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.08)",
+                }}
+              >
                 Lihat lookbook
               </button>
             </div>
@@ -124,16 +136,21 @@ export const HomePage: React.FC = () => {
             <div
               className="aspect-[4/5] rounded-3xl overflow-hidden border border-gray-300 bg-cover bg-center"
               style={{
-                boxShadow: '0 15px 50px rgba(0, 0, 0, 0.25), 0 5px 15px rgba(0, 0, 0, 0.15)'
+                boxShadow:
+                  "0 15px 50px rgba(0, 0, 0, 0.25), 0 5px 15px rgba(0, 0, 0, 0.15)",
               }}
               style={{
                 backgroundImage:
                   "url('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80&sat=-20')",
               }}
             />
-            <div className="absolute -bottom-4 -left-4 bg-gradient-to-br from-white to-gray-100 border border-gray-300 rounded-2xl p-4 w-48" style={{
-              boxShadow: '0 12px 40px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15)'
-            }}>
+            <div
+              className="absolute -bottom-4 -left-4 bg-gradient-to-br from-white to-gray-100 border border-gray-300 rounded-2xl p-4 w-48"
+              style={{
+                boxShadow:
+                  "0 12px 40px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15)",
+              }}
+            >
               <p className="text-xs uppercase tracking-[0.15em] text-gray-500 mb-1">
                 Highlight
               </p>
@@ -155,13 +172,16 @@ export const HomePage: React.FC = () => {
                 key={item}
                 className="px-4 py-2 rounded-full border border-gray-300 bg-gradient-to-b from-white to-gray-50 text-sm font-medium text-gray-900 hover:border-black transition-all"
                 style={{
-                  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.08)'
+                  boxShadow:
+                    "0 4px 15px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.08)",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.12)';
+                  e.currentTarget.style.boxShadow =
+                    "0 8px 25px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.12)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.08)';
+                  e.currentTarget.style.boxShadow =
+                    "0 4px 15px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.08)";
                 }}
               >
                 {item}
@@ -179,7 +199,8 @@ export const HomePage: React.FC = () => {
               key={idx}
               className="relative overflow-hidden rounded-2xl border border-gray-300 bg-cover bg-center min-h-[220px] flex items-end"
               style={{
-                boxShadow: '0 15px 50px rgba(0, 0, 0, 0.25), 0 5px 15px rgba(0, 0, 0, 0.15)'
+                boxShadow:
+                  "0 15px 50px rgba(0, 0, 0, 0.25), 0 5px 15px rgba(0, 0, 0, 0.15)",
               }}
               style={{
                 backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.7) 100%), url(${tile.image})`,
@@ -190,9 +211,13 @@ export const HomePage: React.FC = () => {
                   {tile.subtitle}
                 </p>
                 <h3 className="text-2xl font-semibold">{tile.title}</h3>
-                <button className="mt-3 inline-flex items-center text-sm font-semibold bg-gradient-to-r from-white to-gray-100 text-black px-4 py-2 rounded-full" style={{
-                  boxShadow: '0 6px 20px rgba(255, 255, 255, 0.5), 0 2px 8px rgba(255, 255, 255, 0.3)'
-                }}>
+                <button
+                  className="mt-3 inline-flex items-center text-sm font-semibold bg-gradient-to-r from-white to-gray-100 text-black px-4 py-2 rounded-full"
+                  style={{
+                    boxShadow:
+                      "0 6px 20px rgba(255, 255, 255, 0.5), 0 2px 8px rgba(255, 255, 255, 0.3)",
+                  }}
+                >
                   {tile.cta}
                 </button>
               </div>
@@ -236,7 +261,8 @@ export const HomePage: React.FC = () => {
                 key={tag}
                 className="relative overflow-hidden rounded-2xl border border-gray-300 bg-gradient-to-b from-white to-gray-100"
                 style={{
-                  boxShadow: '0 12px 40px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.12)'
+                  boxShadow:
+                    "0 12px 40px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.12)",
                 }}
               >
                 <div
@@ -266,9 +292,13 @@ export const HomePage: React.FC = () => {
 
       {/* Reviews */}
       <section className="px-4">
-        <div className="max-w-7xl mx-auto rounded-3xl border border-gray-300 bg-gradient-to-b from-white to-gray-50 p-6" style={{
-          boxShadow: '0 15px 50px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.12)'
-        }}>
+        <div
+          className="max-w-7xl mx-auto rounded-3xl border border-gray-300 bg-gradient-to-b from-white to-gray-50 p-6"
+          style={{
+            boxShadow:
+              "0 15px 50px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.12)",
+          }}
+        >
           <div className="flex items-center justify-between mb-4">
             <div>
               <h3 className="text-xl font-semibold text-gray-900">
@@ -286,9 +316,13 @@ export const HomePage: React.FC = () => {
 
       {/* Newsletter */}
       <section className="px-4 pb-16">
-        <div className="max-w-5xl mx-auto rounded-3xl border border-gray-700 bg-gradient-to-br from-gray-800 via-gray-900 to-black p-8 text-center" style={{
-          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4), 0 8px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
-        }}>
+        <div
+          className="max-w-5xl mx-auto rounded-3xl border border-gray-700 bg-gradient-to-br from-gray-800 via-gray-900 to-black p-8 text-center"
+          style={{
+            boxShadow:
+              "0 20px 60px rgba(0, 0, 0, 0.4), 0 8px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+          }}
+        >
           <h3 className="text-2xl font-semibold text-white mb-2">
             Dapatkan info rilis terbaru
           </h3>
@@ -302,13 +336,21 @@ export const HomePage: React.FC = () => {
               placeholder="Email kamu"
               className="flex-1 rounded-full border border-gray-600 bg-gray-800 px-4 py-3 text-sm text-white focus:border-white focus:ring-0"
             />
-            <button className="px-6 py-3 rounded-full bg-white text-black text-sm font-semibold" style={{
-              boxShadow: '0 8px 25px rgba(255, 255, 255, 0.3), 0 2px 8px rgba(255, 255, 255, 0.2)'
-            }} onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = '0 12px 35px rgba(255, 255, 255, 0.4), 0 4px 12px rgba(255, 255, 255, 0.3)';
-            }} onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = '0 8px 25px rgba(255, 255, 255, 0.3), 0 2px 8px rgba(255, 255, 255, 0.2)';
-            }}>
+            <button
+              className="px-6 py-3 rounded-full bg-white text-black text-sm font-semibold"
+              style={{
+                boxShadow:
+                  "0 8px 25px rgba(255, 255, 255, 0.3), 0 2px 8px rgba(255, 255, 255, 0.2)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow =
+                  "0 12px 35px rgba(255, 255, 255, 0.4), 0 4px 12px rgba(255, 255, 255, 0.3)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow =
+                  "0 8px 25px rgba(255, 255, 255, 0.3), 0 2px 8px rgba(255, 255, 255, 0.2)";
+              }}
+            >
               Daftar sekarang
             </button>
           </div>

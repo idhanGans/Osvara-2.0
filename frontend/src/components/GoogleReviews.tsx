@@ -47,11 +47,13 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
             key={idx}
             className="bg-white border border-gray-200 rounded-lg p-6"
             style={{
-              boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08)'
+              boxShadow:
+                "0 8px 30px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08)",
             }}
-            whileHover={{ 
+            whileHover={{
               y: -5,
-              boxShadow: '0 15px 50px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.12)'
+              boxShadow:
+                "0 15px 50px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.12)",
             }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -94,11 +96,13 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
       <motion.button
         className="mx-auto block mt-8 bg-gradient-to-r from-black to-gray-800 text-white px-8 py-3 rounded-lg font-bold transition-colors"
         style={{
-          boxShadow: '0 10px 35px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2)'
+          boxShadow:
+            "0 10px 35px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2)",
         }}
-        whileHover={{ 
+        whileHover={{
           scale: 1.05,
-          boxShadow: '0 15px 50px rgba(0, 0, 0, 0.4), 0 6px 18px rgba(0, 0, 0, 0.3)'
+          boxShadow:
+            "0 15px 50px rgba(0, 0, 0, 0.4), 0 6px 18px rgba(0, 0, 0, 0.3)",
         }}
         whileTap={{ scale: 0.95 }}
       >

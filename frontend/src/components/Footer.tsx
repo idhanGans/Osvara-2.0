@@ -15,7 +15,8 @@ export const Footer: React.FC = () => {
     <motion.footer
       className="relative z-10 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 border-t border-gray-300 py-12"
       style={{
-        boxShadow: '0 -10px 40px rgba(0, 0, 0, 0.1), 0 -2px 10px rgba(0, 0, 0, 0.05)'
+        boxShadow:
+          "0 -10px 40px rgba(0, 0, 0, 0.1), 0 -2px 10px rgba(0, 0, 0, 0.05)",
       }}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -33,7 +34,9 @@ export const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-black font-bold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
+            <h4 className="text-black font-bold mb-4 text-sm uppercase tracking-wider">
+              Quick Links
+            </h4>
             <ul className="space-y-3">
               {["Home", "Products", "Gallery", "About Us", "Contact"].map(
                 (link) => (
@@ -42,7 +45,9 @@ export const Footer: React.FC = () => {
                       href={`/${link.toLowerCase().replace(" ", "-")}`}
                       className="text-gray-600 hover:text-black text-sm transition-colors inline-flex items-center group"
                     >
-                      <span className="group-hover:translate-x-1 transition-transform">{link}</span>
+                      <span className="group-hover:translate-x-1 transition-transform">
+                        {link}
+                      </span>
                     </a>
                   </li>
                 )
@@ -52,7 +57,9 @@ export const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-black font-bold mb-4 text-sm uppercase tracking-wider">Contact Us</h4>
+            <h4 className="text-black font-bold mb-4 text-sm uppercase tracking-wider">
+              Contact Us
+            </h4>
             <div className="space-y-3 text-sm">
               <p className="text-gray-600 flex items-center gap-2 hover:text-black transition-colors">
                 <FaPhone className="text-black" /> +62 812-3456-7890
@@ -65,7 +72,9 @@ export const Footer: React.FC = () => {
 
           {/* Social Links */}
           <div>
-            <h4 className="text-black font-bold mb-4 text-sm uppercase tracking-wider">Follow Us</h4>
+            <h4 className="text-black font-bold mb-4 text-sm uppercase tracking-wider">
+              Follow Us
+            </h4>
             <div className="flex gap-4">
               {[
                 { icon: FaInstagram, href: "#", label: "Instagram" },
@@ -90,8 +99,15 @@ export const Footer: React.FC = () => {
         {/* Bottom */}
         <div className="border-t border-gray-300 pt-6 mt-8">
           <p className="text-center text-gray-500 text-sm">
-            © {currentYear} Osvara. All rights reserved. | <a href="#" className="hover:text-black transition-colors">Privacy Policy</a> |
-            <a href="#" className="hover:text-black transition-colors"> Terms of Service</a>
+            © {currentYear} Osvara. All rights reserved. |{" "}
+            <a href="#" className="hover:text-black transition-colors">
+              Privacy Policy
+            </a>{" "}
+            |
+            <a href="#" className="hover:text-black transition-colors">
+              {" "}
+              Terms of Service
+            </a>
           </p>
         </div>
       </div>

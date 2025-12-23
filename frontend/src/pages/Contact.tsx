@@ -45,7 +45,9 @@ export const ContactPage: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <h1 className="text-5xl font-bold text-black text-center">Contact Us</h1>
+        <h1 className="text-5xl font-bold text-black text-center">
+          Contact Us
+        </h1>
         <p className="text-gray-600 text-center mt-4">
           We'd love to hear from you
         </p>

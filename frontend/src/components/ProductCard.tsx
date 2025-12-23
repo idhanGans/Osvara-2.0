@@ -22,11 +22,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     <motion.div
       className="bg-white border border-gray-200 rounded-2xl overflow-hidden cursor-pointer group"
       style={{
-        boxShadow: '0 10px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)'
+        boxShadow:
+          "0 10px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)",
       }}
-      whileHover={{ 
+      whileHover={{
         y: -6,
-        boxShadow: '0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15)'
+        boxShadow:
+          "0 20px 60px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.15)",
       }}
       transition={{ duration: 0.2 }}
     >

@@ -167,7 +167,9 @@ export const AboutPage: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
         >
-          <h2 className="text-3xl font-bold text-black mb-8">Visit Our Store</h2>
+          <h2 className="text-3xl font-bold text-black mb-8">
+            Visit Our Store
+          </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
               <h3 className="text-black font-bold text-xl mb-4">
