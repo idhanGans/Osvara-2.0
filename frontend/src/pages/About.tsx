@@ -67,7 +67,7 @@ export const AboutPage: React.FC = () => {
     <div className="pt-20 pb-20">
       {/* Hero Section */}
       <motion.div
-        className="relative bg-gradient-to-r from-primary to-dark py-24 px-4"
+        className="relative bg-gradient-to-r from-black via-gray-800 to-black py-24 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
@@ -107,28 +107,28 @@ export const AboutPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="text-muted text-sm tracking-widest">/</div>
-                <div className="text-muted text-sm tracking-widest">
+                <div className="text-grey text-sm tracking-widest">/</div>
+                <div className="text-grey text-sm tracking-widest">
                   OUR STORY
                 </div>
               </div>
-              <h2 className="text-4xl font-light text-primary mb-8">
+              <h2 className="text-4xl font-light text-black mb-8">
                 A Journey of <span className="italic font-serif">Passion</span>
               </h2>
-              <p className="text-muted text-lg leading-relaxed mb-6">
+              <p className="text-grey text-lg leading-relaxed mb-6">
                 Osvara was founded in 2020 with a simple mission: to make
                 elegant, high-quality Islamic fashion accessible to every
                 muslimah woman. We believe that fashion and modesty are not
                 mutually exclusive – they can beautifully complement each other.
               </p>
-              <p className="text-muted text-lg leading-relaxed mb-6">
+              <p className="text-grey text-lg leading-relaxed mb-6">
                 Our founder, passionate about traditional Islamic clothing and
                 modern design, started creating pieces that blend timeless
                 elegance with contemporary style. Today, Osvara has grown into a
                 trusted brand serving thousands of satisfied customers across
                 the region.
               </p>
-              <p className="text-muted text-lg leading-relaxed">
+              <p className="text-grey text-lg leading-relaxed">
                 We source the finest fabrics from around the world and work with
                 skilled craftspeople to create each piece with care and
                 attention to detail.
@@ -141,14 +141,14 @@ export const AboutPage: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="relative overflow-hidden rounded-lg shadow-2xl">
+              <div className="relative overflow-hidden rounded-lg shadow-lg">
                 <img
                   src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=600&h=700&fit=crop"
                   alt="About Osvara"
                   className="w-full h-auto"
                 />
               </div>
-              <div className="absolute -bottom-8 -left-8 bg-primary text-secondary p-8 shadow-xl">
+              <div className="absolute -bottom-8 -left-8 bg-black text-white p-8 shadow-xl">
                 <div className="text-4xl font-light">5+</div>
                 <div className="text-sm tracking-wider">
                   Years of Excellence
@@ -167,12 +167,12 @@ export const AboutPage: React.FC = () => {
         >
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-muted text-sm tracking-widest">/</div>
-              <div className="text-muted text-sm tracking-widest">
+              <div className="text-grey text-sm tracking-widest">/</div>
+              <div className="text-grey text-sm tracking-widest">
                 OUR VALUES
               </div>
             </div>
-            <h2 className="text-4xl font-light text-primary">
+            <h2 className="text-4xl font-light text-black">
               What We <span className="italic font-serif">Stand For</span>
             </h2>
           </div>
@@ -197,7 +197,7 @@ export const AboutPage: React.FC = () => {
             ].map((value, idx) => (
               <motion.div
                 key={idx}
-                className="bg-light rounded-lg p-10 text-center shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-gray-50 rounded-lg p-10 text-center shadow-lg hover:shadow-xl transition-shadow"
                 whileHover={{ y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -205,10 +205,10 @@ export const AboutPage: React.FC = () => {
                 transition={{ delay: idx * 0.1 }}
               >
                 <span className="text-5xl block mb-6">{value.icon}</span>
-                <h3 className="text-primary font-medium text-2xl mb-4">
+                <h3 className="text-black font-medium text-2xl mb-4">
                   {value.title}
                 </h3>
-                <p className="text-muted leading-relaxed">{value.desc}</p>
+                <p className="text-grey leading-relaxed">{value.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -223,19 +223,19 @@ export const AboutPage: React.FC = () => {
         >
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-muted text-sm tracking-widest">/</div>
-              <div className="text-muted text-sm tracking-widest">
+              <div className="text-grey text-sm tracking-widest">/</div>
+              <div className="text-grey text-sm tracking-widest">
                 OUR JOURNEY
               </div>
             </div>
-            <h2 className="text-4xl font-light text-primary">
+            <h2 className="text-4xl font-light text-black">
               Milestones & <span className="italic font-serif">Growth</span>
             </h2>
           </div>
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-muted/30" />
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-silver/30" />
 
             <div className="space-y-12">
               {milestones.map((milestone, idx) => (
@@ -256,17 +256,17 @@ export const AboutPage: React.FC = () => {
                         : "md:text-left md:pl-12"
                     }`}
                   >
-                    <div className="bg-secondary p-6 rounded-lg shadow-lg inline-block">
-                      <span className="text-primary font-light text-3xl">
+                    <div className="bg-white p-6 rounded-lg shadow-lg inline-block">
+                      <span className="text-black font-light text-3xl">
                         {milestone.year}
                       </span>
-                      <h3 className="text-primary font-medium text-xl mt-2">
+                      <h3 className="text-black font-medium text-xl mt-2">
                         {milestone.title}
                       </h3>
-                      <p className="text-muted mt-2">{milestone.description}</p>
+                      <p className="text-grey mt-2">{milestone.description}</p>
                     </div>
                   </div>
-                  <div className="hidden md:block w-4 h-4 bg-primary rounded-full relative z-10" />
+                  <div className="hidden md:block w-4 h-4 bg-black rounded-full relative z-10" />
                   <div className="flex-1" />
                 </motion.div>
               ))}
@@ -283,10 +283,10 @@ export const AboutPage: React.FC = () => {
         >
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-muted text-sm tracking-widest">/</div>
-              <div className="text-muted text-sm tracking-widest">OUR TEAM</div>
+              <div className="text-grey text-sm tracking-widest">/</div>
+              <div className="text-grey text-sm tracking-widest">OUR TEAM</div>
             </div>
-            <h2 className="text-4xl font-light text-primary">
+            <h2 className="text-4xl font-light text-black">
               Meet the <span className="italic font-serif">People</span>
             </h2>
           </div>
@@ -308,13 +308,13 @@ export const AboutPage: React.FC = () => {
                     className="w-full h-80 object-cover"
                   />
                 </div>
-                <h3 className="text-primary font-medium text-xl mb-1">
+                <h3 className="text-black font-medium text-xl mb-1">
                   {member.name}
                 </h3>
-                <p className="text-muted/70 text-sm tracking-wide mb-3">
+                <p className="text-grey/70 text-sm tracking-wide mb-3">
                   {member.role}
                 </p>
-                <p className="text-muted text-sm leading-relaxed">
+                <p className="text-grey text-sm leading-relaxed">
                   {member.description}
                 </p>
               </motion.div>
@@ -331,12 +331,12 @@ export const AboutPage: React.FC = () => {
         >
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-muted text-sm tracking-widest">/</div>
-              <div className="text-muted text-sm tracking-widest">
+              <div className="text-grey text-sm tracking-widest">/</div>
+              <div className="text-grey text-sm tracking-widest">
                 WHY OSVARA
               </div>
             </div>
-            <h2 className="text-4xl font-light text-primary">
+            <h2 className="text-4xl font-light text-black">
               Why Customers <span className="italic font-serif">Choose Us</span>
             </h2>
           </div>
@@ -376,7 +376,7 @@ export const AboutPage: React.FC = () => {
             ].map((item, idx) => (
               <motion.div
                 key={idx}
-                className="flex items-start gap-4 p-6 bg-light rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                className="flex items-start gap-4 p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition-shadow"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -384,10 +384,10 @@ export const AboutPage: React.FC = () => {
               >
                 <span className="text-3xl">{item.icon}</span>
                 <div>
-                  <h3 className="text-primary font-medium text-lg mb-1">
+                  <h3 className="text-black font-medium text-lg mb-1">
                     {item.title}
                   </h3>
-                  <p className="text-muted text-sm">{item.desc}</p>
+                  <p className="text-grey text-sm">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -396,7 +396,7 @@ export const AboutPage: React.FC = () => {
 
         {/* Store Location */}
         <motion.section
-          className="bg-gradient-to-r from-primary to-dark rounded-lg p-10 text-white"
+          className="bg-gradient-to-r from-black via-gray-800 to-black rounded-lg p-10 text-white"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -438,7 +438,7 @@ export const AboutPage: React.FC = () => {
               </div>
               <Link
                 to="/contact"
-                className="inline-block mt-8 px-8 py-3 bg-secondary text-primary font-medium tracking-wide hover:bg-light transition-colors"
+                className="inline-block mt-8 px-8 py-3 bg-white text-black font-medium tracking-wide hover:bg-gray-50 transition-colors"
               >
                 Get Directions
               </Link>

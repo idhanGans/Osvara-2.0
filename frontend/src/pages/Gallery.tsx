@@ -118,7 +118,7 @@ export const GalleryPage: React.FC = () => {
   return (
     <div className="pt-20 pb-20">
       <motion.div
-        className="bg-gradient-to-r from-primary to-dark py-16 px-4"
+        className="bg-gradient-to-r from-black via-gray-800 to-black py-16 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
@@ -143,8 +143,8 @@ export const GalleryPage: React.FC = () => {
               onClick={() => setSelectedCategory(cat)}
               className={`px-6 py-2 rounded-full transition-colors ${
                 selectedCategory === cat
-                  ? "bg-primary text-secondary"
-                  : "bg-light text-muted hover:text-primary"
+                  ? "bg-black text-white"
+                  : "bg-gray-50 text-grey hover:text-black"
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -198,10 +198,10 @@ export const GalleryPage: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-light text-primary mb-4">
+          <h2 className="text-3xl font-light text-black mb-4">
             Follow Us on Instagram
           </h2>
-          <p className="text-muted mb-8 max-w-xl mx-auto">
+          <p className="text-grey mb-8 max-w-xl mx-auto">
             Get daily style inspirations and be the first to see our new
             collections. Tag us with #OsvaraStyle to be featured!
           </p>
@@ -209,7 +209,7 @@ export const GalleryPage: React.FC = () => {
             href="https://instagram.com/osvara"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-secondary font-medium tracking-wide hover:bg-dark transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-medium tracking-wide hover:bg-grey transition-colors"
             whileHover={{ scale: 1.02 }}
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -240,11 +240,11 @@ export const GalleryPage: React.FC = () => {
               <img
                 src={selectedImage.image.replace("600&h=400", "1200&h=800")}
                 alt={selectedImage.title}
-                className="w-full rounded-lg shadow-2xl"
+                className="w-full rounded-lg shadow-lg"
               />
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 text-white text-3xl hover:text-muted transition-colors"
+                className="absolute top-4 right-4 text-white text-3xl hover:text-grey transition-colors"
               >
                 ✕
               </button>

@@ -40,19 +40,19 @@ export const Checkout: React.FC = () => {
 
   if (items.length === 0) {
     return (
-      <div className="pt-32 pb-20 min-h-screen bg-light">
+      <div className="pt-32 pb-20 min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-4xl font-light text-primary mb-6">Checkout</h1>
-            <p className="text-muted mb-8">
+            <h1 className="text-4xl font-light text-black mb-6">Checkout</h1>
+            <p className="text-grey mb-8">
               Your cart is empty. Add some items before checking out.
             </p>
             <Link
               to="/products"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-secondary rounded hover:bg-dark transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white rounded hover:bg-grey transition-colors"
             >
               <FaArrowLeft />
               Continue Shopping
@@ -64,7 +64,7 @@ export const Checkout: React.FC = () => {
   }
 
   return (
-    <div className="pt-32 pb-20 min-h-screen bg-light">
+    <div className="pt-32 pb-20 min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -74,12 +74,12 @@ export const Checkout: React.FC = () => {
         >
           <Link
             to="/cart"
-            className="inline-flex items-center gap-2 text-muted hover:text-primary transition-colors mb-6"
+            className="inline-flex items-center gap-2 text-grey hover:text-black transition-colors mb-6"
           >
             <FaArrowLeft size={14} />
             Back to Cart
           </Link>
-          <h1 className="text-4xl font-light text-primary">Checkout</h1>
+          <h1 className="text-4xl font-light text-black">Checkout</h1>
         </motion.div>
 
         <form onSubmit={handleSubmit}>
@@ -88,17 +88,17 @@ export const Checkout: React.FC = () => {
             <div className="lg:col-span-2 space-y-8">
               {/* Contact Information */}
               <motion.div
-                className="bg-secondary p-8 rounded-lg shadow-lg"
+                className="bg-white p-8 rounded-lg shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
               >
-                <h2 className="text-xl font-light text-primary mb-6">
+                <h2 className="text-xl font-light text-black mb-6">
                   Contact Information
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm text-muted mb-2">
+                    <label className="block text-sm text-grey mb-2">
                       First Name *
                     </label>
                     <input
@@ -107,11 +107,11 @@ export const Checkout: React.FC = () => {
                       value={formData.firstName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-light border border-muted/30 rounded focus:outline-none focus:border-primary transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-muted mb-2">
+                    <label className="block text-sm text-grey mb-2">
                       Last Name *
                     </label>
                     <input
@@ -120,11 +120,11 @@ export const Checkout: React.FC = () => {
                       value={formData.lastName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-light border border-muted/30 rounded focus:outline-none focus:border-primary transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-muted mb-2">
+                    <label className="block text-sm text-grey mb-2">
                       Email *
                     </label>
                     <input
@@ -133,11 +133,11 @@ export const Checkout: React.FC = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-light border border-muted/30 rounded focus:outline-none focus:border-primary transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-muted mb-2">
+                    <label className="block text-sm text-grey mb-2">
                       Phone *
                     </label>
                     <input
@@ -146,7 +146,7 @@ export const Checkout: React.FC = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-light border border-muted/30 rounded focus:outline-none focus:border-primary transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
                     />
                   </div>
                 </div>
@@ -154,17 +154,17 @@ export const Checkout: React.FC = () => {
 
               {/* Shipping Address */}
               <motion.div
-                className="bg-secondary p-8 rounded-lg shadow-lg"
+                className="bg-white p-8 rounded-lg shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <h2 className="text-xl font-light text-primary mb-6">
+                <h2 className="text-xl font-light text-black mb-6">
                   Shipping Address
                 </h2>
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-sm text-muted mb-2">
+                    <label className="block text-sm text-grey mb-2">
                       Address *
                     </label>
                     <input
@@ -174,12 +174,12 @@ export const Checkout: React.FC = () => {
                       onChange={handleInputChange}
                       required
                       placeholder="Street address, building, etc."
-                      className="w-full px-4 py-3 bg-light border border-muted/30 rounded focus:outline-none focus:border-primary transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
                     />
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                      <label className="block text-sm text-muted mb-2">
+                      <label className="block text-sm text-grey mb-2">
                         City *
                       </label>
                       <input
@@ -188,11 +188,11 @@ export const Checkout: React.FC = () => {
                         value={formData.city}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-light border border-muted/30 rounded focus:outline-none focus:border-primary transition-colors"
+                        className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-muted mb-2">
+                      <label className="block text-sm text-grey mb-2">
                         Province *
                       </label>
                       <select
@@ -200,7 +200,7 @@ export const Checkout: React.FC = () => {
                         value={formData.province}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-light border border-muted/30 rounded focus:outline-none focus:border-primary transition-colors"
+                        className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
                       >
                         <option value="">Select</option>
                         <option value="DKI Jakarta">DKI Jakarta</option>
@@ -212,7 +212,7 @@ export const Checkout: React.FC = () => {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm text-muted mb-2">
+                      <label className="block text-sm text-grey mb-2">
                         Postal Code *
                       </label>
                       <input
@@ -221,12 +221,12 @@ export const Checkout: React.FC = () => {
                         value={formData.postalCode}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-light border border-muted/30 rounded focus:outline-none focus:border-primary transition-colors"
+                        className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm text-muted mb-2">
+                    <label className="block text-sm text-grey mb-2">
                       Order Notes (Optional)
                     </label>
                     <textarea
@@ -235,7 +235,7 @@ export const Checkout: React.FC = () => {
                       onChange={handleInputChange}
                       rows={3}
                       placeholder="Any special instructions..."
-                      className="w-full px-4 py-3 bg-light border border-muted/30 rounded focus:outline-none focus:border-primary transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors resize-none"
                     />
                   </div>
                 </div>
@@ -243,20 +243,20 @@ export const Checkout: React.FC = () => {
 
               {/* Payment Method */}
               <motion.div
-                className="bg-secondary p-8 rounded-lg shadow-lg"
+                className="bg-white p-8 rounded-lg shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <h2 className="text-xl font-light text-primary mb-6">
+                <h2 className="text-xl font-light text-black mb-6">
                   Payment Method
                 </h2>
                 <div className="space-y-4">
                   <label
                     className={`flex items-center gap-4 p-4 border rounded cursor-pointer transition-all ${
                       paymentMethod === "transfer"
-                        ? "border-primary bg-light"
-                        : "border-muted/30 hover:border-muted"
+                        ? "border-primary bg-gray-50"
+                        : "border-silver/30 hover:border-silver"
                     }`}
                   >
                     <input
@@ -267,12 +267,12 @@ export const Checkout: React.FC = () => {
                       onChange={(e) => setPaymentMethod(e.target.value)}
                       className="sr-only"
                     />
-                    <FaWallet className="text-primary" size={20} />
+                    <FaWallet className="text-black" size={20} />
                     <div>
-                      <div className="font-medium text-primary">
+                      <div className="font-medium text-black">
                         Bank Transfer
                       </div>
-                      <div className="text-sm text-muted">
+                      <div className="text-sm text-grey">
                         Transfer to BCA, Mandiri, or BNI
                       </div>
                     </div>
@@ -281,8 +281,8 @@ export const Checkout: React.FC = () => {
                   <label
                     className={`flex items-center gap-4 p-4 border rounded cursor-pointer transition-all ${
                       paymentMethod === "card"
-                        ? "border-primary bg-light"
-                        : "border-muted/30 hover:border-muted"
+                        ? "border-primary bg-gray-50"
+                        : "border-silver/30 hover:border-silver"
                     }`}
                   >
                     <input
@@ -293,12 +293,12 @@ export const Checkout: React.FC = () => {
                       onChange={(e) => setPaymentMethod(e.target.value)}
                       className="sr-only"
                     />
-                    <FaCreditCard className="text-primary" size={20} />
+                    <FaCreditCard className="text-black" size={20} />
                     <div>
-                      <div className="font-medium text-primary">
+                      <div className="font-medium text-black">
                         Credit / Debit Card
                       </div>
-                      <div className="text-sm text-muted">
+                      <div className="text-sm text-grey">
                         Coming soon - Visa, Mastercard
                       </div>
                     </div>
@@ -310,12 +310,12 @@ export const Checkout: React.FC = () => {
             {/* Right - Order Summary */}
             <div className="lg:col-span-1">
               <motion.div
-                className="bg-secondary p-8 rounded-lg shadow-lg sticky top-32"
+                className="bg-white p-8 rounded-lg shadow-lg sticky top-32"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                <h2 className="text-xl font-light text-primary mb-6">
+                <h2 className="text-xl font-light text-black mb-6">
                   Order Summary
                 </h2>
 
@@ -332,13 +332,13 @@ export const Checkout: React.FC = () => {
                         className="w-16 h-16 object-cover rounded"
                       />
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-sm font-medium text-primary truncate">
+                        <h4 className="text-sm font-medium text-black truncate">
                           {item.name}
                         </h4>
-                        <p className="text-xs text-muted">
+                        <p className="text-xs text-grey">
                           {item.size} / {item.color} × {item.quantity}
                         </p>
-                        <p className="text-sm text-primary">
+                        <p className="text-sm text-black">
                           Rp{" "}
                           {(item.price * item.quantity).toLocaleString("id-ID")}
                         </p>
@@ -348,12 +348,12 @@ export const Checkout: React.FC = () => {
                 </div>
 
                 {/* Totals */}
-                <div className="space-y-3 border-t border-muted/20 pt-6">
-                  <div className="flex justify-between text-muted">
+                <div className="space-y-3 border-t border-silver/20 pt-6">
+                  <div className="flex justify-between text-grey">
                     <span>Subtotal</span>
                     <span>Rp {subtotal.toLocaleString("id-ID")}</span>
                   </div>
-                  <div className="flex justify-between text-muted">
+                  <div className="flex justify-between text-grey">
                     <span>Shipping</span>
                     <span>
                       {shipping === 0 ? (
@@ -363,7 +363,7 @@ export const Checkout: React.FC = () => {
                       )}
                     </span>
                   </div>
-                  <div className="flex justify-between text-xl font-light text-primary border-t border-muted/20 pt-4">
+                  <div className="flex justify-between text-xl font-light text-black border-t border-silver/20 pt-4">
                     <span>Total</span>
                     <span>Rp {total.toLocaleString("id-ID")}</span>
                   </div>
@@ -372,7 +372,7 @@ export const Checkout: React.FC = () => {
                 {/* Submit Button */}
                 <motion.button
                   type="submit"
-                  className="w-full mt-8 py-4 bg-primary text-secondary rounded font-medium tracking-wide hover:bg-dark transition-colors flex items-center justify-center gap-3"
+                  className="w-full mt-8 py-4 bg-black text-white rounded font-medium tracking-wide hover:bg-grey transition-colors flex items-center justify-center gap-3"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -380,7 +380,7 @@ export const Checkout: React.FC = () => {
                   Place Order
                 </motion.button>
 
-                <p className="text-xs text-muted text-center mt-4">
+                <p className="text-xs text-grey text-center mt-4">
                   Your payment is secure and encrypted
                 </p>
               </motion.div>

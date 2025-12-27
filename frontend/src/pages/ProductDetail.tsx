@@ -20,15 +20,15 @@ export const ProductDetailPage: React.FC = () => {
     return (
       <div className="pt-20 pb-20 min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-light text-primary mb-4">
+          <h1 className="text-4xl font-light text-black mb-4">
             Product Not Found
           </h1>
-          <p className="text-muted mb-8">
+          <p className="text-grey mb-8">
             The product you're looking for doesn't exist.
           </p>
           <Link
             to="/products"
-            className="px-8 py-3 bg-primary text-secondary font-medium tracking-wide hover:bg-dark transition-colors"
+            className="px-8 py-3 bg-black text-white font-medium tracking-wide hover:bg-grey transition-colors"
           >
             Browse Products
           </Link>
@@ -61,25 +61,25 @@ export const ProductDetailPage: React.FC = () => {
   return (
     <div className="pt-20 pb-20">
       {/* Breadcrumb */}
-      <div className="bg-light py-4 px-6">
+      <div className="bg-gray-50 py-4 px-6">
         <div className="max-w-7xl mx-auto">
-          <nav className="text-sm text-muted">
-            <Link to="/" className="hover:text-primary">
+          <nav className="text-sm text-grey">
+            <Link to="/" className="hover:text-black">
               Home
             </Link>
             <span className="mx-2">/</span>
-            <Link to="/products" className="hover:text-primary">
+            <Link to="/products" className="hover:text-black">
               Products
             </Link>
             <span className="mx-2">/</span>
             <Link
               to={`/products?category=${product.category}`}
-              className="hover:text-primary"
+              className="hover:text-black"
             >
               {product.category}
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-primary">{product.name}</span>
+            <span className="text-black">{product.name}</span>
           </nav>
         </div>
       </div>
@@ -92,14 +92,14 @@ export const ProductDetailPage: React.FC = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            <div className="relative overflow-hidden rounded-lg bg-light mb-4">
+            <div className="relative overflow-hidden rounded-lg bg-gray-50 mb-4">
               <img
                 src={product.image}
                 alt={product.name}
                 className="w-full h-[500px] object-cover"
               />
               {product.isNew && (
-                <span className="absolute top-4 left-4 bg-primary text-secondary px-3 py-1 text-xs tracking-wide">
+                <span className="absolute top-4 left-4 bg-black text-white px-3 py-1 text-xs tracking-wide">
                   NEW
                 </span>
               )}
@@ -114,7 +114,7 @@ export const ProductDetailPage: React.FC = () => {
                 {product.images.map((img, idx) => (
                   <div
                     key={idx}
-                    className="overflow-hidden rounded-lg bg-light cursor-pointer hover:opacity-80 transition-opacity"
+                    className="overflow-hidden rounded-lg bg-gray-50 cursor-pointer hover:opacity-80 transition-opacity"
                   >
                     <img
                       src={img}
@@ -132,10 +132,10 @@ export const ProductDetailPage: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            <div className="text-sm text-muted tracking-wide mb-2">
+            <div className="text-sm text-grey tracking-wide mb-2">
               {product.category}
             </div>
-            <h1 className="text-3xl font-light text-primary mb-4">
+            <h1 className="text-3xl font-light text-black mb-4">
               {product.name}
             </h1>
 
@@ -147,40 +147,40 @@ export const ProductDetailPage: React.FC = () => {
                     key={i}
                     className={
                       i < Math.floor(product.rating)
-                        ? "text-primary"
-                        : "text-muted/30"
+                        ? "text-black"
+                        : "text-grey/30"
                     }
                   >
                     ★
                   </span>
                 ))}
               </div>
-              <span className="text-muted text-sm">
+              <span className="text-grey text-sm">
                 {product.rating} ({product.reviewCount || 0} reviews)
               </span>
             </div>
 
             {/* Price */}
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-3xl font-light text-primary">
+              <span className="text-3xl font-light text-black">
                 Rp {product.price.toLocaleString("id-ID")}
               </span>
               {product.originalPrice && (
-                <span className="text-xl text-muted line-through">
+                <span className="text-xl text-grey line-through">
                   Rp {product.originalPrice.toLocaleString("id-ID")}
                 </span>
               )}
             </div>
 
             {/* Description */}
-            <p className="text-muted leading-relaxed mb-8">
+            <p className="text-grey leading-relaxed mb-8">
               {product.description}
             </p>
 
             {/* Size Selection */}
             {product.sizes && product.sizes.length > 0 && (
               <div className="mb-6">
-                <label className="block text-primary font-medium mb-3">
+                <label className="block text-black font-medium mb-3">
                   Size
                 </label>
                 <div className="flex flex-wrap gap-3">
@@ -190,8 +190,8 @@ export const ProductDetailPage: React.FC = () => {
                       onClick={() => setSelectedSize(size)}
                       className={`px-4 py-2 border transition-colors ${
                         selectedSize === size
-                          ? "bg-primary text-secondary border-primary"
-                          : "border-muted/30 text-primary hover:border-primary"
+                          ? "bg-black text-white border-primary"
+                          : "border-silver/30 text-black hover:border-primary"
                       }`}
                     >
                       {size}
@@ -204,7 +204,7 @@ export const ProductDetailPage: React.FC = () => {
             {/* Color Selection */}
             {product.colors && product.colors.length > 0 && (
               <div className="mb-6">
-                <label className="block text-primary font-medium mb-3">
+                <label className="block text-black font-medium mb-3">
                   Color
                 </label>
                 <div className="flex flex-wrap gap-3">
@@ -214,8 +214,8 @@ export const ProductDetailPage: React.FC = () => {
                       onClick={() => setSelectedColor(color)}
                       className={`px-4 py-2 border transition-colors ${
                         selectedColor === color
-                          ? "bg-primary text-secondary border-primary"
-                          : "border-muted/30 text-primary hover:border-primary"
+                          ? "bg-black text-white border-primary"
+                          : "border-silver/30 text-black hover:border-primary"
                       }`}
                     >
                       {color}
@@ -227,13 +227,13 @@ export const ProductDetailPage: React.FC = () => {
 
             {/* Quantity */}
             <div className="mb-8">
-              <label className="block text-primary font-medium mb-3">
+              <label className="block text-black font-medium mb-3">
                 Quantity
               </label>
               <div className="flex items-center gap-4">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="w-10 h-10 border border-muted/30 text-primary hover:border-primary transition-colors"
+                  className="w-10 h-10 border border-silver/30 text-black hover:border-primary transition-colors"
                 >
                   -
                 </button>
@@ -242,7 +242,7 @@ export const ProductDetailPage: React.FC = () => {
                 </span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="w-10 h-10 border border-muted/30 text-primary hover:border-primary transition-colors"
+                  className="w-10 h-10 border border-silver/30 text-black hover:border-primary transition-colors"
                 >
                   +
                 </button>
@@ -253,7 +253,7 @@ export const ProductDetailPage: React.FC = () => {
             <div className="flex gap-4">
               <motion.button
                 onClick={handleAddToCart}
-                className="flex-1 bg-primary text-secondary py-4 font-medium tracking-wide hover:bg-dark transition-colors"
+                className="flex-1 bg-black text-white py-4 font-medium tracking-wide hover:bg-grey transition-colors"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -264,7 +264,7 @@ export const ProductDetailPage: React.FC = () => {
                   handleAddToCart();
                   navigate("/cart");
                 }}
-                className="px-8 py-4 border border-primary text-primary font-medium tracking-wide hover:bg-primary hover:text-secondary transition-colors"
+                className="px-8 py-4 border border-primary text-black font-medium tracking-wide hover:bg-black hover:text-white transition-colors"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -284,18 +284,18 @@ export const ProductDetailPage: React.FC = () => {
             )}
 
             {/* Product Features */}
-            <div className="mt-8 pt-8 border-t border-muted/20">
+            <div className="mt-8 pt-8 border-t border-silver/20">
               <div className="grid grid-cols-2 gap-4 text-sm">
-                <div className="flex items-center gap-2 text-muted">
+                <div className="flex items-center gap-2 text-grey">
                   <span>🚚</span> Free shipping over Rp 500,000
                 </div>
-                <div className="flex items-center gap-2 text-muted">
+                <div className="flex items-center gap-2 text-grey">
                   <span>↩️</span> 30-day easy returns
                 </div>
-                <div className="flex items-center gap-2 text-muted">
+                <div className="flex items-center gap-2 text-grey">
                   <span>✨</span> Premium quality materials
                 </div>
-                <div className="flex items-center gap-2 text-muted">
+                <div className="flex items-center gap-2 text-grey">
                   <span>💳</span> Secure payment
                 </div>
               </div>
@@ -306,7 +306,7 @@ export const ProductDetailPage: React.FC = () => {
         {/* Related Products */}
         {relatedProducts.length > 0 && (
           <div className="mt-20">
-            <h2 className="text-3xl font-light text-primary mb-8">
+            <h2 className="text-3xl font-light text-black mb-8">
               Related Products
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

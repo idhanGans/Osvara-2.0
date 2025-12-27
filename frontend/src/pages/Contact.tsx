@@ -103,7 +103,7 @@ export const ContactPage: React.FC = () => {
     <div className="pt-20 pb-20">
       {/* Hero Section */}
       <motion.div
-        className="bg-gradient-to-r from-primary to-dark py-20 px-4"
+        className="bg-gradient-to-r from-black via-gray-800 to-black py-20 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
@@ -140,18 +140,18 @@ export const ContactPage: React.FC = () => {
                   ? "noopener noreferrer"
                   : undefined
               }
-              className="bg-secondary border border-muted/20 rounded-lg p-8 text-center shadow-lg hover:shadow-xl transition-all hover:border-primary group"
+              className="bg-white border border-silver/20 rounded-lg p-8 text-center shadow-lg hover:shadow-xl transition-all hover:border-primary group"
               whileHover={{ y: -5 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
             >
-              <contact.icon className="text-primary text-4xl mx-auto mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-primary font-medium text-xl mb-2">
+              <contact.icon className="text-black text-4xl mx-auto mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-black font-medium text-xl mb-2">
                 {contact.title}
               </h3>
-              <p className="text-primary text-lg mb-2">{contact.content}</p>
-              <p className="text-muted text-sm">{contact.desc}</p>
+              <p className="text-black text-lg mb-2">{contact.content}</p>
+              <p className="text-grey text-sm">{contact.desc}</p>
             </motion.a>
           ))}
         </div>
@@ -164,19 +164,19 @@ export const ContactPage: React.FC = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="text-muted text-sm tracking-widest">/</div>
-              <div className="text-muted text-sm tracking-widest">
+              <div className="text-grey text-sm tracking-widest">/</div>
+              <div className="text-grey text-sm tracking-widest">
                 GET IN TOUCH
               </div>
             </div>
-            <h2 className="text-3xl font-light text-primary mb-8">
+            <h2 className="text-3xl font-light text-black mb-8">
               Send us a <span className="italic font-serif">Message</span>
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="text-primary font-medium block mb-2">
+                  <label className="text-black font-medium block mb-2">
                     Full Name *
                   </label>
                   <input
@@ -185,12 +185,12 @@ export const ContactPage: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-secondary border border-muted/30 rounded-lg text-primary focus:outline-none focus:border-primary transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-silver/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label className="text-primary font-medium block mb-2">
+                  <label className="text-black font-medium block mb-2">
                     Email Address *
                   </label>
                   <input
@@ -199,7 +199,7 @@ export const ContactPage: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-secondary border border-muted/30 rounded-lg text-primary focus:outline-none focus:border-primary transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-silver/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
                     placeholder="Your email"
                   />
                 </div>
@@ -207,7 +207,7 @@ export const ContactPage: React.FC = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="text-primary font-medium block mb-2">
+                  <label className="text-black font-medium block mb-2">
                     Phone Number
                   </label>
                   <input
@@ -215,12 +215,12 @@ export const ContactPage: React.FC = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-secondary border border-muted/30 rounded-lg text-primary focus:outline-none focus:border-primary transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-silver/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
                     placeholder="Your phone number"
                   />
                 </div>
                 <div>
-                  <label className="text-primary font-medium block mb-2">
+                  <label className="text-black font-medium block mb-2">
                     Subject *
                   </label>
                   <select
@@ -228,7 +228,7 @@ export const ContactPage: React.FC = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-secondary border border-muted/30 rounded-lg text-primary focus:outline-none focus:border-primary transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-silver/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
                   >
                     <option value="">Select a subject</option>
                     <option value="product-inquiry">Product Inquiry</option>
@@ -242,7 +242,7 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div>
-                <label className="text-primary font-medium block mb-2">
+                <label className="text-black font-medium block mb-2">
                   Message *
                 </label>
                 <textarea
@@ -251,7 +251,7 @@ export const ContactPage: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-secondary border border-muted/30 rounded-lg text-primary focus:outline-none focus:border-primary transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-white border border-silver/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors resize-none"
                   placeholder="How can we help you?"
                 />
               </div>
@@ -259,7 +259,7 @@ export const ContactPage: React.FC = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-primary text-secondary py-4 rounded-lg font-medium tracking-wide hover:bg-dark transition-colors disabled:opacity-50"
+                className="w-full bg-black text-white py-4 rounded-lg font-medium tracking-wide hover:bg-grey transition-colors disabled:opacity-50"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -286,12 +286,12 @@ export const ContactPage: React.FC = () => {
             className="space-y-8"
           >
             {/* Store Location Card */}
-            <div className="bg-light rounded-lg p-8 shadow-lg">
-              <h3 className="text-primary text-2xl font-light mb-6 flex items-center gap-3">
-                <FaMapMarkerAlt className="text-primary" /> Visit Our Boutique
+            <div className="bg-gray-50 rounded-lg p-8 shadow-lg">
+              <h3 className="text-black text-2xl font-light mb-6 flex items-center gap-3">
+                <FaMapMarkerAlt className="text-black" /> Visit Our Boutique
               </h3>
-              <p className="text-muted mb-4">
-                <strong className="text-primary">Osvara Boutique</strong>
+              <p className="text-grey mb-4">
+                <strong className="text-black">Osvara Boutique</strong>
                 <br />
                 Jl. Kemang Raya No. 123
                 <br />
@@ -299,9 +299,9 @@ export const ContactPage: React.FC = () => {
                 <br />
                 Indonesia
               </p>
-              <div className="border-t border-muted/20 pt-4 mt-4">
-                <h4 className="text-primary font-medium mb-3">Store Hours</h4>
-                <div className="text-muted space-y-1 text-sm">
+              <div className="border-t border-silver/20 pt-4 mt-4">
+                <h4 className="text-black font-medium mb-3">Store Hours</h4>
+                <div className="text-grey space-y-1 text-sm">
                   <p>Monday - Friday: 10:00 AM - 7:00 PM</p>
                   <p>Saturday: 10:00 AM - 8:00 PM</p>
                   <p>Sunday: 12:00 PM - 6:00 PM</p>
@@ -310,8 +310,8 @@ export const ContactPage: React.FC = () => {
             </div>
 
             {/* Quick Contact */}
-            <div className="bg-secondary border border-muted/20 rounded-lg p-8 shadow-lg">
-              <h3 className="text-primary text-2xl font-light mb-6">
+            <div className="bg-white border border-silver/20 rounded-lg p-8 shadow-lg">
+              <h3 className="text-black text-2xl font-light mb-6">
                 Quick Contact
               </h3>
               <div className="space-y-4">
@@ -319,34 +319,34 @@ export const ContactPage: React.FC = () => {
                   href="https://wa.me/6281234567890?text=Hi%20Osvara,%20I%20would%20like%20to%20inquire%20about..."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-light rounded-lg hover:bg-muted/10 transition-colors"
+                  className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-silver/10 transition-colors"
                   whileHover={{ x: 5 }}
                 >
                   <FaWhatsapp className="text-green-600 text-2xl" />
-                  <span className="text-primary">Chat on WhatsApp</span>
+                  <span className="text-black">Chat on WhatsApp</span>
                 </motion.a>
                 <motion.a
                   href="tel:+6281234567890"
-                  className="flex items-center gap-4 p-4 bg-light rounded-lg hover:bg-muted/10 transition-colors"
+                  className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-silver/10 transition-colors"
                   whileHover={{ x: 5 }}
                 >
-                  <FaPhone className="text-primary text-2xl" />
-                  <span className="text-primary">Call Us</span>
+                  <FaPhone className="text-black text-2xl" />
+                  <span className="text-black">Call Us</span>
                 </motion.a>
                 <motion.a
                   href="mailto:hello@osvara.com"
-                  className="flex items-center gap-4 p-4 bg-light rounded-lg hover:bg-muted/10 transition-colors"
+                  className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-silver/10 transition-colors"
                   whileHover={{ x: 5 }}
                 >
-                  <FaEnvelope className="text-primary text-2xl" />
-                  <span className="text-primary">Send Email</span>
+                  <FaEnvelope className="text-black text-2xl" />
+                  <span className="text-black">Send Email</span>
                 </motion.a>
               </div>
             </div>
 
             {/* Social Media */}
-            <div className="bg-secondary border border-muted/20 rounded-lg p-8 shadow-lg">
-              <h3 className="text-primary text-2xl font-light mb-6">
+            <div className="bg-white border border-silver/20 rounded-lg p-8 shadow-lg">
+              <h3 className="text-black text-2xl font-light mb-6">
                 Follow Us
               </h3>
               <div className="flex gap-4">
@@ -409,10 +409,10 @@ export const ContactPage: React.FC = () => {
         >
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-muted text-sm tracking-widest">/</div>
-              <div className="text-muted text-sm tracking-widest">FAQ</div>
+              <div className="text-grey text-sm tracking-widest">/</div>
+              <div className="text-grey text-sm tracking-widest">FAQ</div>
             </div>
-            <h2 className="text-3xl font-light text-primary">
+            <h2 className="text-3xl font-light text-black">
               Frequently Asked{" "}
               <span className="italic font-serif">Questions</span>
             </h2>
@@ -422,16 +422,16 @@ export const ContactPage: React.FC = () => {
             {faqs.map((faq, idx) => (
               <motion.div
                 key={idx}
-                className="bg-light rounded-lg p-6 shadow-md"
+                className="bg-gray-50 rounded-lg p-6 shadow-md"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <h3 className="text-primary font-medium text-lg mb-3">
+                <h3 className="text-black font-medium text-lg mb-3">
                   {faq.question}
                 </h3>
-                <p className="text-muted leading-relaxed">{faq.answer}</p>
+                <p className="text-grey leading-relaxed">{faq.answer}</p>
               </motion.div>
             ))}
           </div>

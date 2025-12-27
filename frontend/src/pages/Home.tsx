@@ -443,7 +443,7 @@ export const HomePage: React.FC = () => {
                       <p className="text-xs text-white/60 mb-4">
                         {cat.count} Products
                       </p>
-                      <span className="w-max px-6 py-2 bg-primary text-secondary font-medium text-sm tracking-wide group-hover:bg-dark transition-colors">
+                      <span className="w-max px-6 py-2 bg-white text-black font-medium text-sm tracking-wide group-hover:bg-grey group-hover:text-white transition-colors">
                         Go To Shop
                       </span>
                     </div>
@@ -456,7 +456,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="py-24 px-6 bg-gradient-to-b from-light via-muted/5 to-light shadow-lg">
+      <section className="py-24 px-6 bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-20">
             <div>
@@ -466,15 +466,15 @@ export const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-muted text-sm tracking-widest">/</div>
-                <div className="text-muted text-sm tracking-widest">
+                <div className="text-grey text-sm tracking-widest">/</div>
+                <div className="text-grey text-sm tracking-widest">
                   FEATURED
                 </div>
-                <div className="text-muted text-sm tracking-widest">(03)</div>
+                <div className="text-grey text-sm tracking-widest">(03)</div>
               </motion.div>
 
               <motion.h2
-                className="text-4xl md:text-5xl font-light text-primary"
+                className="text-4xl md:text-5xl font-light text-black"
                 initial={{ y: 30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
@@ -484,7 +484,7 @@ export const HomePage: React.FC = () => {
             </div>
             <Link to="/products">
               <motion.button
-                className="px-8 py-3 border border-primary text-primary font-medium tracking-wide hover:bg-primary hover:text-secondary transition-colors"
+                className="px-8 py-3 border border-black text-black font-medium tracking-wide hover:bg-black hover:text-white transition-colors"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -512,7 +512,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Sale Banner */}
-      <section className="py-24 px-6 bg-gradient-to-r from-primary via-dark to-primary">
+      <section className="py-24 px-6 bg-gradient-to-r from-black via-gray-800 to-black">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -520,19 +520,19 @@ export const HomePage: React.FC = () => {
             viewport={{ once: true }}
             className="text-white"
           >
-            <div className="text-sm tracking-widest text-white/80 mb-4 uppercase">
+            <div className="text-sm tracking-widest text-silver mb-4 uppercase">
               Limited Time
             </div>
             <h2 className="text-5xl md:text-6xl font-light mb-6 leading-tight">
               Exclusive <span className="italic font-serif">New Year</span> Sale
             </h2>
-            <p className="text-lg text-white/90 mb-8">
+            <p className="text-lg text-silver mb-8">
               Discover our latest collection with special discounts on selected
               items.
             </p>
             <Link to="/products">
               <motion.button
-                className="px-10 py-4 bg-secondary text-primary font-medium tracking-wide hover:bg-light transition-colors shadow-lg hover:shadow-xl"
+                className="px-10 py-4 bg-white text-black font-medium tracking-wide hover:bg-silver transition-colors shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -555,15 +555,15 @@ export const HomePage: React.FC = () => {
               />
             </div>
             <div className="absolute top-8 right-8 text-center">
-              <div className="text-6xl font-light text-secondary mb-2">20%</div>
-              <div className="text-white text-sm tracking-widest">OFF</div>
+              <div className="text-6xl font-light text-white mb-2">20%</div>
+              <div className="text-silver text-sm tracking-widest">OFF</div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 px-6 bg-gradient-to-b from-secondary via-muted/10 to-secondary shadow-lg">
+      <section className="py-24 px-6 bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             className="text-center mb-20 max-w-2xl mx-auto"
@@ -572,16 +572,16 @@ export const HomePage: React.FC = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-muted text-sm tracking-widest">/</div>
-              <div className="text-muted text-sm tracking-widest">WHY US</div>
-              <div className="text-muted text-sm tracking-widest">(04)</div>
+              <div className="text-grey text-sm tracking-widest">/</div>
+              <div className="text-grey text-sm tracking-widest">WHY US</div>
+              <div className="text-grey text-sm tracking-widest">(04)</div>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-light text-primary mb-6">
+            <h2 className="text-4xl md:text-5xl font-light text-black mb-6">
               Why Choose Osvara
             </h2>
 
-            <p className="text-lg text-muted">
+            <p className="text-lg text-grey">
               We believe in quality, purpose, and elegance in every piece we
               create.
             </p>
@@ -604,21 +604,19 @@ export const HomePage: React.FC = () => {
             ].map((item, idx) => (
               <motion.div
                 key={idx}
-                className="bg-light p-8 rounded-lg shadow-lg hover:shadow-xl transition-all"
+                className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all border border-silver/20"
                 initial={{ y: 30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.15 }}
               >
-                <div className="text-5xl font-light text-muted/40 mb-4">
+                <div className="text-5xl font-light text-silver mb-4">
                   0{idx + 1}
                 </div>
-                <h3 className="text-xl font-light text-primary mb-4 tracking-wide">
+                <h3 className="text-xl font-light text-black mb-4 tracking-wide">
                   {item.title}
                 </h3>
-                <p className="text-muted text-sm leading-relaxed">
-                  {item.desc}
-                </p>
+                <p className="text-grey text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -626,7 +624,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 px-6 bg-gradient-to-b from-light via-secondary/5 to-light shadow-lg">
+      <section className="py-24 px-6 bg-gradient-to-b from-gray-50 via-white to-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             className="text-center mb-20 max-w-2xl mx-auto"
@@ -635,14 +633,14 @@ export const HomePage: React.FC = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-muted text-sm tracking-widest">/</div>
-              <div className="text-muted text-sm tracking-widest">
+              <div className="text-grey text-sm tracking-widest">/</div>
+              <div className="text-grey text-sm tracking-widest">
                 TESTIMONIALS
               </div>
-              <div className="text-muted text-sm tracking-widest">(05)</div>
+              <div className="text-grey text-sm tracking-widest">(05)</div>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-light text-primary">
+            <h2 className="text-4xl md:text-5xl font-light text-black">
               What Our Customers Say
             </h2>
           </motion.div>
@@ -664,23 +662,23 @@ export const HomePage: React.FC = () => {
             ].map((testimonial, idx) => (
               <motion.div
                 key={idx}
-                className="bg-secondary border border-muted/20 p-10 shadow-lg hover:shadow-xl transition-shadow rounded-lg"
+                className="bg-white border border-silver/20 p-10 shadow-md hover:shadow-lg transition-shadow rounded-lg"
                 initial={{ y: 30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <div className="text-primary text-sm font-medium mb-4">
+                <div className="text-black text-sm font-medium mb-4">
                   ★★★★★ {testimonial.rating}
                 </div>
-                <p className="text-muted text-lg leading-relaxed mb-8 italic">
+                <p className="text-grey text-lg leading-relaxed mb-8 italic">
                   "{testimonial.text}"
                 </p>
-                <div className="border-t border-muted/20 pt-6">
-                  <div className="text-primary font-light">
+                <div className="border-t border-silver/20 pt-6">
+                  <div className="text-black font-light">
                     {testimonial.author}
                   </div>
-                  <div className="text-muted text-sm mt-1">
+                  <div className="text-grey text-sm mt-1">
                     {testimonial.role}
                   </div>
                 </div>
@@ -699,10 +697,10 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Newsletter */}
-      <section className="py-24 px-6 bg-gradient-to-r from-secondary via-primary/5 to-secondary border-t border-muted/20 shadow-lg">
+      <section className="py-24 px-6 bg-gradient-to-r from-gray-100 via-white to-gray-100 border-t border-silver/20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
-            className="text-4xl md:text-5xl font-light text-primary mb-6"
+            className="text-4xl md:text-5xl font-light text-black mb-6"
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -711,7 +709,7 @@ export const HomePage: React.FC = () => {
           </motion.h2>
 
           <motion.p
-            className="text-muted text-lg mb-12 leading-relaxed"
+            className="text-grey text-lg mb-12 leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -730,9 +728,9 @@ export const HomePage: React.FC = () => {
             <input
               type="email"
               placeholder="Enter your email address"
-              className="flex-1 px-6 py-4 bg-light border border-muted/30 text-primary placeholder-muted/50 focus:outline-none focus:border-primary transition-colors shadow-md focus:shadow-lg rounded"
+              className="flex-1 px-6 py-4 bg-white border border-silver/50 text-black placeholder-grey focus:outline-none focus:border-black transition-colors shadow-sm focus:shadow-md rounded"
             />
-            <button className="px-10 py-4 bg-primary text-secondary font-medium tracking-wide hover:bg-dark transition-colors shadow-lg hover:shadow-xl rounded">
+            <button className="px-10 py-4 bg-black text-white font-medium tracking-wide hover:bg-grey transition-colors shadow-md hover:shadow-lg rounded">
               Subscribe
             </button>
           </motion.div>
