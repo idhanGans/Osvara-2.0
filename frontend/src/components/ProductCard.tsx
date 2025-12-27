@@ -1,90 +1,122 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useCart } from "../context/CartContext";
 
 interface ProductCardProps {
   id: string;
   name: string;
   price: number;
+  originalPrice?: number;
   image: string;
   category: string;
   rating: number;
+  isNew?: boolean;
+  isSale?: boolean;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   id,
   name,
   price,
+  originalPrice,
   image,
   category,
   rating,
+  isNew,
+  isSale,
 }) => {
+  const { addItem } = useCart();
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addItem({
+      id,
+      name,
+      price,
+      image,
+      category,
+    });
+  };
+
   return (
-    <motion.div
-      className="bg-dark border border-gold/30 rounded-lg overflow-hidden hover:border-gold transition-colors cursor-pointer group"
-      whileHover={{ y: -10 }}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-    >
-      {/* Image Container */}
-      <div className="relative overflow-hidden h-64 bg-dark/50">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-        />
-        <motion.div
-          className="absolute top-4 right-4 bg-gold text-dark px-3 py-1 rounded-full text-sm font-bold"
-          whileHover={{ scale: 1.1 }}
-        >
-          {category}
-        </motion.div>
-        <motion.button
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-gold text-dark px-6 py-2 rounded-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          View Product
-        </motion.button>
-      </div>
-
-      {/* Content */}
-      <div className="p-4">
-        <h3 className="text-gold font-bold text-lg mb-2 line-clamp-2">
-          {name}
-        </h3>
-
-        {/* Rating */}
-        <div className="flex items-center mb-3">
-          {[...Array(5)].map((_, i) => (
-            <span
-              key={i}
-              className={
-                i < Math.floor(rating) ? "text-gold" : "text-silver/30"
-              }
-            >
-              ★
-            </span>
-          ))}
-          <span className="text-silver/50 text-sm ml-2">
-            ({rating.toFixed(1)})
-          </span>
-        </div>
-
-        {/* Price and Button */}
-        <div className="flex justify-between items-center">
-          <span className="text-2xl font-bold text-gold">
-            Rp {price.toLocaleString("id-ID")}
-          </span>
-          <motion.button
-            className="bg-gold/20 text-gold border border-gold p-2 rounded-lg hover:bg-gold hover:text-dark transition-colors"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
+    <Link to={`/products/${id}`}>
+      <motion.div
+        className="group cursor-pointer shadow-lg hover:shadow-2xl transition-shadow bg-secondary rounded-lg overflow-hidden"
+        whileHover={{ y: -5 }}
+        transition={{ duration: 0.3 }}
+      >
+        {/* Image Container */}
+        <div className="relative overflow-hidden h-80 bg-light">
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          {/* Badges */}
+          <div className="absolute top-4 left-4 flex flex-col gap-2">
+            {isNew && (
+              <span className="bg-primary text-secondary px-3 py-1 text-xs tracking-wide">
+                NEW
+              </span>
+            )}
+            {isSale && (
+              <span className="bg-red-600 text-white px-3 py-1 text-xs tracking-wide">
+                SALE
+              </span>
+            )}
+          </div>
+          <motion.div
+            className="absolute top-4 right-4 bg-primary text-secondary px-3 py-1 text-xs tracking-wide"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
           >
-            🛒
+            {category}
+          </motion.div>
+          <motion.button
+            onClick={handleAddToCart}
+            className="absolute bottom-4 left-4 right-4 bg-secondary border border-primary text-primary py-3 font-medium tracking-wide opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-secondary"
+          >
+            Add to Cart
           </motion.button>
         </div>
-      </div>
-    </motion.div>
+
+        {/* Content */}
+        <div className="p-4">
+          <h3 className="text-primary font-light text-lg mb-2 tracking-wide line-clamp-1">
+            {name}
+          </h3>
+
+          {/* Rating */}
+          <div className="flex items-center mb-3 gap-1">
+            {[...Array(5)].map((_, i) => (
+              <span
+                key={i}
+                className={
+                  i < Math.floor(rating) ? "text-primary" : "text-muted/20"
+                }
+                style={{ fontSize: "12px" }}
+              >
+                ★
+              </span>
+            ))}
+            <span className="text-muted text-xs ml-1">{rating.toFixed(1)}</span>
+          </div>
+
+          {/* Price */}
+          <div className="flex items-center gap-2">
+            <span className="text-xl font-light text-primary tracking-wide">
+              Rp {price.toLocaleString("id-ID")}
+            </span>
+            {originalPrice && (
+              <span className="text-sm text-muted line-through">
+                Rp {originalPrice.toLocaleString("id-ID")}
+              </span>
+            )}
+          </div>
+        </div>
+      </motion.div>
+    </Link>
   );
 };

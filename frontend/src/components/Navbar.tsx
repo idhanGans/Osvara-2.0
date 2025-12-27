@@ -1,73 +1,121 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useCart } from "../context/CartContext";
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const location = useLocation();
+  const { getItemCount } = useCart();
 
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Products", href: "/products" },
     { name: "Gallery", href: "/gallery" },
-    { name: "About Us", href: "/about" },
+    { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return location.pathname === "/";
+    }
+    return location.pathname.startsWith(href);
+  };
+
   return (
     <motion.nav
-      className="fixed top-0 w-full bg-dark/95 backdrop-blur-md border-b border-gold/20 z-50"
+      className="fixed top-0 w-full bg-secondary/95 backdrop-blur-md border-b border-muted/10 z-50 shadow-lg"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <motion.div
-            className="text-3xl font-bold text-gold"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            OSVARA
-          </motion.div>
+          <Link to="/">
+            <motion.div
+              className="text-lg font-light tracking-widest text-primary"
+              whileHover={{ scale: 1.02 }}
+            >
+              OSVARA®
+            </motion.div>
+          </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center gap-12">
             {navItems.map((item) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className="text-silver hover:text-gold transition-colors relative group"
-                whileHover={{ scale: 1.1 }}
-              >
-                {item.name}
-                <motion.div
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-gold"
-                  scaleX={0}
-                  groupHover={{ scaleX: 1 }}
-                  style={{ originX: 0 }}
-                />
-              </motion.a>
+              <Link key={item.name} to={item.href}>
+                <motion.span
+                  className={`text-sm transition-colors tracking-wide ${
+                    isActive(item.href)
+                      ? "text-primary font-medium"
+                      : "text-muted hover:text-primary"
+                  }`}
+                  whileHover={{ y: -2 }}
+                >
+                  {item.name}
+                </motion.span>
+              </Link>
             ))}
           </div>
 
           {/* Cart Icon */}
-          <motion.button
-            className="relative text-gold"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            🛒
-            <span className="absolute -top-2 -right-2 bg-gold text-dark rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
-              0
-            </span>
-          </motion.button>
+          <Link to="/cart">
+            <motion.div
+              className="relative text-primary cursor-pointer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.5}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              {getItemCount() > 0 && (
+                <span className="absolute -top-2 -right-2 bg-primary text-secondary rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
+                  {getItemCount()}
+                </span>
+              )}
+            </motion.div>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gold"
+            className="md:hidden text-primary"
             onClick={() => setIsOpen(!isOpen)}
           >
-            ☰
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={1.5}
+            >
+              {isOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
           </button>
         </div>
 
@@ -79,14 +127,26 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, height: "auto" }}
           >
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
-                className="block py-2 text-silver hover:text-gold"
+                to={item.href}
+                onClick={() => setIsOpen(false)}
+                className={`block py-3 transition-colors ${
+                  isActive(item.href)
+                    ? "text-primary font-medium"
+                    : "text-muted hover:text-primary"
+                }`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
+            <Link
+              to="/cart"
+              onClick={() => setIsOpen(false)}
+              className="block py-3 text-muted hover:text-primary"
+            >
+              Cart ({getItemCount()})
+            </Link>
           </motion.div>
         )}
       </div>
