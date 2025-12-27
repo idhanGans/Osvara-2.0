@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 w-full bg-secondary/95 backdrop-blur-md border-b border-muted/10 z-50 shadow-lg"
+      className="fixed top-0 w-full bg-white border-b border-grey/20 z-50 shadow-sm"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -35,7 +35,7 @@ export const Navbar: React.FC = () => {
           {/* Logo */}
           <Link to="/">
             <motion.div
-              className="text-lg font-light tracking-widest text-primary"
+              className="text-lg font-light tracking-widest text-black"
               whileHover={{ scale: 1.02 }}
             >
               OSVARA®
@@ -49,8 +49,8 @@ export const Navbar: React.FC = () => {
                 <motion.span
                   className={`text-sm transition-colors tracking-wide ${
                     isActive(item.href)
-                      ? "text-primary font-medium"
-                      : "text-muted hover:text-primary"
+                      ? "text-black font-medium"
+                      : "text-grey hover:text-black"
                   }`}
                   whileHover={{ y: -2 }}
                 >
@@ -63,7 +63,7 @@ export const Navbar: React.FC = () => {
           {/* Cart Icon */}
           <Link to="/cart">
             <motion.div
-              className="relative text-primary cursor-pointer"
+              className="relative text-black cursor-pointer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -82,7 +82,7 @@ export const Navbar: React.FC = () => {
                 />
               </svg>
               {getItemCount() > 0 && (
-                <span className="absolute -top-2 -right-2 bg-primary text-secondary rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
+                <span className="absolute -top-2 -right-2 bg-black text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
                   {getItemCount()}
                 </span>
               )}
@@ -91,7 +91,7 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-primary"
+            className="md:hidden text-black"
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg
@@ -133,8 +133,8 @@ export const Navbar: React.FC = () => {
                 onClick={() => setIsOpen(false)}
                 className={`block py-3 transition-colors ${
                   isActive(item.href)
-                    ? "text-primary font-medium"
-                    : "text-muted hover:text-primary"
+                    ? "text-black font-medium"
+                    : "text-grey hover:text-black"
                 }`}
               >
                 {item.name}
@@ -143,7 +143,7 @@ export const Navbar: React.FC = () => {
             <Link
               to="/cart"
               onClick={() => setIsOpen(false)}
-              className="block py-3 text-muted hover:text-primary"
+              className="block py-3 text-grey hover:text-black"
             >
               Cart ({getItemCount()})
             </Link>

@@ -4,16 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        gold: "#D4AF37",
-        dark: "#0F0F0F",
-        silver: "#E8E8E8",
-        cream: "#FFF8F0",
+        black: "#000000",
+        white: "#FFFFFF",
+        grey: "#808080",
+        silver: "#C0C0C0",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-in",
         "slide-up": "slideUp 0.6s ease-out",
-        "bounce-smooth": "bounceSoft 2s infinite",
-        glow: "glow 2s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -23,14 +21,6 @@ export default {
         slideUp: {
           "0%": { transform: "translateY(30px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
-        },
-        bounceSoft: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
-        glow: {
-          "0%, 100%": { textShadow: "0 0 5px rgba(212, 175, 55, 0.5)" },
-          "50%": { textShadow: "0 0 20px rgba(212, 175, 55, 0.8)" },
         },
       },
     },

@@ -103,7 +103,7 @@ export const HomePage: React.FC = () => {
   return (
     <div className="pt-16">
       {/* Promotional Banner */}
-      <div className="bg-primary text-secondary py-3 px-6 relative overflow-hidden">
+      <div className="bg-black text-white py-3 px-6 relative overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -125,8 +125,8 @@ export const HomePage: React.FC = () => {
               onClick={() => setCurrentSlide(idx)}
               className={`w-1.5 h-1.5 rounded-full transition-all ${
                 idx === currentSlide
-                  ? "bg-secondary w-4"
-                  : "bg-secondary/40 hover:bg-secondary/60"
+                  ? "bg-white w-4"
+                  : "bg-white/40 hover:bg-white/60"
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
@@ -135,7 +135,7 @@ export const HomePage: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-32 px-6 bg-secondary flex items-center justify-center relative overflow-hidden shadow-2xl">
+      <section className="py-32 px-6 bg-white flex items-center justify-center relative overflow-hidden shadow-sm">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentHeroSlide}
@@ -148,7 +148,7 @@ export const HomePage: React.FC = () => {
             {/* Left Content */}
             <div className="relative z-10">
               <motion.div
-                className="text-sm tracking-widest text-muted mb-6 uppercase"
+                className="text-sm tracking-widest text-grey mb-6 uppercase"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -157,7 +157,7 @@ export const HomePage: React.FC = () => {
               </motion.div>
 
               <motion.h1
-                className="text-5xl md:text-6xl font-light text-primary mb-8 leading-tight"
+                className="text-5xl md:text-6xl font-light text-black mb-8 leading-tight"
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
@@ -169,7 +169,7 @@ export const HomePage: React.FC = () => {
               </motion.h1>
 
               <motion.p
-                className="text-lg text-muted mb-10 max-w-xl leading-relaxed"
+                className="text-lg text-grey mb-10 max-w-xl leading-relaxed"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
@@ -179,7 +179,7 @@ export const HomePage: React.FC = () => {
 
               <motion.button
                 onClick={() => navigate(heroSlides[currentHeroSlide].link)}
-                className="px-12 py-4 bg-primary text-secondary font-medium tracking-wide hover:bg-dark transition-colors shadow-lg hover:shadow-xl"
+                className="px-12 py-4 bg-black text-white font-medium tracking-wide hover:bg-grey transition-colors shadow-sm hover:shadow-md"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
@@ -197,7 +197,7 @@ export const HomePage: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-muted/20 to-accent/10 rounded-lg overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-grey/10 rounded-lg overflow-hidden shadow-md">
                 <img
                   src={heroSlides[currentHeroSlide].image}
                   alt={heroSlides[currentHeroSlide].title}
@@ -216,20 +216,17 @@ export const HomePage: React.FC = () => {
               onClick={() => setCurrentHeroSlide(idx)}
               className={`h-1.5 rounded-full transition-all ${
                 idx === currentHeroSlide
-                  ? "bg-primary w-8"
-                  : "bg-muted/40 w-1.5 hover:bg-muted/60"
+                  ? "bg-black w-8"
+                  : "bg-grey/40 w-1.5 hover:bg-grey/60"
               }`}
               aria-label={`Go to hero slide ${idx + 1}`}
             />
           ))}
         </div>
-
-        {/* Decorative element */}
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-6 bg-light shadow-lg">
+      <section className="py-16 px-6 bg-white/50 shadow-sm">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
@@ -306,13 +303,13 @@ export const HomePage: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary to-dark mb-6 text-secondary shadow-lg">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-black text-white mb-6 shadow-sm">
                   {feature.icon}
                 </div>
-                <h3 className="text-lg font-light text-primary mb-2">
+                <h3 className="text-lg font-light text-black mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-muted">{feature.desc}</p>
+                <p className="text-sm text-grey">{feature.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -320,7 +317,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-24 px-6 bg-gradient-to-b from-light via-primary/3 to-light shadow-lg">
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -329,7 +326,7 @@ export const HomePage: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-muted/20 to-accent/10 rounded-lg overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-grey/10 rounded-lg overflow-hidden shadow-md">
                 <img
                   src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&h=600&fit=crop"
                   alt="About"
@@ -344,28 +341,28 @@ export const HomePage: React.FC = () => {
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="text-muted text-sm tracking-widest">/</div>
-                <div className="text-muted text-sm tracking-widest">ABOUT</div>
-                <div className="text-muted text-sm tracking-widest">(01)</div>
+                <div className="text-grey text-sm tracking-widest">/</div>
+                <div className="text-grey text-sm tracking-widest">ABOUT</div>
+                <div className="text-grey text-sm tracking-widest">(01)</div>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-light text-primary mb-6 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
                 About <span className="italic font-serif">Osvara</span>
               </h2>
 
-              <p className="text-muted text-lg leading-relaxed mb-6">
+              <p className="text-grey text-lg leading-relaxed mb-6">
                 Our studio is dedicated to crafting clean, purposeful fashion
                 that honors tradition while embracing modern elegance.
               </p>
 
-              <p className="text-muted text-lg leading-relaxed mb-8">
+              <p className="text-grey text-lg leading-relaxed mb-8">
                 Every piece is designed with intention, using premium fabrics
                 and thoughtful details that elevate your everyday wear.
               </p>
 
               <Link to="/about">
                 <motion.button
-                  className="px-8 py-3 border border-primary text-primary font-medium tracking-wide hover:bg-primary hover:text-secondary transition-colors"
+                  className="px-8 py-3 border border-black text-black font-medium tracking-wide hover:bg-black hover:text-white transition-colors"
                   whileHover={{ scale: 1.05 }}
                 >
                   Learn More
@@ -377,7 +374,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Collections */}
-      <section className="py-24 px-6 bg-gradient-to-b from-secondary via-primary/5 to-secondary shadow-lg">
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-20">
             <div>
@@ -387,15 +384,15 @@ export const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-muted text-sm tracking-widest">/</div>
-                <div className="text-muted text-sm tracking-widest">
+                <div className="text-grey text-sm tracking-widest">/</div>
+                <div className="text-grey text-sm tracking-widest">
                   COLLECTIONS
                 </div>
-                <div className="text-muted text-sm tracking-widest">(02)</div>
+                <div className="text-grey text-sm tracking-widest">(02)</div>
               </motion.div>
 
               <motion.h2
-                className="text-4xl md:text-5xl font-light text-primary"
+                className="text-4xl md:text-5xl font-light text-black"
                 initial={{ y: 30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
@@ -405,7 +402,7 @@ export const HomePage: React.FC = () => {
             </div>
             <Link to="/products">
               <motion.button
-                className="px-8 py-3 border border-primary text-primary font-medium tracking-wide hover:bg-primary hover:text-secondary transition-colors"
+                className="px-8 py-3 border border-black text-black font-medium tracking-wide hover:bg-black hover:text-white transition-colors"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}

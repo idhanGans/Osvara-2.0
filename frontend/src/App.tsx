@@ -12,14 +12,12 @@ import { CartPage } from "./pages/Cart";
 import { Checkout } from "./pages/Checkout";
 import { CartProvider } from "./context/CartContext";
 import "./index.css";
-import AnimatedBackground from "./components/AnimatedBackground";
 
 function App() {
   return (
     <CartProvider>
       <BrowserRouter>
-        <div className="min-h-screen flex flex-col text-gray-900">
-          <AnimatedBackground />
+        <div className="min-h-screen flex flex-col bg-white">
           <Navbar />
           <main className="flex-1">
             <Routes>
