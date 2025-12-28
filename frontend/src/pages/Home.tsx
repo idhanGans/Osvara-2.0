@@ -317,30 +317,71 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-24 px-6 bg-gradient-to-b from-white via-gray-50/50 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            {/* Image Card with enhanced visuals */}
             <motion.div
-              className="relative h-96"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              className="relative group"
+              initial={{ opacity: 0, x: -50, scale: 0.95 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <div className="absolute inset-0 bg-gray-100 rounded-lg overflow-hidden shadow-md">
+              {/* Decorative background element */}
+              <motion.div
+                className="absolute -top-4 -left-4 w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl"
+                initial={{ opacity: 0, rotate: -3 }}
+                whileInView={{ opacity: 1, rotate: -3 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              />
+
+              {/* Main image container */}
+              <motion.div
+                className="relative h-[450px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200"
+                whileHover={{ scale: 1.02, y: -5 }}
+                transition={{ duration: 0.4 }}
+              >
                 <img
                   src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&h=600&fit=crop"
-                  alt="About"
-                  className="w-full h-full object-cover"
+                  alt="About Osvara"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-              </div>
+
+                {/* Overlay gradient on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                {/* Floating badge */}
+                <motion.div
+                  className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm px-5 py-3 rounded-lg shadow-lg"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
+                >
+                  <p className="text-sm font-medium text-gray-900">
+                    Since 2020
+                  </p>
+                  <p className="text-xs text-gray-500">Crafting Elegance</p>
+                </motion.div>
+              </motion.div>
             </motion.div>
 
+            {/* Content side */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: 0.2 }}
             >
-              <div className="flex items-center gap-4 mb-6">
+              <motion.div
+                className="flex items-center gap-4 mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
                 <div className="text-gray-400 text-sm tracking-widest">/</div>
                 <div className="text-gray-400 text-sm tracking-widest">
                   ABOUT
@@ -348,31 +389,63 @@ export const HomePage: React.FC = () => {
                 <div className="text-gray-400 text-sm tracking-widest">
                   (01)
                 </div>
-              </div>
+              </motion.div>
 
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight">
+              <motion.h2
+                className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
                 About{" "}
                 <span className="italic font-serif text-black">Osvara</span>
-              </h2>
+              </motion.h2>
 
-              <p className="text-gray-500 text-lg leading-relaxed mb-6">
+              <motion.p
+                className="text-gray-500 text-lg leading-relaxed mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+              >
                 Our studio is dedicated to crafting clean, purposeful fashion
                 that honors tradition while embracing modern elegance.
-              </p>
+              </motion.p>
 
-              <p className="text-gray-500 text-lg leading-relaxed mb-8">
+              <motion.p
+                className="text-gray-500 text-lg leading-relaxed mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+              >
                 Every piece is designed with intention, using premium fabrics
                 and thoughtful details that elevate your everyday wear.
-              </p>
+              </motion.p>
 
-              <Link to="/about">
-                <motion.button
-                  className="px-8 py-3 border border-black text-black font-medium tracking-wide hover:bg-black hover:text-white transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  Learn More
-                </motion.button>
-              </Link>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.7 }}
+              >
+                <Link to="/about">
+                  <motion.button
+                    className="group relative px-8 py-4 bg-white border-2 border-black text-black font-medium tracking-wide overflow-hidden transition-all duration-300 hover:text-white"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span className="relative z-10">Learn More</span>
+                    <motion.div
+                      className="absolute inset-0 bg-black"
+                      initial={{ x: "-100%" }}
+                      whileHover={{ x: 0 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </motion.button>
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
         </div>
