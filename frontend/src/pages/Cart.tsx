@@ -28,7 +28,7 @@ export const CartPage: React.FC = () => {
             <h2 className="text-2xl font-light text-black mb-4">
               Your cart is empty
             </h2>
-            <p className="text-grey mb-8">
+            <p className="text-gray-500 mb-8">
               Looks like you haven't added anything to your cart yet.
             </p>
             <Link
@@ -78,7 +78,7 @@ export const CartPage: React.FC = () => {
               {items.map((item, idx) => (
                 <motion.div
                   key={item.id}
-                  className="px-6 py-4 grid grid-cols-12 gap-4 items-center border-b border-silver/10"
+                  className="px-6 py-4 grid grid-cols-12 gap-4 items-center border-b border-gray-300/10"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.1 }}
@@ -97,12 +97,12 @@ export const CartPage: React.FC = () => {
                       >
                         {item.name}
                       </Link>
-                      <p className="text-grey text-sm">{item.category}</p>
+                      <p className="text-gray-500 text-sm">{item.category}</p>
                       {item.size && (
-                        <p className="text-grey text-xs">Size: {item.size}</p>
+                        <p className="text-gray-500 text-xs">Size: {item.size}</p>
                       )}
                       {item.color && (
-                        <p className="text-grey text-xs">
+                        <p className="text-gray-500 text-xs">
                           Color: {item.color}
                         </p>
                       )}
@@ -116,7 +116,7 @@ export const CartPage: React.FC = () => {
                   </div>
 
                   {/* Price */}
-                  <div className="col-span-2 text-center text-grey">
+                  <div className="col-span-2 text-center text-gray-500">
                     Rp {item.price.toLocaleString("id-ID")}
                   </div>
 
@@ -124,14 +124,14 @@ export const CartPage: React.FC = () => {
                   <div className="col-span-2 flex items-center justify-center gap-2">
                     <button
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                      className="w-8 h-8 border border-silver/30 text-black hover:border-primary transition-colors rounded"
+                      className="w-8 h-8 border border-gray-300/30 text-black hover:border-primary transition-colors rounded"
                     >
                       -
                     </button>
                     <span className="w-8 text-center">{item.quantity}</span>
                     <button
                       onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                      className="w-8 h-8 border border-silver/30 text-black hover:border-primary transition-colors rounded"
+                      className="w-8 h-8 border border-gray-300/30 text-black hover:border-primary transition-colors rounded"
                     >
                       +
                     </button>
@@ -174,11 +174,11 @@ export const CartPage: React.FC = () => {
               </h2>
 
               <div className="space-y-4 mb-6">
-                <div className="flex justify-between text-grey">
+                <div className="flex justify-between text-gray-500">
                   <span>Subtotal</span>
                   <span>Rp {getTotal().toLocaleString("id-ID")}</span>
                 </div>
-                <div className="flex justify-between text-grey">
+                <div className="flex justify-between text-gray-500">
                   <span>Shipping</span>
                   <span>
                     {shippingCost === 0
@@ -187,11 +187,11 @@ export const CartPage: React.FC = () => {
                   </span>
                 </div>
                 {shippingCost > 0 && (
-                  <p className="text-xs text-grey/70">
+                  <p className="text-xs text-gray-500/70">
                     Free shipping on orders over Rp 500,000
                   </p>
                 )}
-                <div className="border-t border-silver/20 pt-4 flex justify-between text-lg font-medium text-black">
+                <div className="border-t border-gray-300/20 pt-4 flex justify-between text-lg font-medium text-black">
                   <span>Total</span>
                   <span>Rp {grandTotal.toLocaleString("id-ID")}</span>
                 </div>
@@ -207,7 +207,7 @@ export const CartPage: React.FC = () => {
                 </motion.button>
               </Link>
 
-              <p className="text-xs text-grey text-center mt-4">
+              <p className="text-xs text-gray-500 text-center mt-4">
                 Secure checkout powered by trusted payment providers
               </p>
 

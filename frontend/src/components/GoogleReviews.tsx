@@ -40,14 +40,16 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
       {/* Section Header */}
       <div className="text-center mb-12">
         <div className="flex items-center justify-center gap-4 mb-4">
-          <div className="text-grey text-sm tracking-widest">/</div>
-          <div className="text-grey text-sm tracking-widest">TESTIMONIALS</div>
-          <div className="text-grey text-sm tracking-widest">(05)</div>
+          <div className="text-gray-400 text-sm tracking-widest">/</div>
+          <div className="text-gray-400 text-sm tracking-widest">
+            TESTIMONIALS
+          </div>
+          <div className="text-gray-400 text-sm tracking-widest">(05)</div>
         </div>
-        <h2 className="text-4xl md:text-5xl font-light text-black mb-4">
+        <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
           Customer Reviews
         </h2>
-        <p className="text-grey max-w-xl mx-auto">
+        <p className="text-gray-500 max-w-xl mx-auto">
           What our customers say about their experience with Osvara
         </p>
       </div>
@@ -56,7 +58,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
         {mockReviews.map((review, idx) => (
           <motion.div
             key={idx}
-            className="bg-white border border-silver/30 rounded-lg p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+            className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm hover:shadow-lg hover:border-black transition-all duration-300"
             whileHover={{ y: -5 }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -64,12 +66,12 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
           >
             {/* Header */}
             <div className="flex items-center mb-6">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-black to-grey flex items-center justify-center text-white font-light text-sm mr-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center text-white font-light text-sm mr-4">
                 {review.initials}
               </div>
               <div>
-                <h4 className="text-black font-medium">{review.name}</h4>
-                <p className="text-grey text-sm">{review.date}</p>
+                <h4 className="text-gray-900 font-medium">{review.name}</h4>
+                <p className="text-gray-400 text-sm">{review.date}</p>
               </div>
             </div>
 
@@ -81,7 +83,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
                   className={
                     i < review.rating
                       ? "text-black text-lg"
-                      : "text-silver text-lg"
+                      : "text-gray-200 text-lg"
                   }
                 >
                   ★
@@ -90,7 +92,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
             </div>
 
             {/* Review Text */}
-            <p className="text-grey text-sm leading-relaxed italic">
+            <p className="text-gray-500 text-sm leading-relaxed italic">
               "{review.text}"
             </p>
           </motion.div>
@@ -102,7 +104,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
         href="https://maps.google.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="mx-auto block mt-12 w-fit px-10 py-4 bg-black text-white font-medium tracking-wide hover:bg-grey transition-colors shadow-md hover:shadow-lg"
+        className="mx-auto block mt-12 w-fit px-10 py-4 bg-black text-white font-medium tracking-wide hover:bg-gray-800 transition-colors shadow-md hover:shadow-lg"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >

@@ -68,7 +68,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             )}
           </div>
           <motion.div
-            className="absolute top-4 right-4 bg-black text-white px-3 py-1 text-xs tracking-wide"
+            className="absolute top-4 right-4 bg-gray-900 text-white px-3 py-1 text-xs tracking-wide"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
           >
@@ -76,7 +76,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </motion.div>
           <motion.button
             onClick={handleAddToCart}
-            className="absolute bottom-4 left-4 right-4 bg-white border border-black text-black py-3 font-medium tracking-wide opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black hover:text-white"
+            className="absolute bottom-4 left-4 right-4 bg-black text-white py-3 font-medium tracking-wide opacity-0 group-hover:opacity-100 transition-all hover:bg-gray-800"
           >
             Add to Cart
           </motion.button>
@@ -84,7 +84,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
         {/* Content */}
         <div className="p-4">
-          <h3 className="text-black font-light text-lg mb-2 tracking-wide line-clamp-1">
+          <h3 className="text-gray-900 font-light text-lg mb-2 tracking-wide line-clamp-1">
             {name}
           </h3>
 
@@ -94,23 +94,25 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               <span
                 key={i}
                 className={
-                  i < Math.floor(rating) ? "text-black" : "text-grey/20"
+                  i < Math.floor(rating) ? "text-black" : "text-gray-200"
                 }
                 style={{ fontSize: "12px" }}
               >
                 ★
               </span>
             ))}
-            <span className="text-grey text-xs ml-1">{rating.toFixed(1)}</span>
+            <span className="text-gray-500 text-xs ml-1">
+              {rating.toFixed(1)}
+            </span>
           </div>
 
           {/* Price */}
           <div className="flex items-center gap-2">
-            <span className="text-xl font-light text-black tracking-wide">
+            <span className="text-xl font-light text-gray-900 tracking-wide">
               Rp {price.toLocaleString("id-ID")}
             </span>
             {originalPrice && (
-              <span className="text-sm text-grey line-through">
+              <span className="text-sm text-gray-400 line-through">
                 Rp {originalPrice.toLocaleString("id-ID")}
               </span>
             )}

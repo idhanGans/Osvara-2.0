@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 w-full bg-white border-b border-grey/20 z-50 shadow-sm"
+      className="fixed top-0 w-full bg-white border-b border-gray-300/20 z-50 shadow-sm"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -50,7 +50,7 @@ export const Navbar: React.FC = () => {
                   className={`text-sm transition-colors tracking-wide ${
                     isActive(item.href)
                       ? "text-black font-medium"
-                      : "text-grey hover:text-black"
+                      : "text-gray-500 hover:text-black"
                   }`}
                   whileHover={{ y: -2 }}
                 >
@@ -134,7 +134,7 @@ export const Navbar: React.FC = () => {
                 className={`block py-3 transition-colors ${
                   isActive(item.href)
                     ? "text-black font-medium"
-                    : "text-grey hover:text-black"
+                    : "text-gray-500 hover:text-black"
                 }`}
               >
                 {item.name}
@@ -143,7 +143,7 @@ export const Navbar: React.FC = () => {
             <Link
               to="/cart"
               onClick={() => setIsOpen(false)}
-              className="block py-3 text-grey hover:text-black"
+              className="block py-3 text-gray-500 hover:text-black"
             >
               Cart ({getItemCount()})
             </Link>

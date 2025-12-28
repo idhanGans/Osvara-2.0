@@ -60,14 +60,14 @@ export const ProductsPage: React.FC = () => {
     <div className="pt-16 pb-20 min-h-screen">
       {/* Hero Banner */}
       <motion.div
-        className="bg-gradient-to-r from-black via-gray-800 to-black py-20 px-4"
+        className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-20 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
         <h1 className="text-5xl font-light text-white text-center tracking-wide">
           Our Products
         </h1>
-        <p className="text-silver text-center mt-4 max-w-xl mx-auto">
+        <p className="text-gray-400 text-center mt-4 max-w-xl mx-auto">
           Discover our exclusive collection of modest fashion crafted with
           elegance
         </p>
@@ -77,27 +77,27 @@ export const ProductsPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
           {/* Sidebar - Filters */}
           <motion.div
-            className="bg-white border border-silver/30 rounded-lg p-6 h-fit shadow-sm"
+            className="bg-white border border-gray-200 rounded-lg p-6 h-fit shadow-sm"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            <h3 className="text-black font-medium text-lg mb-6">Filters</h3>
+            <h3 className="text-gray-900 font-medium text-lg mb-6">Filters</h3>
 
             {/* Search */}
             <div className="mb-8">
-              <h4 className="text-black font-medium mb-4">Search</h4>
+              <h4 className="text-gray-900 font-medium mb-4">Search</h4>
               <input
                 type="text"
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-3 border border-silver/50 rounded-lg focus:outline-none focus:border-black transition-colors bg-white"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black transition-colors bg-white"
               />
             </div>
 
             {/* Category Filter */}
             <div className="mb-8">
-              <h4 className="text-black font-medium mb-4">Category</h4>
+              <h4 className="text-gray-900 font-medium mb-4">Category</h4>
               <div className="space-y-2">
                 {categories.map((cat) => (
                   <motion.button
@@ -106,7 +106,7 @@ export const ProductsPage: React.FC = () => {
                     className={`block w-full text-left px-4 py-2 rounded-lg transition-colors ${
                       selectedCategory === cat
                         ? "bg-black text-white font-medium"
-                        : "text-grey hover:text-black hover:bg-gray-50"
+                        : "text-gray-500 hover:text-black hover:bg-gray-50"
                     }`}
                     whileHover={{ x: 5 }}
                   >
@@ -125,7 +125,7 @@ export const ProductsPage: React.FC = () => {
 
             {/* Price Range Filter */}
             <div className="mb-8">
-              <h4 className="text-black font-medium mb-4">Price Range</h4>
+              <h4 className="text-gray-900 font-medium mb-4">Price Range</h4>
               <input
                 type="range"
                 min="100000"
@@ -135,7 +135,7 @@ export const ProductsPage: React.FC = () => {
                 onChange={(e) => setPriceRange(Number(e.target.value))}
                 className="w-full"
               />
-              <div className="flex justify-between text-grey text-sm mt-2">
+              <div className="flex justify-between text-gray-500 text-sm mt-2">
                 <span>Rp 100,000</span>
                 <span>Rp {priceRange.toLocaleString("id-ID")}</span>
               </div>
@@ -164,13 +164,13 @@ export const ProductsPage: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
-              <p className="text-grey">
+              <p className="text-gray-500">
                 Showing {filteredProducts.length} of {products.length} products
               </p>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="bg-white border border-silver/50 text-black px-4 py-3 rounded-lg focus:outline-none focus:border-black"
+                className="bg-white border border-gray-300 text-gray-900 px-4 py-3 rounded-lg focus:outline-none focus:border-black"
               >
                 <option value="newest">Newest</option>
                 <option value="price-low">Price: Low to High</option>
@@ -199,10 +199,10 @@ export const ProductsPage: React.FC = () => {
                 animate={{ opacity: 1 }}
               >
                 <div className="text-6xl mb-4">🔍</div>
-                <h3 className="text-xl font-light text-black mb-2">
+                <h3 className="text-xl font-light text-gray-900 mb-2">
                   No products found
                 </h3>
-                <p className="text-grey">
+                <p className="text-gray-500">
                   Try adjusting your filters or search query.
                 </p>
               </motion.div>

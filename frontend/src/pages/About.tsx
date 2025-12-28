@@ -67,7 +67,7 @@ export const AboutPage: React.FC = () => {
     <div className="pt-20 pb-20">
       {/* Hero Section */}
       <motion.div
-        className="relative bg-gradient-to-r from-black via-gray-800 to-black py-24 px-4"
+        className="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-24 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
@@ -107,28 +107,28 @@ export const AboutPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="text-grey text-sm tracking-widest">/</div>
-                <div className="text-grey text-sm tracking-widest">
+                <div className="text-gray-500 text-sm tracking-widest">/</div>
+                <div className="text-gray-500 text-sm tracking-widest">
                   OUR STORY
                 </div>
               </div>
               <h2 className="text-4xl font-light text-black mb-8">
                 A Journey of <span className="italic font-serif">Passion</span>
               </h2>
-              <p className="text-grey text-lg leading-relaxed mb-6">
+              <p className="text-gray-500 text-lg leading-relaxed mb-6">
                 Osvara was founded in 2020 with a simple mission: to make
                 elegant, high-quality Islamic fashion accessible to every
                 muslimah woman. We believe that fashion and modesty are not
                 mutually exclusive – they can beautifully complement each other.
               </p>
-              <p className="text-grey text-lg leading-relaxed mb-6">
+              <p className="text-gray-500 text-lg leading-relaxed mb-6">
                 Our founder, passionate about traditional Islamic clothing and
                 modern design, started creating pieces that blend timeless
                 elegance with contemporary style. Today, Osvara has grown into a
                 trusted brand serving thousands of satisfied customers across
                 the region.
               </p>
-              <p className="text-grey text-lg leading-relaxed">
+              <p className="text-gray-500 text-lg leading-relaxed">
                 We source the finest fabrics from around the world and work with
                 skilled craftspeople to create each piece with care and
                 attention to detail.
@@ -167,8 +167,8 @@ export const AboutPage: React.FC = () => {
         >
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-grey text-sm tracking-widest">/</div>
-              <div className="text-grey text-sm tracking-widest">
+              <div className="text-gray-500 text-sm tracking-widest">/</div>
+              <div className="text-gray-500 text-sm tracking-widest">
                 OUR VALUES
               </div>
             </div>
@@ -208,7 +208,7 @@ export const AboutPage: React.FC = () => {
                 <h3 className="text-black font-medium text-2xl mb-4">
                   {value.title}
                 </h3>
-                <p className="text-grey leading-relaxed">{value.desc}</p>
+                <p className="text-gray-500 leading-relaxed">{value.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -223,8 +223,8 @@ export const AboutPage: React.FC = () => {
         >
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-grey text-sm tracking-widest">/</div>
-              <div className="text-grey text-sm tracking-widest">
+              <div className="text-gray-500 text-sm tracking-widest">/</div>
+              <div className="text-gray-500 text-sm tracking-widest">
                 OUR JOURNEY
               </div>
             </div>
@@ -235,7 +235,7 @@ export const AboutPage: React.FC = () => {
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-silver/30" />
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-gray-300/30" />
 
             <div className="space-y-12">
               {milestones.map((milestone, idx) => (
@@ -263,7 +263,7 @@ export const AboutPage: React.FC = () => {
                       <h3 className="text-black font-medium text-xl mt-2">
                         {milestone.title}
                       </h3>
-                      <p className="text-grey mt-2">{milestone.description}</p>
+                      <p className="text-gray-500 mt-2">{milestone.description}</p>
                     </div>
                   </div>
                   <div className="hidden md:block w-4 h-4 bg-black rounded-full relative z-10" />
@@ -283,8 +283,8 @@ export const AboutPage: React.FC = () => {
         >
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-grey text-sm tracking-widest">/</div>
-              <div className="text-grey text-sm tracking-widest">OUR TEAM</div>
+              <div className="text-gray-500 text-sm tracking-widest">/</div>
+              <div className="text-gray-500 text-sm tracking-widest">OUR TEAM</div>
             </div>
             <h2 className="text-4xl font-light text-black">
               Meet the <span className="italic font-serif">People</span>
@@ -311,10 +311,10 @@ export const AboutPage: React.FC = () => {
                 <h3 className="text-black font-medium text-xl mb-1">
                   {member.name}
                 </h3>
-                <p className="text-grey/70 text-sm tracking-wide mb-3">
+                <p className="text-gray-500/70 text-sm tracking-wide mb-3">
                   {member.role}
                 </p>
-                <p className="text-grey text-sm leading-relaxed">
+                <p className="text-gray-500 text-sm leading-relaxed">
                   {member.description}
                 </p>
               </motion.div>
@@ -331,8 +331,8 @@ export const AboutPage: React.FC = () => {
         >
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-grey text-sm tracking-widest">/</div>
-              <div className="text-grey text-sm tracking-widest">
+              <div className="text-gray-500 text-sm tracking-widest">/</div>
+              <div className="text-gray-500 text-sm tracking-widest">
                 WHY OSVARA
               </div>
             </div>
@@ -387,7 +387,7 @@ export const AboutPage: React.FC = () => {
                   <h3 className="text-black font-medium text-lg mb-1">
                     {item.title}
                   </h3>
-                  <p className="text-grey text-sm">{item.desc}</p>
+                  <p className="text-gray-500 text-sm">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -396,7 +396,7 @@ export const AboutPage: React.FC = () => {
 
         {/* Store Location */}
         <motion.section
-          className="bg-gradient-to-r from-black via-gray-800 to-black rounded-lg p-10 text-white"
+          className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-lg p-10 text-white"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

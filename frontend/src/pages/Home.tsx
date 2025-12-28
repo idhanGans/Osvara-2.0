@@ -148,7 +148,7 @@ export const HomePage: React.FC = () => {
             {/* Left Content */}
             <div className="relative z-10">
               <motion.div
-                className="text-sm tracking-widest text-grey mb-6 uppercase"
+                className="text-sm tracking-widest text-gray-400 mb-6 uppercase"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -157,19 +157,19 @@ export const HomePage: React.FC = () => {
               </motion.div>
 
               <motion.h1
-                className="text-5xl md:text-6xl font-light text-black mb-8 leading-tight"
+                className="text-5xl md:text-6xl font-light text-gray-900 mb-8 leading-tight"
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
                 {heroSlides[currentHeroSlide].title}{" "}
-                <span className="italic font-serif">
+                <span className="italic font-serif text-black">
                   {heroSlides[currentHeroSlide].titleHighlight}
                 </span>
               </motion.h1>
 
               <motion.p
-                className="text-lg text-grey mb-10 max-w-xl leading-relaxed"
+                className="text-lg text-gray-500 mb-10 max-w-xl leading-relaxed"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
@@ -179,7 +179,7 @@ export const HomePage: React.FC = () => {
 
               <motion.button
                 onClick={() => navigate(heroSlides[currentHeroSlide].link)}
-                className="px-12 py-4 bg-black text-white font-medium tracking-wide hover:bg-grey transition-colors shadow-sm hover:shadow-md"
+                className="px-12 py-4 bg-black text-white font-medium tracking-wide hover:bg-gray-800 transition-colors shadow-sm hover:shadow-md"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
@@ -197,7 +197,7 @@ export const HomePage: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="absolute inset-0 bg-grey/10 rounded-lg overflow-hidden shadow-md">
+              <div className="absolute inset-0 bg-gray-500/10 rounded-lg overflow-hidden shadow-md">
                 <img
                   src={heroSlides[currentHeroSlide].image}
                   alt={heroSlides[currentHeroSlide].title}
@@ -217,7 +217,7 @@ export const HomePage: React.FC = () => {
               className={`h-1.5 rounded-full transition-all ${
                 idx === currentHeroSlide
                   ? "bg-black w-8"
-                  : "bg-grey/40 w-1.5 hover:bg-grey/60"
+                  : "bg-gray-300 w-1.5 hover:bg-black/60"
               }`}
               aria-label={`Go to hero slide ${idx + 1}`}
             />
@@ -306,10 +306,10 @@ export const HomePage: React.FC = () => {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-black text-white mb-6 shadow-sm">
                   {feature.icon}
                 </div>
-                <h3 className="text-lg font-light text-black mb-2">
+                <h3 className="text-lg font-light text-gray-900 mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-grey">{feature.desc}</p>
+                <p className="text-sm text-gray-500">{feature.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -326,7 +326,7 @@ export const HomePage: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="absolute inset-0 bg-grey/10 rounded-lg overflow-hidden shadow-md">
+              <div className="absolute inset-0 bg-gray-100 rounded-lg overflow-hidden shadow-md">
                 <img
                   src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&h=600&fit=crop"
                   alt="About"
@@ -341,21 +341,26 @@ export const HomePage: React.FC = () => {
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="text-grey text-sm tracking-widest">/</div>
-                <div className="text-grey text-sm tracking-widest">ABOUT</div>
-                <div className="text-grey text-sm tracking-widest">(01)</div>
+                <div className="text-gray-400 text-sm tracking-widest">/</div>
+                <div className="text-gray-400 text-sm tracking-widest">
+                  ABOUT
+                </div>
+                <div className="text-gray-400 text-sm tracking-widest">
+                  (01)
+                </div>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-light text-black mb-6 leading-tight">
-                About <span className="italic font-serif">Osvara</span>
+              <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight">
+                About{" "}
+                <span className="italic font-serif text-black">Osvara</span>
               </h2>
 
-              <p className="text-grey text-lg leading-relaxed mb-6">
+              <p className="text-gray-500 text-lg leading-relaxed mb-6">
                 Our studio is dedicated to crafting clean, purposeful fashion
                 that honors tradition while embracing modern elegance.
               </p>
 
-              <p className="text-grey text-lg leading-relaxed mb-8">
+              <p className="text-gray-500 text-lg leading-relaxed mb-8">
                 Every piece is designed with intention, using premium fabrics
                 and thoughtful details that elevate your everyday wear.
               </p>
@@ -384,15 +389,17 @@ export const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-grey text-sm tracking-widest">/</div>
-                <div className="text-grey text-sm tracking-widest">
+                <div className="text-gray-400 text-sm tracking-widest">/</div>
+                <div className="text-gray-400 text-sm tracking-widest">
                   COLLECTIONS
                 </div>
-                <div className="text-grey text-sm tracking-widest">(02)</div>
+                <div className="text-gray-400 text-sm tracking-widest">
+                  (02)
+                </div>
               </motion.div>
 
               <motion.h2
-                className="text-4xl md:text-5xl font-light text-black"
+                className="text-4xl md:text-5xl font-light text-gray-900"
                 initial={{ y: 30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
@@ -443,7 +450,7 @@ export const HomePage: React.FC = () => {
                       <p className="text-xs text-white/60 mb-4">
                         {cat.count} Products
                       </p>
-                      <span className="w-max px-6 py-2 bg-white text-black font-medium text-sm tracking-wide group-hover:bg-grey group-hover:text-white transition-colors">
+                      <span className="w-max px-6 py-2 bg-black text-white font-medium text-sm tracking-wide group-hover:bg-gray-800 transition-colors">
                         Go To Shop
                       </span>
                     </div>
@@ -466,15 +473,17 @@ export const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-grey text-sm tracking-widest">/</div>
-                <div className="text-grey text-sm tracking-widest">
+                <div className="text-gray-400 text-sm tracking-widest">/</div>
+                <div className="text-gray-400 text-sm tracking-widest">
                   FEATURED
                 </div>
-                <div className="text-grey text-sm tracking-widest">(03)</div>
+                <div className="text-gray-400 text-sm tracking-widest">
+                  (03)
+                </div>
               </motion.div>
 
               <motion.h2
-                className="text-4xl md:text-5xl font-light text-black"
+                className="text-4xl md:text-5xl font-light text-gray-900"
                 initial={{ y: 30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
@@ -512,7 +521,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Sale Banner */}
-      <section className="py-24 px-6 bg-gradient-to-r from-black via-gray-800 to-black">
+      <section className="py-24 px-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -524,15 +533,17 @@ export const HomePage: React.FC = () => {
               Limited Time
             </div>
             <h2 className="text-5xl md:text-6xl font-light mb-6 leading-tight">
-              Exclusive <span className="italic font-serif">New Year</span> Sale
+              Exclusive{" "}
+              <span className="italic font-serif text-silver">New Year</span>{" "}
+              Sale
             </h2>
-            <p className="text-lg text-silver mb-8">
+            <p className="text-lg text-gray-400 mb-8">
               Discover our latest collection with special discounts on selected
               items.
             </p>
             <Link to="/products">
               <motion.button
-                className="px-10 py-4 bg-white text-black font-medium tracking-wide hover:bg-silver transition-colors shadow-lg hover:shadow-xl"
+                className="px-10 py-4 bg-white text-black font-medium tracking-wide hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -572,16 +583,18 @@ export const HomePage: React.FC = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-grey text-sm tracking-widest">/</div>
-              <div className="text-grey text-sm tracking-widest">WHY US</div>
-              <div className="text-grey text-sm tracking-widest">(04)</div>
+              <div className="text-gray-400 text-sm tracking-widest">/</div>
+              <div className="text-gray-400 text-sm tracking-widest">
+                WHY US
+              </div>
+              <div className="text-gray-400 text-sm tracking-widest">(04)</div>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-light text-black mb-6">
-              Why Choose Osvara
+            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
+              Why Choose <span className="text-black">Osvara</span>
             </h2>
 
-            <p className="text-lg text-grey">
+            <p className="text-lg text-gray-500">
               We believe in quality, purpose, and elegance in every piece we
               create.
             </p>
@@ -604,7 +617,7 @@ export const HomePage: React.FC = () => {
             ].map((item, idx) => (
               <motion.div
                 key={idx}
-                className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all border border-silver/20"
+                className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all border border-gray-200 hover:border-black"
                 initial={{ y: 30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
@@ -613,10 +626,12 @@ export const HomePage: React.FC = () => {
                 <div className="text-5xl font-light text-silver mb-4">
                   0{idx + 1}
                 </div>
-                <h3 className="text-xl font-light text-black mb-4 tracking-wide">
+                <h3 className="text-xl font-light text-gray-900 mb-4 tracking-wide">
                   {item.title}
                 </h3>
-                <p className="text-grey text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -633,14 +648,14 @@ export const HomePage: React.FC = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-grey text-sm tracking-widest">/</div>
-              <div className="text-grey text-sm tracking-widest">
+              <div className="text-gray-400 text-sm tracking-widest">/</div>
+              <div className="text-gray-400 text-sm tracking-widest">
                 TESTIMONIALS
               </div>
-              <div className="text-grey text-sm tracking-widest">(05)</div>
+              <div className="text-gray-400 text-sm tracking-widest">(05)</div>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-light text-black">
+            <h2 className="text-4xl md:text-5xl font-light text-gray-900">
               What Our Customers Say
             </h2>
           </motion.div>
@@ -662,7 +677,7 @@ export const HomePage: React.FC = () => {
             ].map((testimonial, idx) => (
               <motion.div
                 key={idx}
-                className="bg-white border border-silver/20 p-10 shadow-md hover:shadow-lg transition-shadow rounded-lg"
+                className="bg-white border border-gray-200 p-10 shadow-md hover:shadow-lg hover:border-black transition-all rounded-lg"
                 initial={{ y: 30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
@@ -671,14 +686,14 @@ export const HomePage: React.FC = () => {
                 <div className="text-black text-sm font-medium mb-4">
                   ★★★★★ {testimonial.rating}
                 </div>
-                <p className="text-grey text-lg leading-relaxed mb-8 italic">
+                <p className="text-gray-500 text-lg leading-relaxed mb-8 italic">
                   "{testimonial.text}"
                 </p>
-                <div className="border-t border-silver/20 pt-6">
-                  <div className="text-black font-light">
+                <div className="border-t border-gray-200 pt-6">
+                  <div className="text-gray-900 font-light">
                     {testimonial.author}
                   </div>
-                  <div className="text-grey text-sm mt-1">
+                  <div className="text-gray-500 text-sm mt-1">
                     {testimonial.role}
                   </div>
                 </div>
@@ -697,10 +712,10 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Newsletter */}
-      <section className="py-24 px-6 bg-gradient-to-r from-gray-100 via-white to-gray-100 border-t border-silver/20">
+      <section className="py-24 px-6 bg-gradient-to-r from-gray-100 via-white to-gray-100 border-t border-gray-200">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
-            className="text-4xl md:text-5xl font-light text-black mb-6"
+            className="text-4xl md:text-5xl font-light text-gray-900 mb-6"
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -709,7 +724,7 @@ export const HomePage: React.FC = () => {
           </motion.h2>
 
           <motion.p
-            className="text-grey text-lg mb-12 leading-relaxed"
+            className="text-gray-500 text-lg mb-12 leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -728,9 +743,9 @@ export const HomePage: React.FC = () => {
             <input
               type="email"
               placeholder="Enter your email address"
-              className="flex-1 px-6 py-4 bg-white border border-silver/50 text-black placeholder-grey focus:outline-none focus:border-black transition-colors shadow-sm focus:shadow-md rounded"
+              className="flex-1 px-6 py-4 bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-black transition-colors shadow-sm focus:shadow-md rounded"
             />
-            <button className="px-10 py-4 bg-black text-white font-medium tracking-wide hover:bg-grey transition-colors shadow-md hover:shadow-lg rounded">
+            <button className="px-10 py-4 bg-black text-white font-medium tracking-wide hover:bg-gray-800 transition-colors shadow-md hover:shadow-lg rounded">
               Subscribe
             </button>
           </motion.div>

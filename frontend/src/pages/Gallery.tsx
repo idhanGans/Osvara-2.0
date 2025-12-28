@@ -118,7 +118,7 @@ export const GalleryPage: React.FC = () => {
   return (
     <div className="pt-20 pb-20">
       <motion.div
-        className="bg-gradient-to-r from-black via-gray-800 to-black py-16 px-4"
+        className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-16 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
@@ -144,7 +144,7 @@ export const GalleryPage: React.FC = () => {
               className={`px-6 py-2 rounded-full transition-colors ${
                 selectedCategory === cat
                   ? "bg-black text-white"
-                  : "bg-gray-50 text-grey hover:text-black"
+                  : "bg-gray-50 text-gray-500 hover:text-black"
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -201,7 +201,7 @@ export const GalleryPage: React.FC = () => {
           <h2 className="text-3xl font-light text-black mb-4">
             Follow Us on Instagram
           </h2>
-          <p className="text-grey mb-8 max-w-xl mx-auto">
+          <p className="text-gray-500 mb-8 max-w-xl mx-auto">
             Get daily style inspirations and be the first to see our new
             collections. Tag us with #OsvaraStyle to be featured!
           </p>
@@ -244,7 +244,7 @@ export const GalleryPage: React.FC = () => {
               />
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 text-white text-3xl hover:text-grey transition-colors"
+                className="absolute top-4 right-4 text-white text-3xl hover:text-gray-500 transition-colors"
               >
                 ✕
               </button>

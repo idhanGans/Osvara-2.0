@@ -16,8 +16,8 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(180deg, #ffffff 0%, #fafafa 50%, #f5f5f5 100%);
-  color: #111111;
+  background: #ffffff;
+  color: #0a0a0a;
 }
 
 /* Custom Scrollbar */
@@ -31,12 +31,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c0c0c0;
+  background: #a0a0a0;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #808080;
+  background: #737373;
 }
 
 /* Smooth transitions */
@@ -50,7 +50,7 @@ input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: #000000 !important;
+  border-color: #171717 !important;
 }
 
 /* Range input styling */
@@ -60,8 +60,8 @@ input[type="range"] {
   border-radius: 3px;
   background: linear-gradient(
     to right,
-    #000000 0%,
-    #000000 50%,
+    #171717 0%,
+    #171717 50%,
     #e5e5e5 50%,
     #e5e5e5 100%
   );
@@ -75,7 +75,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #000000;
+  background: #171717;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -84,7 +84,7 @@ input[type="range"]::-moz-range-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #000000;
+  background: #171717;
   cursor: pointer;
   border: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);

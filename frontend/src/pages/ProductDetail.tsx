@@ -23,7 +23,7 @@ export const ProductDetailPage: React.FC = () => {
           <h1 className="text-4xl font-light text-black mb-4">
             Product Not Found
           </h1>
-          <p className="text-grey mb-8">
+          <p className="text-gray-500 mb-8">
             The product you're looking for doesn't exist.
           </p>
           <Link
@@ -63,7 +63,7 @@ export const ProductDetailPage: React.FC = () => {
       {/* Breadcrumb */}
       <div className="bg-gray-50 py-4 px-6">
         <div className="max-w-7xl mx-auto">
-          <nav className="text-sm text-grey">
+          <nav className="text-sm text-gray-500">
             <Link to="/" className="hover:text-black">
               Home
             </Link>
@@ -132,7 +132,7 @@ export const ProductDetailPage: React.FC = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            <div className="text-sm text-grey tracking-wide mb-2">
+            <div className="text-sm text-gray-500 tracking-wide mb-2">
               {product.category}
             </div>
             <h1 className="text-3xl font-light text-black mb-4">
@@ -148,14 +148,14 @@ export const ProductDetailPage: React.FC = () => {
                     className={
                       i < Math.floor(product.rating)
                         ? "text-black"
-                        : "text-grey/30"
+                        : "text-gray-500/30"
                     }
                   >
                     ★
                   </span>
                 ))}
               </div>
-              <span className="text-grey text-sm">
+              <span className="text-gray-500 text-sm">
                 {product.rating} ({product.reviewCount || 0} reviews)
               </span>
             </div>
@@ -166,14 +166,14 @@ export const ProductDetailPage: React.FC = () => {
                 Rp {product.price.toLocaleString("id-ID")}
               </span>
               {product.originalPrice && (
-                <span className="text-xl text-grey line-through">
+                <span className="text-xl text-gray-500 line-through">
                   Rp {product.originalPrice.toLocaleString("id-ID")}
                 </span>
               )}
             </div>
 
             {/* Description */}
-            <p className="text-grey leading-relaxed mb-8">
+            <p className="text-gray-500 leading-relaxed mb-8">
               {product.description}
             </p>
 
@@ -191,7 +191,7 @@ export const ProductDetailPage: React.FC = () => {
                       className={`px-4 py-2 border transition-colors ${
                         selectedSize === size
                           ? "bg-black text-white border-primary"
-                          : "border-silver/30 text-black hover:border-primary"
+                          : "border-gray-300/30 text-black hover:border-primary"
                       }`}
                     >
                       {size}
@@ -215,7 +215,7 @@ export const ProductDetailPage: React.FC = () => {
                       className={`px-4 py-2 border transition-colors ${
                         selectedColor === color
                           ? "bg-black text-white border-primary"
-                          : "border-silver/30 text-black hover:border-primary"
+                          : "border-gray-300/30 text-black hover:border-primary"
                       }`}
                     >
                       {color}
@@ -233,7 +233,7 @@ export const ProductDetailPage: React.FC = () => {
               <div className="flex items-center gap-4">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="w-10 h-10 border border-silver/30 text-black hover:border-primary transition-colors"
+                  className="w-10 h-10 border border-gray-300/30 text-black hover:border-primary transition-colors"
                 >
                   -
                 </button>
@@ -242,7 +242,7 @@ export const ProductDetailPage: React.FC = () => {
                 </span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="w-10 h-10 border border-silver/30 text-black hover:border-primary transition-colors"
+                  className="w-10 h-10 border border-gray-300/30 text-black hover:border-primary transition-colors"
                 >
                   +
                 </button>
@@ -284,18 +284,18 @@ export const ProductDetailPage: React.FC = () => {
             )}
 
             {/* Product Features */}
-            <div className="mt-8 pt-8 border-t border-silver/20">
+            <div className="mt-8 pt-8 border-t border-gray-300/20">
               <div className="grid grid-cols-2 gap-4 text-sm">
-                <div className="flex items-center gap-2 text-grey">
+                <div className="flex items-center gap-2 text-gray-500">
                   <span>🚚</span> Free shipping over Rp 500,000
                 </div>
-                <div className="flex items-center gap-2 text-grey">
+                <div className="flex items-center gap-2 text-gray-500">
                   <span>↩️</span> 30-day easy returns
                 </div>
-                <div className="flex items-center gap-2 text-grey">
+                <div className="flex items-center gap-2 text-gray-500">
                   <span>✨</span> Premium quality materials
                 </div>
-                <div className="flex items-center gap-2 text-grey">
+                <div className="flex items-center gap-2 text-gray-500">
                   <span>💳</span> Secure payment
                 </div>
               </div>

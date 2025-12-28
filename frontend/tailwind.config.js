@@ -4,10 +4,27 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Primary colors - Black & White dominant
+        dark: "#0a0a0a",
         black: "#000000",
         white: "#FFFFFF",
-        grey: "#808080",
+        // Silver accent
         silver: "#C0C0C0",
+        "silver-light": "#D8D8D8",
+        "silver-dark": "#A0A0A0",
+        // Grays - Dominant palette
+        gray: {
+          50: "#fafafa",
+          100: "#f5f5f5",
+          200: "#e5e5e5",
+          300: "#d4d4d4",
+          400: "#a3a3a3",
+          500: "#737373",
+          600: "#525252",
+          700: "#404040",
+          800: "#262626",
+          900: "#171717",
+        },
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-in",

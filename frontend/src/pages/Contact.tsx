@@ -103,7 +103,7 @@ export const ContactPage: React.FC = () => {
     <div className="pt-20 pb-20">
       {/* Hero Section */}
       <motion.div
-        className="bg-gradient-to-r from-black via-gray-800 to-black py-20 px-4"
+        className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-20 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
@@ -140,7 +140,7 @@ export const ContactPage: React.FC = () => {
                   ? "noopener noreferrer"
                   : undefined
               }
-              className="bg-white border border-silver/20 rounded-lg p-8 text-center shadow-lg hover:shadow-xl transition-all hover:border-primary group"
+              className="bg-white border border-gray-300/20 rounded-lg p-8 text-center shadow-lg hover:shadow-xl transition-all hover:border-primary group"
               whileHover={{ y: -5 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -151,7 +151,7 @@ export const ContactPage: React.FC = () => {
                 {contact.title}
               </h3>
               <p className="text-black text-lg mb-2">{contact.content}</p>
-              <p className="text-grey text-sm">{contact.desc}</p>
+              <p className="text-gray-500 text-sm">{contact.desc}</p>
             </motion.a>
           ))}
         </div>
@@ -164,8 +164,8 @@ export const ContactPage: React.FC = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="text-grey text-sm tracking-widest">/</div>
-              <div className="text-grey text-sm tracking-widest">
+              <div className="text-gray-500 text-sm tracking-widest">/</div>
+              <div className="text-gray-500 text-sm tracking-widest">
                 GET IN TOUCH
               </div>
             </div>
@@ -185,7 +185,7 @@ export const ContactPage: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white border border-silver/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-gray-300/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
                     placeholder="Your name"
                   />
                 </div>
@@ -199,7 +199,7 @@ export const ContactPage: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white border border-silver/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-gray-300/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
                     placeholder="Your email"
                   />
                 </div>
@@ -215,7 +215,7 @@ export const ContactPage: React.FC = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-silver/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-gray-300/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
                     placeholder="Your phone number"
                   />
                 </div>
@@ -228,7 +228,7 @@ export const ContactPage: React.FC = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white border border-silver/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
+                    className="w-full px-4 py-3 bg-white border border-gray-300/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors"
                   >
                     <option value="">Select a subject</option>
                     <option value="product-inquiry">Product Inquiry</option>
@@ -251,7 +251,7 @@ export const ContactPage: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-white border border-silver/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-white border border-gray-300/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors resize-none"
                   placeholder="How can we help you?"
                 />
               </div>
@@ -290,7 +290,7 @@ export const ContactPage: React.FC = () => {
               <h3 className="text-black text-2xl font-light mb-6 flex items-center gap-3">
                 <FaMapMarkerAlt className="text-black" /> Visit Our Boutique
               </h3>
-              <p className="text-grey mb-4">
+              <p className="text-gray-500 mb-4">
                 <strong className="text-black">Osvara Boutique</strong>
                 <br />
                 Jl. Kemang Raya No. 123
@@ -299,9 +299,9 @@ export const ContactPage: React.FC = () => {
                 <br />
                 Indonesia
               </p>
-              <div className="border-t border-silver/20 pt-4 mt-4">
+              <div className="border-t border-gray-300/20 pt-4 mt-4">
                 <h4 className="text-black font-medium mb-3">Store Hours</h4>
-                <div className="text-grey space-y-1 text-sm">
+                <div className="text-gray-500 space-y-1 text-sm">
                   <p>Monday - Friday: 10:00 AM - 7:00 PM</p>
                   <p>Saturday: 10:00 AM - 8:00 PM</p>
                   <p>Sunday: 12:00 PM - 6:00 PM</p>
@@ -310,7 +310,7 @@ export const ContactPage: React.FC = () => {
             </div>
 
             {/* Quick Contact */}
-            <div className="bg-white border border-silver/20 rounded-lg p-8 shadow-lg">
+            <div className="bg-white border border-gray-300/20 rounded-lg p-8 shadow-lg">
               <h3 className="text-black text-2xl font-light mb-6">
                 Quick Contact
               </h3>
@@ -319,7 +319,7 @@ export const ContactPage: React.FC = () => {
                   href="https://wa.me/6281234567890?text=Hi%20Osvara,%20I%20would%20like%20to%20inquire%20about..."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-silver/10 transition-colors"
+                  className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-300/10 transition-colors"
                   whileHover={{ x: 5 }}
                 >
                   <FaWhatsapp className="text-green-600 text-2xl" />
@@ -327,7 +327,7 @@ export const ContactPage: React.FC = () => {
                 </motion.a>
                 <motion.a
                   href="tel:+6281234567890"
-                  className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-silver/10 transition-colors"
+                  className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-300/10 transition-colors"
                   whileHover={{ x: 5 }}
                 >
                   <FaPhone className="text-black text-2xl" />
@@ -335,7 +335,7 @@ export const ContactPage: React.FC = () => {
                 </motion.a>
                 <motion.a
                   href="mailto:hello@osvara.com"
-                  className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-silver/10 transition-colors"
+                  className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-300/10 transition-colors"
                   whileHover={{ x: 5 }}
                 >
                   <FaEnvelope className="text-black text-2xl" />
@@ -345,7 +345,7 @@ export const ContactPage: React.FC = () => {
             </div>
 
             {/* Social Media */}
-            <div className="bg-white border border-silver/20 rounded-lg p-8 shadow-lg">
+            <div className="bg-white border border-gray-300/20 rounded-lg p-8 shadow-lg">
               <h3 className="text-black text-2xl font-light mb-6">
                 Follow Us
               </h3>
@@ -409,8 +409,8 @@ export const ContactPage: React.FC = () => {
         >
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="text-grey text-sm tracking-widest">/</div>
-              <div className="text-grey text-sm tracking-widest">FAQ</div>
+              <div className="text-gray-500 text-sm tracking-widest">/</div>
+              <div className="text-gray-500 text-sm tracking-widest">FAQ</div>
             </div>
             <h2 className="text-3xl font-light text-black">
               Frequently Asked{" "}
@@ -431,7 +431,7 @@ export const ContactPage: React.FC = () => {
                 <h3 className="text-black font-medium text-lg mb-3">
                   {faq.question}
                 </h3>
-                <p className="text-grey leading-relaxed">{faq.answer}</p>
+                <p className="text-gray-500 leading-relaxed">{faq.answer}</p>
               </motion.div>
             ))}
           </div>

@@ -47,7 +47,7 @@ export const Checkout: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
           >
             <h1 className="text-4xl font-light text-black mb-6">Checkout</h1>
-            <p className="text-grey mb-8">
+            <p className="text-gray-500 mb-8">
               Your cart is empty. Add some items before checking out.
             </p>
             <Link
@@ -74,7 +74,7 @@ export const Checkout: React.FC = () => {
         >
           <Link
             to="/cart"
-            className="inline-flex items-center gap-2 text-grey hover:text-black transition-colors mb-6"
+            className="inline-flex items-center gap-2 text-gray-500 hover:text-black transition-colors mb-6"
           >
             <FaArrowLeft size={14} />
             Back to Cart
@@ -98,7 +98,7 @@ export const Checkout: React.FC = () => {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm text-grey mb-2">
+                    <label className="block text-sm text-gray-500 mb-2">
                       First Name *
                     </label>
                     <input
@@ -107,11 +107,11 @@ export const Checkout: React.FC = () => {
                       value={formData.firstName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-300/30 rounded focus:outline-none focus:border-primary transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-grey mb-2">
+                    <label className="block text-sm text-gray-500 mb-2">
                       Last Name *
                     </label>
                     <input
@@ -120,11 +120,11 @@ export const Checkout: React.FC = () => {
                       value={formData.lastName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-300/30 rounded focus:outline-none focus:border-primary transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-grey mb-2">
+                    <label className="block text-sm text-gray-500 mb-2">
                       Email *
                     </label>
                     <input
@@ -133,11 +133,11 @@ export const Checkout: React.FC = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-300/30 rounded focus:outline-none focus:border-primary transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-grey mb-2">
+                    <label className="block text-sm text-gray-500 mb-2">
                       Phone *
                     </label>
                     <input
@@ -146,7 +146,7 @@ export const Checkout: React.FC = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-300/30 rounded focus:outline-none focus:border-primary transition-colors"
                     />
                   </div>
                 </div>
@@ -164,7 +164,7 @@ export const Checkout: React.FC = () => {
                 </h2>
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-sm text-grey mb-2">
+                    <label className="block text-sm text-gray-500 mb-2">
                       Address *
                     </label>
                     <input
@@ -174,12 +174,12 @@ export const Checkout: React.FC = () => {
                       onChange={handleInputChange}
                       required
                       placeholder="Street address, building, etc."
-                      className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-300/30 rounded focus:outline-none focus:border-primary transition-colors"
                     />
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                      <label className="block text-sm text-grey mb-2">
+                      <label className="block text-sm text-gray-500 mb-2">
                         City *
                       </label>
                       <input
@@ -188,11 +188,11 @@ export const Checkout: React.FC = () => {
                         value={formData.city}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-300/30 rounded focus:outline-none focus:border-primary transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-grey mb-2">
+                      <label className="block text-sm text-gray-500 mb-2">
                         Province *
                       </label>
                       <select
@@ -200,7 +200,7 @@ export const Checkout: React.FC = () => {
                         value={formData.province}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-300/30 rounded focus:outline-none focus:border-primary transition-colors"
                       >
                         <option value="">Select</option>
                         <option value="DKI Jakarta">DKI Jakarta</option>
@@ -212,7 +212,7 @@ export const Checkout: React.FC = () => {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm text-grey mb-2">
+                      <label className="block text-sm text-gray-500 mb-2">
                         Postal Code *
                       </label>
                       <input
@@ -221,12 +221,12 @@ export const Checkout: React.FC = () => {
                         value={formData.postalCode}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-300/30 rounded focus:outline-none focus:border-primary transition-colors"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm text-grey mb-2">
+                    <label className="block text-sm text-gray-500 mb-2">
                       Order Notes (Optional)
                     </label>
                     <textarea
@@ -235,7 +235,7 @@ export const Checkout: React.FC = () => {
                       onChange={handleInputChange}
                       rows={3}
                       placeholder="Any special instructions..."
-                      className="w-full px-4 py-3 bg-gray-50 border border-silver/30 rounded focus:outline-none focus:border-primary transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-300/30 rounded focus:outline-none focus:border-primary transition-colors resize-none"
                     />
                   </div>
                 </div>
@@ -256,7 +256,7 @@ export const Checkout: React.FC = () => {
                     className={`flex items-center gap-4 p-4 border rounded cursor-pointer transition-all ${
                       paymentMethod === "transfer"
                         ? "border-primary bg-gray-50"
-                        : "border-silver/30 hover:border-silver"
+                        : "border-gray-300/30 hover:border-gray-300"
                     }`}
                   >
                     <input
@@ -272,7 +272,7 @@ export const Checkout: React.FC = () => {
                       <div className="font-medium text-black">
                         Bank Transfer
                       </div>
-                      <div className="text-sm text-grey">
+                      <div className="text-sm text-gray-500">
                         Transfer to BCA, Mandiri, or BNI
                       </div>
                     </div>
@@ -282,7 +282,7 @@ export const Checkout: React.FC = () => {
                     className={`flex items-center gap-4 p-4 border rounded cursor-pointer transition-all ${
                       paymentMethod === "card"
                         ? "border-primary bg-gray-50"
-                        : "border-silver/30 hover:border-silver"
+                        : "border-gray-300/30 hover:border-gray-300"
                     }`}
                   >
                     <input
@@ -298,7 +298,7 @@ export const Checkout: React.FC = () => {
                       <div className="font-medium text-black">
                         Credit / Debit Card
                       </div>
-                      <div className="text-sm text-grey">
+                      <div className="text-sm text-gray-500">
                         Coming soon - Visa, Mastercard
                       </div>
                     </div>
@@ -335,7 +335,7 @@ export const Checkout: React.FC = () => {
                         <h4 className="text-sm font-medium text-black truncate">
                           {item.name}
                         </h4>
-                        <p className="text-xs text-grey">
+                        <p className="text-xs text-gray-500">
                           {item.size} / {item.color} × {item.quantity}
                         </p>
                         <p className="text-sm text-black">
@@ -348,12 +348,12 @@ export const Checkout: React.FC = () => {
                 </div>
 
                 {/* Totals */}
-                <div className="space-y-3 border-t border-silver/20 pt-6">
-                  <div className="flex justify-between text-grey">
+                <div className="space-y-3 border-t border-gray-300/20 pt-6">
+                  <div className="flex justify-between text-gray-500">
                     <span>Subtotal</span>
                     <span>Rp {subtotal.toLocaleString("id-ID")}</span>
                   </div>
-                  <div className="flex justify-between text-grey">
+                  <div className="flex justify-between text-gray-500">
                     <span>Shipping</span>
                     <span>
                       {shipping === 0 ? (
@@ -363,7 +363,7 @@ export const Checkout: React.FC = () => {
                       )}
                     </span>
                   </div>
-                  <div className="flex justify-between text-xl font-light text-black border-t border-silver/20 pt-4">
+                  <div className="flex justify-between text-xl font-light text-black border-t border-gray-300/20 pt-4">
                     <span>Total</span>
                     <span>Rp {total.toLocaleString("id-ID")}</span>
                   </div>
@@ -380,7 +380,7 @@ export const Checkout: React.FC = () => {
                   Place Order
                 </motion.button>
 
-                <p className="text-xs text-grey text-center mt-4">
+                <p className="text-xs text-gray-500 text-center mt-4">
                   Your payment is secure and encrypted
                 </p>
               </motion.div>
