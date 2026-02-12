@@ -1,0 +1,39 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/server.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "DATABASE_URL": {
+      "description": "PostgreSQL database connection URL from Supabase",
+      "default": "postgresql://postgres:PASSWORD@HOST:5432/postgres"
+    },
+    "STRIPE_SECRET_KEY": {
+      "description": "Stripe secret API key (live for production)",
+      "default": "sk_live_"
+    },
+    "STRIPE_WEBHOOK_SECRET": {
+      "description": "Stripe webhook signing secret",
+      "default": "whsec_"
+    },
+    "FRONTEND_URL": {
+      "description": "Frontend deployment URL",
+      "default": "https://osvara.vercel.app"
+    },
+    "PORT": {
+      "description": "Server port",
+      "default": "3001"
+    }
+  },
+  "functions": {
+    "src/server.ts": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  }
+}
