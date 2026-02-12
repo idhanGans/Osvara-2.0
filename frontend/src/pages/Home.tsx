@@ -3,13 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ProductCard } from "../components/ProductCard";
 import { GoogleReviews } from "../components/GoogleReviews";
-import {
-  getFeaturedProducts,
-  categories as productCategories,
-} from "../data/products";
+import { getProducts, type Product } from "../api/productApi";
 
 export const HomePage: React.FC = () => {
   const navigate = useNavigate();
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loadingProducts, setLoadingProducts] = useState(true);
+  const [productError, setProductError] = useState<string | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
 
@@ -89,7 +89,18 @@ export const HomePage: React.FC = () => {
     return () => clearInterval(heroTimer);
   }, [heroSlides.length]);
 
-  const featuredProducts = getFeaturedProducts();
+  useEffect(() => {
+    getProducts()
+      .then((data) => {
+        setProducts(data);
+      })
+      .catch(() => {
+        setProductError("Failed to load products");
+      })
+      .finally(() => setLoadingProducts(false));
+  }, []);
+
+  const featuredProducts = products.slice(0, 4);
 
   const stats = [
     { number: "5+", label: "Years of Experience" },
@@ -98,7 +109,27 @@ export const HomePage: React.FC = () => {
     { number: "4.9", label: "Customer Rating" },
   ];
 
-  const categories = productCategories;
+  const categories = React.useMemo(() => {
+    const map = new Map<
+      string,
+      { name: string; description: string; image: string; count: number }
+    >();
+    for (const p of products) {
+      const existing = map.get(p.category);
+      if (existing) {
+        existing.count += 1;
+      } else {
+        // fallback image/description – customize as needed
+        map.set(p.category, {
+          name: p.category,
+          description: `Explore our ${p.category} collection`,
+          image: p.imageUrl || "https://images.unsplash.com/photo-1590736969955-71cc94801759?w=600&h=400&fit=crop",
+          count: 1,
+        });
+      }
+    }
+    return Array.from(map.values());
+  }, [products]);
 
   return (
     <div className="pt-16">
@@ -577,19 +608,36 @@ export const HomePage: React.FC = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {featuredProducts.map((product, idx) => (
-              <motion.div
-                key={product.id}
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
-                <ProductCard {...product} />
-              </motion.div>
-            ))}
-          </div>
+          {loadingProducts && (
+            <div className="py-8 text-center text-gray-500">
+              Loading products...
+            </div>
+          )}
+          {productError && !loadingProducts && (
+            <div className="py-8 text-center text-red-500">{productError}</div>
+          )}
+          {!loadingProducts && !productError && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {featuredProducts.map((product, idx) => (
+                <motion.div
+                  key={product.id}
+                  initial={{ y: 30, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                >
+                  <ProductCard
+                    id={product.id}
+                    name={product.name}
+                    price={product.price}
+                    image={product.imageUrl ?? ""}
+                    category={product.category}
+                    rating={4.8}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

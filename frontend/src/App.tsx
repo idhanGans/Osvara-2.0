@@ -10,6 +10,7 @@ import { AboutPage } from "./pages/About";
 import { ContactPage } from "./pages/Contact";
 import { CartPage } from "./pages/Cart";
 import { Checkout } from "./pages/Checkout";
+import { SuccessPage } from "./pages/Success";
 import { CartProvider } from "./context/CartContext";
 import "./index.css";
 
@@ -29,6 +30,7 @@ function App() {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/cart" element={<CartPage />} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/success" element={<SuccessPage />} />
             </Routes>
           </main>
           <Footer />

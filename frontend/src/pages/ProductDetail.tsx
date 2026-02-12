@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { getProductById, products } from "../data/products";
+import { getProductById, getProducts, type Product } from "../api/productApi";
 import { useCart } from "../context/CartContext";
 import { ProductCard } from "../components/ProductCard";
 
@@ -9,14 +9,42 @@ export const ProductDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { addItem } = useCart();
-  const product = getProductById(id || "");
+  const [product, setProduct] = useState<Product | null>(null);
+  const [related, setRelated] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const [selectedSize, setSelectedSize] = useState<string>("");
   const [selectedColor, setSelectedColor] = useState<string>("");
   const [quantity, setQuantity] = useState(1);
   const [showAddedNotification, setShowAddedNotification] = useState(false);
 
-  if (!product) {
+  useEffect(() => {
+    if (!id) return;
+    setLoading(true);
+    Promise.all([getProductById(id), getProducts()])
+      .then(([p, all]) => {
+        setProduct(p);
+        setRelated(
+          all
+            .filter((ap) => ap.category === p.category && ap.id !== p.id)
+            .slice(0, 4)
+        );
+        setError(null);
+      })
+      .catch(() => setError("Failed to load product"))
+      .finally(() => setLoading(false));
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="pt-20 pb-20 min-h-screen flex items-center justify-center">
+        <div className="text-center text-gray-500">Loading product...</div>
+      </div>
+    );
+  }
+
+  if (error || !product) {
     return (
       <div className="pt-20 pb-20 min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -24,7 +52,7 @@ export const ProductDetailPage: React.FC = () => {
             Product Not Found
           </h1>
           <p className="text-gray-500 mb-8">
-            The product you're looking for doesn't exist.
+            {error ?? "The product you're looking for doesn't exist."}
           </p>
           <Link
             to="/products"
@@ -43,7 +71,7 @@ export const ProductDetailPage: React.FC = () => {
         id: product.id,
         name: product.name,
         price: product.price,
-        image: product.image,
+        image: product.imageUrl ?? "",
         category: product.category,
         size: selectedSize,
         color: selectedColor,
@@ -94,7 +122,7 @@ export const ProductDetailPage: React.FC = () => {
           >
             <div className="relative overflow-hidden rounded-lg bg-gray-50 mb-4">
               <img
-                src={product.image}
+                src={product.imageUrl ?? ""}
                 alt={product.name}
                 className="w-full h-[500px] object-cover"
               />
@@ -109,22 +137,7 @@ export const ProductDetailPage: React.FC = () => {
                 </span>
               )}
             </div>
-            {product.images && product.images.length > 1 && (
-              <div className="grid grid-cols-4 gap-4">
-                {product.images.map((img, idx) => (
-                  <div
-                    key={idx}
-                    className="overflow-hidden rounded-lg bg-gray-50 cursor-pointer hover:opacity-80 transition-opacity"
-                  >
-                    <img
-                      src={img}
-                      alt={`${product.name} ${idx + 1}`}
-                      className="w-full h-24 object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
+            {/* additional images could be rendered here when schema supports them */}
           </motion.div>
 
           {/* Product Info */}
@@ -165,11 +178,6 @@ export const ProductDetailPage: React.FC = () => {
               <span className="text-3xl font-light text-black">
                 Rp {product.price.toLocaleString("id-ID")}
               </span>
-              {product.originalPrice && (
-                <span className="text-xl text-gray-500 line-through">
-                  Rp {product.originalPrice.toLocaleString("id-ID")}
-                </span>
-              )}
             </div>
 
             {/* Description */}
@@ -178,13 +186,14 @@ export const ProductDetailPage: React.FC = () => {
             </p>
 
             {/* Size Selection */}
-            {product.sizes && product.sizes.length > 0 && (
+            {/* Size / color options could be backed by API later; keep UI for now */}
+            {product && Array.isArray((product as any).sizes) && (product as any).sizes.length > 0 && (
               <div className="mb-6">
                 <label className="block text-black font-medium mb-3">
                   Size
                 </label>
                 <div className="flex flex-wrap gap-3">
-                  {product.sizes.map((size) => (
+                  {(product as any).sizes.map((size: string) => (
                     <button
                       key={size}
                       onClick={() => setSelectedSize(size)}
@@ -202,13 +211,13 @@ export const ProductDetailPage: React.FC = () => {
             )}
 
             {/* Color Selection */}
-            {product.colors && product.colors.length > 0 && (
+            {product && Array.isArray((product as any).colors) && (product as any).colors.length > 0 && (
               <div className="mb-6">
                 <label className="block text-black font-medium mb-3">
                   Color
                 </label>
                 <div className="flex flex-wrap gap-3">
-                  {product.colors.map((color) => (
+                  {(product as any).colors.map((color: string) => (
                     <button
                       key={color}
                       onClick={() => setSelectedColor(color)}
@@ -304,14 +313,22 @@ export const ProductDetailPage: React.FC = () => {
         </div>
 
         {/* Related Products */}
-        {relatedProducts.length > 0 && (
+        {related.length > 0 && (
           <div className="mt-20">
             <h2 className="text-3xl font-light text-black mb-8">
               Related Products
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {relatedProducts.map((product) => (
-                <ProductCard key={product.id} {...product} />
+              {related.map((rp) => (
+                <ProductCard
+                  key={rp.id}
+                  id={rp.id}
+                  name={rp.name}
+                  price={rp.price}
+                  image={rp.imageUrl ?? ""}
+                  category={rp.category}
+                  rating={4.8}
+                />
               ))}
             </div>
           </div>

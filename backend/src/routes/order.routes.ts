@@ -1,0 +1,9 @@
+import { Router } from "express";
+import * as orderController from "../controllers/order.controller.js";
+
+const router = Router();
+
+router.post("/", orderController.createOrder);
+
+export default router;
+

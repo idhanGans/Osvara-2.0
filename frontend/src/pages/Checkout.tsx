@@ -1,11 +1,82 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useCart } from "../context/CartContext";
 import { FaLock, FaArrowLeft, FaCreditCard, FaWallet } from "react-icons/fa";
+import { createOrder } from "../api/orderApi";
+import { createPaymentIntent } from "../api/paymentApi";
+import { loadStripe } from "@stripe/stripe-js";
+import {
+  Elements,
+  PaymentElement,
+  useStripe,
+  useElements,
+} from "@stripe/react-stripe-js";
+
+const stripePromise = loadStripe(
+  import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY as string
+);
+
+const CheckoutPaymentForm: React.FC<{ orderId: string }> = ({ orderId }) => {
+  const stripe = useStripe();
+  const elements = useElements();
+  const navigate = useNavigate();
+  const { clearCart } = useCart();
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!stripe || !elements) return;
+
+    setSubmitting(true);
+    setError(null);
+
+    const { error: stripeError, paymentIntent } = await stripe.confirmPayment({
+      elements,
+      confirmParams: {
+        return_url: window.location.origin + "/success?orderId=" + orderId,
+      },
+      redirect: "if_required",
+    });
+
+    if (stripeError) {
+      setError(stripeError.message || "Payment failed");
+      setSubmitting(false);
+      return;
+    }
+
+    if (paymentIntent && paymentIntent.status === "succeeded") {
+      clearCart();
+      localStorage.setItem("osvara_last_order_id", orderId);
+      navigate("/success?orderId=" + orderId);
+    } else {
+      setError("Payment not completed");
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <PaymentElement />
+      {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+      <button
+        type="submit"
+        disabled={!stripe || submitting}
+        className="w-full mt-4 py-4 bg-black text-white rounded font-medium tracking-wide hover:bg-grey transition-colors disabled:opacity-60"
+      >
+        {submitting ? "Processing..." : "Pay Now"}
+      </button>
+      <p className="text-xs text-gray-500 text-center mt-2">
+        Your payment is secure and encrypted
+      </p>
+    </form>
+  );
+};
 
 export const Checkout: React.FC = () => {
-  const { items, getTotal, clearCart } = useCart();
+  const { items, getTotal } = useCart();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -17,7 +88,12 @@ export const Checkout: React.FC = () => {
     province: "",
     notes: "",
   });
-  const [paymentMethod, setPaymentMethod] = useState<string>("transfer");
+  const [paymentMethod, setPaymentMethod] = useState<string>("card");
+  const [step, setStep] = useState<"details" | "payment">("details");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [clientSecret, setClientSecret] = useState<string | null>(null);
+  const [orderId, setOrderId] = useState<string | null>(null);
 
   const subtotal = getTotal();
   const shipping = subtotal >= 500000 ? 0 : 25000;
@@ -31,11 +107,39 @@ export const Checkout: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmitDetails = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder for payment integration
-    alert("Payment integration coming soon! Your order has been recorded.");
-    clearCart();
+    if (items.length === 0) return;
+    if (!formData.email) return;
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const fullName = `${formData.firstName} ${formData.lastName}`.trim();
+      const shippingAddress = `${formData.address}, ${formData.city}, ${formData.province}, ${formData.postalCode}`;
+
+      const order = await createOrder({
+        email: formData.email,
+        fullName,
+        shippingAddress,
+        items: items.map((item) => ({
+          productId: item.id,
+          quantity: item.quantity,
+        })),
+      });
+
+      const secret = await createPaymentIntent(order.id);
+
+      setOrderId(order.id);
+      setClientSecret(secret);
+      setStep("payment");
+    } catch (err) {
+      console.error(err);
+      setError("Failed to start checkout. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (items.length === 0) {
@@ -65,7 +169,7 @@ export const Checkout: React.FC = () => {
 
   return (
     <div className="pt-32 pb-20 min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
           className="mb-12"
@@ -82,7 +186,7 @@ export const Checkout: React.FC = () => {
           <h1 className="text-4xl font-light text-black">Checkout</h1>
         </motion.div>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmitDetails}>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Left - Form */}
             <div className="lg:col-span-2 space-y-8">
@@ -273,7 +377,7 @@ export const Checkout: React.FC = () => {
                         Bank Transfer
                       </div>
                       <div className="text-sm text-gray-500">
-                        Transfer to BCA, Mandiri, or BNI
+                        Transfer to BCA, Mandiri, or BNI (manual)
                       </div>
                     </div>
                   </label>
@@ -299,7 +403,7 @@ export const Checkout: React.FC = () => {
                         Credit / Debit Card
                       </div>
                       <div className="text-sm text-gray-500">
-                        Coming soon - Visa, Mastercard
+                        Pay securely with your card via Stripe
                       </div>
                     </div>
                   </label>
@@ -323,7 +427,7 @@ export const Checkout: React.FC = () => {
                 <div className="space-y-4 mb-6 max-h-64 overflow-y-auto">
                   {items.map((item) => (
                     <div
-                      key={`${item.id}-${item.size}-${item.color}`}
+                        key={`${item.id}-${item.size}-${item.color}`}
                       className="flex gap-4"
                     >
                       <img
@@ -369,20 +473,42 @@ export const Checkout: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Submit Button */}
-                <motion.button
-                  type="submit"
-                  className="w-full mt-8 py-4 bg-black text-white rounded font-medium tracking-wide hover:bg-grey transition-colors flex items-center justify-center gap-3"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <FaLock size={14} />
-                  Place Order
-                </motion.button>
+                {/* Submit Button / Stripe Elements */}
+                {step === "details" && (
+                  <>
+                    {error && (
+                      <p className="text-red-500 text-sm mb-2">{error}</p>
+                    )}
+                    <motion.button
+                      type="submit"
+                      disabled={loading || paymentMethod !== "card"}
+                      className="w-full mt-8 py-4 bg-black text-white rounded font-medium tracking-wide hover:bg-grey transition-colors flex items-center justify-center gap-3 disabled:opacity-60"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <FaLock size={14} />
+                      {loading
+                        ? "Processing..."
+                        : paymentMethod === "card"
+                        ? "Continue to Payment"
+                        : "Only card payments are supported"}
+                    </motion.button>
+                  </>
+                )}
 
-                <p className="text-xs text-gray-500 text-center mt-4">
-                  Your payment is secure and encrypted
-                </p>
+                {step === "payment" && clientSecret && orderId && (
+                  <div className="mt-8">
+                    <Elements
+                      stripe={stripePromise}
+                      options={{
+                        clientSecret,
+                        appearance: { theme: "stripe" },
+                      }}
+                    >
+                      <CheckoutPaymentForm orderId={orderId} />
+                    </Elements>
+                  </div>
+                )}
               </motion.div>
             </div>
           </div>

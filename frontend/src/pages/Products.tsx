@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ProductCard } from "../components/ProductCard";
-import { products } from "../data/products";
+import { getProducts, type Product } from "../api/productApi";
 
 export const ProductsPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -12,6 +12,9 @@ export const ProductsPage: React.FC = () => {
   const [priceRange, setPriceRange] = useState(1000000);
   const [sortBy, setSortBy] = useState("newest");
   const [searchQuery, setSearchQuery] = useState("");
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const category = searchParams.get("category");
@@ -19,6 +22,13 @@ export const ProductsPage: React.FC = () => {
       setSelectedCategory(category);
     }
   }, [searchParams]);
+
+  useEffect(() => {
+    getProducts()
+      .then((data) => setProducts(data))
+      .catch(() => setError("Failed to load products"))
+      .finally(() => setLoading(false));
+  }, []);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
@@ -54,7 +64,13 @@ export const ProductsPage: React.FC = () => {
       }
     });
 
-  const categories = ["all", "Gamis", "Khimar", "Abaya", "Accessories"];
+  const categories = React.useMemo(() => {
+    const set = new Set<string>();
+    for (const p of products) {
+      set.add(p.category);
+    }
+    return ["all", ...Array.from(set)];
+  }, [products]);
 
   return (
     <div className="pt-16 pb-20 min-h-screen">
@@ -112,11 +128,9 @@ export const ProductsPage: React.FC = () => {
                   >
                     {cat === "all" ? "All Products" : cat}
                     <span className="float-right text-sm">
-                      (
                       {cat === "all"
-                        ? products.length
-                        : products.filter((p) => p.category === cat).length}
-                      )
+                        ? `(${products.length})`
+                        : `(${products.filter((p) => p.category === cat).length})`}
                     </span>
                   </motion.button>
                 ))}
@@ -179,33 +193,52 @@ export const ProductsPage: React.FC = () => {
               </select>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProducts.map((product, idx) => (
-                <motion.div
-                  key={product.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.05 }}
-                >
-                  <ProductCard {...product} />
-                </motion.div>
-              ))}
-            </div>
+            {loading && (
+              <div className="py-8 text-center text-gray-500">
+                Loading products...
+              </div>
+            )}
+            {error && !loading && (
+              <div className="py-8 text-center text-red-500">{error}</div>
+            )}
+            {!loading && !error && (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {filteredProducts.map((product, idx) => (
+                    <motion.div
+                      key={product.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.05 }}
+                    >
+                      <ProductCard
+                        id={product.id}
+                        name={product.name}
+                        price={product.price}
+                        image={product.imageUrl ?? ""}
+                        category={product.category}
+                        rating={4.8}
+                      />
+                    </motion.div>
+                  ))}
+                </div>
 
-            {filteredProducts.length === 0 && (
-              <motion.div
-                className="text-center py-16"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-              >
-                <div className="text-6xl mb-4">🔍</div>
-                <h3 className="text-xl font-light text-gray-900 mb-2">
-                  No products found
-                </h3>
-                <p className="text-gray-500">
-                  Try adjusting your filters or search query.
-                </p>
-              </motion.div>
+                {filteredProducts.length === 0 && (
+                  <motion.div
+                    className="text-center py-16"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    <div className="text-6xl mb-4">🔍</div>
+                    <h3 className="text-xl font-light text-gray-900 mb-2">
+                      No products found
+                    </h3>
+                    <p className="text-gray-500">
+                      Try adjusting your filters or search query.
+                    </p>
+                  </motion.div>
+                )}
+              </>
             )}
           </div>
         </div>
