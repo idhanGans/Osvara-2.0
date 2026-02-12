@@ -4,14 +4,19 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { HomePage } from "./pages/Home";
 import { ProductsPage } from "./pages/Products";
+import { ProductDetailPage } from "./pages/ProductDetail";
 import { GalleryPage } from "./pages/Gallery";
 import { AboutPage } from "./pages/About";
 import { ContactPage } from "./pages/Contact";
+import { CartPage } from "./pages/Cart";
+import { Checkout } from "./pages/Checkout";
+import { SuccessPage } from "./pages/Success";
+import { CartProvider } from "./context/CartContext";
 import "./index.css";
-import AnimatedBackground from "./components/AnimatedBackground";
 
 function App() {
   return (
+<<<<<<< HEAD
     <BrowserRouter>
       <div className="min-h-screen flex flex-col text-gray-900 bg-white relative">
         <AnimatedBackground />
@@ -28,6 +33,29 @@ function App() {
         <Footer />
       </div>
     </BrowserRouter>
+=======
+    <CartProvider>
+      <BrowserRouter>
+        <div className="min-h-screen flex flex-col bg-white">
+          <Navbar />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/products/:id" element={<ProductDetailPage />} />
+              <Route path="/gallery" element={<GalleryPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/success" element={<SuccessPage />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </CartProvider>
+>>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
   );
 }
 

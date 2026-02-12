@@ -4,18 +4,40 @@ export default {
   theme: {
     extend: {
       colors: {
+<<<<<<< HEAD
         primary: "#1a1a1a",
         secondary: "#4a4a4a",
         accent: "#808080",
         dark: "#000000",
         silver: "#C0C0C0",
         lightGrey: "#e8e8e8",
+=======
+        // Primary colors - Black & White dominant
+        dark: "#0a0a0a",
+        black: "#000000",
+        white: "#FFFFFF",
+        // Silver accent
+        silver: "#C0C0C0",
+        "silver-light": "#D8D8D8",
+        "silver-dark": "#A0A0A0",
+        // Grays - Dominant palette
+        gray: {
+          50: "#fafafa",
+          100: "#f5f5f5",
+          200: "#e5e5e5",
+          300: "#d4d4d4",
+          400: "#a3a3a3",
+          500: "#737373",
+          600: "#525252",
+          700: "#404040",
+          800: "#262626",
+          900: "#171717",
+        },
+>>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-in",
         "slide-up": "slideUp 0.6s ease-out",
-        "bounce-smooth": "bounceSoft 2s infinite",
-        glow: "glow 2s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -25,14 +47,6 @@ export default {
         slideUp: {
           "0%": { transform: "translateY(30px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
-        },
-        bounceSoft: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
-        glow: {
-          "0%, 100%": { textShadow: "0 0 5px rgba(212, 175, 55, 0.5)" },
-          "50%": { textShadow: "0 0 20px rgba(212, 175, 55, 0.8)" },
         },
       },
     },
