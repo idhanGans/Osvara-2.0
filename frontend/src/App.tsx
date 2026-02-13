@@ -16,24 +16,6 @@ import "./index.css";
 
 function App() {
   return (
-<<<<<<< HEAD
-    <BrowserRouter>
-      <div className="min-h-screen flex flex-col text-gray-900 bg-white relative">
-        <AnimatedBackground />
-        <Navbar />
-        <main className="flex-1 relative z-10">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
-=======
     <CartProvider>
       <BrowserRouter>
         <div className="min-h-screen flex flex-col bg-white">
@@ -55,7 +37,6 @@ function App() {
         </div>
       </BrowserRouter>
     </CartProvider>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
   );
 }
 

@@ -24,7 +24,7 @@ export const ContactPage: React.FC = () => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -103,18 +103,6 @@ export const ContactPage: React.FC = () => {
     <div className="pt-20 pb-20">
       {/* Hero Section */}
       <motion.div
-<<<<<<< HEAD
-        className="bg-gray-100 py-16 px-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        <h1 className="text-5xl font-bold text-black text-center">
-          Contact Us
-        </h1>
-        <p className="text-gray-600 text-center mt-4">
-          We'd love to hear from you
-        </p>
-=======
         className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-20 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -137,7 +125,6 @@ export const ContactPage: React.FC = () => {
             We'd love to hear from you. Get in touch with us today.
           </motion.p>
         </div>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
       </motion.div>
 
       <div className="max-w-6xl mx-auto px-6 py-16">
@@ -146,9 +133,6 @@ export const ContactPage: React.FC = () => {
           {contactInfo.map((contact, idx) => (
             <motion.a
               key={idx}
-<<<<<<< HEAD
-              className="bg-white border border-gray-300 rounded-lg p-8 text-center"
-=======
               href={contact.action}
               target={contact.action.startsWith("http") ? "_blank" : undefined}
               rel={
@@ -157,21 +141,11 @@ export const ContactPage: React.FC = () => {
                   : undefined
               }
               className="bg-white border border-gray-300/20 rounded-lg p-8 text-center shadow-lg hover:shadow-xl transition-all hover:border-primary group"
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
               whileHover={{ y: -5 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
             >
-<<<<<<< HEAD
-              <contact.icon className="text-black text-4xl mx-auto mb-4" />
-              <h3 className="text-black font-bold text-xl mb-2">
-                {contact.title}
-              </h3>
-              <p className="text-gray-900 text-lg mb-2">{contact.content}</p>
-              <p className="text-gray-500 text-sm">{contact.desc}</p>
-            </motion.div>
-=======
               <contact.icon className="text-black text-4xl mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-black font-medium text-xl mb-2">
                 {contact.title}
@@ -179,7 +153,6 @@ export const ContactPage: React.FC = () => {
               <p className="text-black text-lg mb-2">{contact.content}</p>
               <p className="text-gray-500 text-sm">{contact.desc}</p>
             </motion.a>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
           ))}
         </div>
 
@@ -190,45 +163,6 @@ export const ContactPage: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-<<<<<<< HEAD
-            <h2 className="text-3xl font-bold text-black mb-8">
-              Send us a Message
-            </h2>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name */}
-              <div>
-                <label className="text-black font-bold block mb-2">
-                  Full Name
-                </label>
-                <motion.input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-black transition-colors"
-                  placeholder="Your name"
-                  whileFocus={{ scale: 1.01 }}
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label className="text-black font-bold block mb-2">
-                  Email Address
-                </label>
-                <motion.input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-black transition-colors"
-                  placeholder="Your email"
-                  whileFocus={{ scale: 1.01 }}
-                />
-=======
             <div className="flex items-center gap-4 mb-6">
               <div className="text-gray-500 text-sm tracking-widest">/</div>
               <div className="text-gray-500 text-sm tracking-widest">
@@ -305,102 +239,38 @@ export const ContactPage: React.FC = () => {
                     <option value="other">Other</option>
                   </select>
                 </div>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
               </div>
 
               <div>
-<<<<<<< HEAD
-                <label className="text-black font-bold block mb-2">
-                  Phone Number
-                </label>
-                <motion.input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-black transition-colors"
-                  placeholder="Your phone number"
-                  whileFocus={{ scale: 1.01 }}
-                />
-              </div>
-
-              {/* Subject */}
-              <div>
-                <label className="text-black font-bold block mb-2">
-                  Subject
-                </label>
-                <motion.select
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-black transition-colors"
-                  whileFocus={{ scale: 1.01 }}
-                >
-                  <option value="">Select a subject</option>
-                  <option value="product-inquiry">Product Inquiry</option>
-                  <option value="order-status">Order Status</option>
-                  <option value="returns">Returns & Refunds</option>
-                  <option value="collaboration">Collaboration</option>
-                  <option value="other">Other</option>
-                </motion.select>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label className="text-black font-bold block mb-2">
-                  Message
-                </label>
-                <motion.textarea
-=======
                 <label className="text-black font-medium block mb-2">
                   Message *
                 </label>
                 <textarea
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
                   rows={5}
-<<<<<<< HEAD
-                  className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-black transition-colors resize-none"
-                  placeholder="Your message..."
-                  whileFocus={{ scale: 1.01 }}
-=======
                   className="w-full px-4 py-3 bg-white border border-gray-300/30 rounded-lg text-black focus:outline-none focus:border-primary transition-colors resize-none"
                   placeholder="How can we help you?"
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                 />
               </div>
 
               <motion.button
                 type="submit"
-<<<<<<< HEAD
-                className="w-full bg-black text-white py-3 rounded-lg font-bold hover:bg-gray-800 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-=======
                 disabled={isSubmitting}
                 className="w-full bg-black text-white py-4 rounded-lg font-medium tracking-wide hover:bg-grey transition-colors disabled:opacity-50"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </motion.button>
 
               {submitted && (
                 <motion.div
-<<<<<<< HEAD
-                  className="bg-green-50 border border-green-500 text-green-700 p-4 rounded-lg text-center"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-=======
                   className="bg-green-100 border border-green-500 text-green-700 p-4 rounded-lg text-center"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                 >
                   ✓ Message sent successfully! We'll get back to you soon.
                 </motion.div>
@@ -415,20 +285,12 @@ export const ContactPage: React.FC = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-<<<<<<< HEAD
-            <div className="bg-white border border-gray-300 rounded-lg p-8">
-              <h3 className="text-black text-2xl font-bold mb-6 flex items-center gap-2">
-                <FaMapMarkerAlt /> Visit Our Boutique
-              </h3>
-              <p className="text-gray-700 mb-4">
-=======
             {/* Store Location Card */}
             <div className="bg-gray-50 rounded-lg p-8 shadow-lg">
               <h3 className="text-black text-2xl font-light mb-6 flex items-center gap-3">
                 <FaMapMarkerAlt className="text-black" /> Visit Our Boutique
               </h3>
               <p className="text-gray-500 mb-4">
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                 <strong className="text-black">Osvara Boutique</strong>
                 <br />
                 Jl. Kemang Raya No. 123
@@ -437,15 +299,9 @@ export const ContactPage: React.FC = () => {
                 <br />
                 Indonesia
               </p>
-<<<<<<< HEAD
-              <div className="mt-6 pt-6 border-t border-gray-300">
-                <h4 className="text-black font-bold mb-3">Store Hours</h4>
-                <div className="text-gray-600 space-y-1 text-sm">
-=======
               <div className="border-t border-gray-300/20 pt-4 mt-4">
                 <h4 className="text-black font-medium mb-3">Store Hours</h4>
                 <div className="text-gray-500 space-y-1 text-sm">
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                   <p>Monday - Friday: 10:00 AM - 7:00 PM</p>
                   <p>Saturday: 10:00 AM - 8:00 PM</p>
                   <p>Sunday: 12:00 PM - 6:00 PM</p>
@@ -453,42 +309,13 @@ export const ContactPage: React.FC = () => {
               </div>
             </div>
 
-<<<<<<< HEAD
-            <div className="bg-white border border-gray-300 rounded-lg p-8">
-              <h3 className="text-black text-2xl font-bold mb-6">
-=======
             {/* Quick Contact */}
             <div className="bg-white border border-gray-300/20 rounded-lg p-8 shadow-lg">
               <h3 className="text-black text-2xl font-light mb-6">
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                 Quick Contact
               </h3>
               <div className="space-y-4">
                 <motion.a
-<<<<<<< HEAD
-                  href="https://wa.me/6281234567890"
-                  className="flex items-center gap-4 p-4 bg-white border border-gray-300 rounded-lg hover:border-black transition-colors"
-                  whileHover={{ x: 5 }}
-                >
-                  <FaWhatsapp className="text-black text-2xl" />
-                  <span className="text-gray-900">Chat on WhatsApp</span>
-                </motion.a>
-                <motion.a
-                  href="tel:+6281234567890"
-                  className="flex items-center gap-4 p-4 bg-white border border-gray-300 rounded-lg hover:border-black transition-colors"
-                  whileHover={{ x: 5 }}
-                >
-                  <FaPhone className="text-black text-2xl" />
-                  <span className="text-gray-900">Call Us</span>
-                </motion.a>
-                <motion.a
-                  href="mailto:hello@osvara.com"
-                  className="flex items-center gap-4 p-4 bg-white border border-gray-300 rounded-lg hover:border-black transition-colors"
-                  whileHover={{ x: 5 }}
-                >
-                  <FaEnvelope className="text-black text-2xl" />
-                  <span className="text-gray-900">Send Email</span>
-=======
                   href="https://wa.me/6281234567890?text=Hi%20Osvara,%20I%20would%20like%20to%20inquire%20about..."
                   target="_blank"
                   rel="noopener noreferrer"
@@ -519,9 +346,7 @@ export const ContactPage: React.FC = () => {
 
             {/* Social Media */}
             <div className="bg-white border border-gray-300/20 rounded-lg p-8 shadow-lg">
-              <h3 className="text-black text-2xl font-light mb-6">
-                Follow Us
-              </h3>
+              <h3 className="text-black text-2xl font-light mb-6">Follow Us</h3>
               <div className="flex gap-4">
                 <motion.a
                   href="https://instagram.com/osvara"
@@ -549,7 +374,6 @@ export const ContactPage: React.FC = () => {
                   whileHover={{ scale: 1.1 }}
                 >
                   <FaWhatsapp size={24} />
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                 </motion.a>
               </div>
             </div>

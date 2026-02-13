@@ -14,7 +14,7 @@ import {
 } from "@stripe/react-stripe-js";
 
 const stripePromise = loadStripe(
-  import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY as string
+  import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY as string,
 );
 
 const CheckoutPaymentForm: React.FC<{ orderId: string }> = ({ orderId }) => {
@@ -102,7 +102,7 @@ export const Checkout: React.FC = () => {
   const handleInputChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -168,14 +168,8 @@ export const Checkout: React.FC = () => {
   }
 
   return (
-<<<<<<< HEAD
-    <div className="pt-20 pb-20 min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-black mb-8">Checkout</h1>
-        <p className="text-gray-600">Checkout feature coming soon...</p>
-=======
     <div className="pt-32 pb-20 min-h-screen bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
           className="mb-12"
@@ -433,7 +427,7 @@ export const Checkout: React.FC = () => {
                 <div className="space-y-4 mb-6 max-h-64 overflow-y-auto">
                   {items.map((item) => (
                     <div
-                        key={`${item.id}-${item.size}-${item.color}`}
+                      key={`${item.id}-${item.size}-${item.color}`}
                       className="flex gap-4"
                     >
                       <img
@@ -496,8 +490,8 @@ export const Checkout: React.FC = () => {
                       {loading
                         ? "Processing..."
                         : paymentMethod === "card"
-                        ? "Continue to Payment"
-                        : "Only card payments are supported"}
+                          ? "Continue to Payment"
+                          : "Only card payments are supported"}
                     </motion.button>
                   </>
                 )}
@@ -519,7 +513,6 @@ export const Checkout: React.FC = () => {
             </div>
           </div>
         </form>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
       </div>
     </div>
   );

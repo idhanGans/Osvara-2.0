@@ -48,11 +48,6 @@ export const CartPage: React.FC = () => {
 
   return (
     <div className="pt-20 pb-20 min-h-screen bg-gray-50">
-<<<<<<< HEAD
-      <div className="max-w-7xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-black mb-8">Shopping Cart</h1>
-        <p className="text-gray-600">Cart feature coming soon...</p>
-=======
       <motion.div
         className="bg-gradient-to-r from-dark to-dark/80 py-16 px-4"
         initial={{ opacity: 0 }}
@@ -104,7 +99,9 @@ export const CartPage: React.FC = () => {
                       </Link>
                       <p className="text-gray-500 text-sm">{item.category}</p>
                       {item.size && (
-                        <p className="text-gray-500 text-xs">Size: {item.size}</p>
+                        <p className="text-gray-500 text-xs">
+                          Size: {item.size}
+                        </p>
                       )}
                       {item.color && (
                         <p className="text-gray-500 text-xs">
@@ -225,7 +222,6 @@ export const CartPage: React.FC = () => {
             </motion.div>
           </div>
         </div>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
       </div>
     </div>
   );

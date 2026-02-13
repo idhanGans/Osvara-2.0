@@ -4,14 +4,6 @@ export default {
   theme: {
     extend: {
       colors: {
-<<<<<<< HEAD
-        primary: "#1a1a1a",
-        secondary: "#4a4a4a",
-        accent: "#808080",
-        dark: "#000000",
-        silver: "#C0C0C0",
-        lightGrey: "#e8e8e8",
-=======
         // Primary colors - Black & White dominant
         dark: "#0a0a0a",
         black: "#000000",
@@ -33,7 +25,6 @@ export default {
           800: "#262626",
           900: "#171717",
         },
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-in",

@@ -76,17 +76,6 @@ export const ProductsPage: React.FC = () => {
     <div className="pt-16 pb-20 min-h-screen">
       {/* Hero Banner */}
       <motion.div
-<<<<<<< HEAD
-        className="bg-gray-100 py-16 px-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        <h1 className="text-5xl font-bold text-black text-center">
-          Our Products
-        </h1>
-        <p className="text-gray-600 text-center mt-4">
-          Discover our exclusive collection
-=======
         className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-20 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -97,7 +86,6 @@ export const ProductsPage: React.FC = () => {
         <p className="text-gray-400 text-center mt-4 max-w-xl mx-auto">
           Discover our exclusive collection of modest fashion crafted with
           elegance
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
         </p>
       </motion.div>
 
@@ -105,17 +93,6 @@ export const ProductsPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
           {/* Sidebar - Filters */}
           <motion.div
-<<<<<<< HEAD
-            className="bg-white border border-gray-200 rounded-lg p-6 h-fit"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-          >
-            <h3 className="text-black font-bold text-lg mb-6">Filters</h3>
-
-            {/* Category Filter */}
-            <div className="mb-8">
-              <h4 className="text-black font-bold mb-4">Category</h4>
-=======
             className="bg-white border border-gray-200 rounded-lg p-6 h-fit shadow-sm"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -137,7 +114,6 @@ export const ProductsPage: React.FC = () => {
             {/* Category Filter */}
             <div className="mb-8">
               <h4 className="text-gray-900 font-medium mb-4">Category</h4>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
               <div className="space-y-2">
                 {categories.map((cat) => (
                   <motion.button
@@ -145,13 +121,8 @@ export const ProductsPage: React.FC = () => {
                     onClick={() => handleCategoryChange(cat)}
                     className={`block w-full text-left px-4 py-2 rounded-lg transition-colors ${
                       selectedCategory === cat
-<<<<<<< HEAD
-                        ? "bg-black text-white font-bold"
-                        : "text-gray-600 hover:text-black"
-=======
                         ? "bg-black text-white font-medium"
                         : "text-gray-500 hover:text-black hover:bg-gray-50"
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                     }`}
                     whileHover={{ x: 5 }}
                   >
@@ -167,13 +138,8 @@ export const ProductsPage: React.FC = () => {
             </div>
 
             {/* Price Range Filter */}
-<<<<<<< HEAD
-            <div>
-              <h4 className="text-black font-bold mb-4">Price Range</h4>
-=======
             <div className="mb-8">
               <h4 className="text-gray-900 font-medium mb-4">Price Range</h4>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
               <input
                 type="range"
                 min="100000"
@@ -183,16 +149,10 @@ export const ProductsPage: React.FC = () => {
                 onChange={(e) => setPriceRange(Number(e.target.value))}
                 className="w-full"
               />
-<<<<<<< HEAD
-              <p className="text-gray-600 text-sm mt-2">
-                Up to Rp {priceRange.toLocaleString("id-ID")}
-              </p>
-=======
               <div className="flex justify-between text-gray-500 text-sm mt-2">
                 <span>Rp 100,000</span>
                 <span>Rp {priceRange.toLocaleString("id-ID")}</span>
               </div>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
             </div>
 
             {/* Reset Button */}
@@ -204,13 +164,8 @@ export const ProductsPage: React.FC = () => {
                 setSortBy("newest");
                 setSearchParams({});
               }}
-<<<<<<< HEAD
-              className="w-full mt-6 px-4 py-2 border border-gray-300 text-black rounded-lg hover:bg-gray-100 transition-colors"
-              whileHover={{ scale: 1.05 }}
-=======
               className="w-full px-4 py-3 border border-black text-black rounded-lg hover:bg-black hover:text-white transition-colors"
               whileHover={{ scale: 1.02 }}
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
             >
               Reset Filters
             </motion.button>
@@ -223,16 +178,6 @@ export const ProductsPage: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
-<<<<<<< HEAD
-              <p className="text-gray-600">
-                Showing {filteredProducts.length} products
-              </p>
-              <select className="bg-white border border-gray-300 text-gray-900 px-4 py-2 rounded-lg focus:outline-none focus:border-black">
-                <option>Newest</option>
-                <option>Price: Low to High</option>
-                <option>Price: High to Low</option>
-                <option>Most Rated</option>
-=======
               <p className="text-gray-500">
                 Showing {filteredProducts.length} of {products.length} products
               </p>
@@ -245,7 +190,6 @@ export const ProductsPage: React.FC = () => {
                 <option value="price-low">Price: Low to High</option>
                 <option value="price-high">Price: High to Low</option>
                 <option value="rating">Most Rated</option>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
               </select>
             </motion.div>
 
@@ -279,18 +223,6 @@ export const ProductsPage: React.FC = () => {
                   ))}
                 </div>
 
-<<<<<<< HEAD
-            {filteredProducts.length === 0 && (
-              <motion.div
-                className="text-center py-12"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-              >
-                <p className="text-gray-600 text-lg">
-                  No products found. Try adjusting your filters.
-                </p>
-              </motion.div>
-=======
                 {filteredProducts.length === 0 && (
                   <motion.div
                     className="text-center py-16"
@@ -307,7 +239,6 @@ export const ProductsPage: React.FC = () => {
                   </motion.div>
                 )}
               </>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
             )}
           </div>
         </div>

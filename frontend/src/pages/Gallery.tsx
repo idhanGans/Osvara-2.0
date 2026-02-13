@@ -118,15 +118,6 @@ export const GalleryPage: React.FC = () => {
   return (
     <div className="pt-20 pb-20">
       <motion.div
-<<<<<<< HEAD
-        className="bg-gray-100 py-16 px-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        <h1 className="text-5xl font-bold text-black text-center">Gallery</h1>
-        <p className="text-gray-600 text-center mt-4">
-          Explore our stunning collection
-=======
         className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-16 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -136,7 +127,6 @@ export const GalleryPage: React.FC = () => {
         </h1>
         <p className="text-white/70 text-center mt-4">
           Explore our stunning collection and style inspirations
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
         </p>
       </motion.div>
 
@@ -181,10 +171,6 @@ export const GalleryPage: React.FC = () => {
                 className="relative overflow-hidden rounded-lg cursor-pointer group h-72 shadow-lg"
                 onClick={() => setSelectedImage(item)}
               >
-<<<<<<< HEAD
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-white font-bold text-lg">{item.title}</h3>
-=======
                 <img
                   src={item.image}
                   alt={item.title}
@@ -199,7 +185,6 @@ export const GalleryPage: React.FC = () => {
                       {item.title}
                     </h3>
                   </div>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                 </div>
               </motion.div>
             ))}
@@ -245,22 +230,6 @@ export const GalleryPage: React.FC = () => {
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
           >
-<<<<<<< HEAD
-            <img
-              src={selectedImage.image}
-              alt={selectedImage.title}
-              className="w-full rounded-lg"
-            />
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 text-white text-3xl hover:text-gray-300"
-            >
-              ✕
-            </button>
-            <h2 className="text-white text-2xl font-bold mt-4 text-center">
-              {selectedImage.title}
-            </h2>
-=======
             <motion.div
               className="relative max-w-4xl w-full"
               initial={{ scale: 0.9, opacity: 0 }}
@@ -288,7 +257,6 @@ export const GalleryPage: React.FC = () => {
                 </h2>
               </div>
             </motion.div>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
           </motion.div>
         )}
       </AnimatePresence>

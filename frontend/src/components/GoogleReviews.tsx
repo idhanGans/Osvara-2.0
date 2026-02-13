@@ -37,11 +37,6 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
     >
-<<<<<<< HEAD
-      <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-        Google Reviews
-      </h2>
-=======
       {/* Section Header */}
       <div className="text-center mb-12">
         <div className="flex items-center justify-center gap-4 mb-4">
@@ -58,27 +53,13 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
           What our customers say about their experience with Osvara
         </p>
       </div>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {mockReviews.map((review, idx) => (
           <motion.div
             key={idx}
-<<<<<<< HEAD
-            className="bg-white border border-gray-200 rounded-lg p-6"
-            style={{
-              boxShadow:
-                "0 8px 30px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08)",
-            }}
-            whileHover={{
-              y: -5,
-              boxShadow:
-                "0 15px 50px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.12)",
-            }}
-=======
             className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm hover:shadow-lg hover:border-black transition-all duration-300"
             whileHover={{ y: -5 }}
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
@@ -89,13 +70,8 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
                 {review.initials}
               </div>
               <div>
-<<<<<<< HEAD
-                <h4 className="text-gray-900 font-bold">{review.name}</h4>
-                <p className="text-gray-500 text-sm">{review.date}</p>
-=======
                 <h4 className="text-gray-900 font-medium">{review.name}</h4>
                 <p className="text-gray-400 text-sm">{review.date}</p>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
               </div>
             </div>
 
@@ -107,11 +83,7 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
                   className={
                     i < review.rating
                       ? "text-black text-lg"
-<<<<<<< HEAD
-                      : "text-gray-300 text-lg"
-=======
                       : "text-gray-200 text-lg"
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                   }
                 >
                   ★
@@ -120,33 +92,14 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
             </div>
 
             {/* Review Text */}
-<<<<<<< HEAD
-            <p className="text-gray-600 text-sm leading-relaxed">
-              {review.text}
-=======
             <p className="text-gray-500 text-sm leading-relaxed italic">
               "{review.text}"
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
             </p>
           </motion.div>
         ))}
       </div>
 
       {/* View More Button */}
-<<<<<<< HEAD
-      <motion.button
-        className="mx-auto block mt-8 bg-gradient-to-r from-black to-gray-800 text-white px-8 py-3 rounded-lg font-bold transition-colors"
-        style={{
-          boxShadow:
-            "0 10px 35px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2)",
-        }}
-        whileHover={{
-          scale: 1.05,
-          boxShadow:
-            "0 15px 50px rgba(0, 0, 0, 0.4), 0 6px 18px rgba(0, 0, 0, 0.3)",
-        }}
-        whileTap={{ scale: 0.95 }}
-=======
       <motion.a
         href="https://maps.google.com"
         target="_blank"
@@ -154,7 +107,6 @@ export const GoogleReviews: React.FC<GoogleReviewsProps> = () => {
         className="mx-auto block mt-12 w-fit px-10 py-4 bg-black text-white font-medium tracking-wide hover:bg-gray-800 transition-colors shadow-md hover:shadow-lg"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
       >
         View More Reviews on Google
       </motion.a>

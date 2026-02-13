@@ -67,16 +67,6 @@ export const AboutPage: React.FC = () => {
     <div className="pt-20 pb-20">
       {/* Hero Section */}
       <motion.div
-<<<<<<< HEAD
-        className="bg-gray-100 py-16 px-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        <h1 className="text-5xl font-bold text-black text-center">
-          About Osvara
-        </h1>
-        <p className="text-gray-600 text-center mt-4">Our story and mission</p>
-=======
         className="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-24 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -100,7 +90,6 @@ export const AboutPage: React.FC = () => {
             2020
           </motion.p>
         </div>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
       </motion.div>
 
       <div className="max-w-6xl mx-auto px-6 py-16">
@@ -111,20 +100,12 @@ export const AboutPage: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-<<<<<<< HEAD
-          <h2 className="text-4xl font-bold text-black mb-8">Our Story</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-=======
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-<<<<<<< HEAD
-              <p className="text-gray-700 text-lg leading-relaxed mb-4">
-=======
               <div className="flex items-center gap-4 mb-6">
                 <div className="text-gray-500 text-sm tracking-widest">/</div>
                 <div className="text-gray-500 text-sm tracking-widest">
@@ -135,28 +116,19 @@ export const AboutPage: React.FC = () => {
                 A Journey of <span className="italic font-serif">Passion</span>
               </h2>
               <p className="text-gray-500 text-lg leading-relaxed mb-6">
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                 Osvara was founded in 2020 with a simple mission: to make
                 elegant, high-quality Islamic fashion accessible to every
                 muslimah woman. We believe that fashion and modesty are not
                 mutually exclusive – they can beautifully complement each other.
               </p>
-<<<<<<< HEAD
-              <p className="text-gray-700 text-lg leading-relaxed mb-4">
-=======
               <p className="text-gray-500 text-lg leading-relaxed mb-6">
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                 Our founder, passionate about traditional Islamic clothing and
                 modern design, started creating pieces that blend timeless
                 elegance with contemporary style. Today, Osvara has grown into a
                 trusted brand serving thousands of satisfied customers across
                 the region.
               </p>
-<<<<<<< HEAD
-              <p className="text-gray-700 text-lg leading-relaxed">
-=======
               <p className="text-gray-500 text-lg leading-relaxed">
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                 We source the finest fabrics from around the world and work with
                 skilled craftspeople to create each piece with care and
                 attention to detail.
@@ -164,13 +136,8 @@ export const AboutPage: React.FC = () => {
             </motion.div>
 
             <motion.div
-<<<<<<< HEAD
-              className="bg-white border border-gray-300 rounded-lg p-8"
-              initial={{ opacity: 0, x: 20 }}
-=======
               className="relative"
               initial={{ opacity: 0, x: 30 }}
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
@@ -198,11 +165,6 @@ export const AboutPage: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-<<<<<<< HEAD
-          <h2 className="text-4xl font-bold text-black mb-12 text-center">
-            Our Values
-          </h2>
-=======
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="text-gray-500 text-sm tracking-widest">/</div>
@@ -215,7 +177,6 @@ export const AboutPage: React.FC = () => {
             </h2>
           </div>
 
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -236,30 +197,18 @@ export const AboutPage: React.FC = () => {
             ].map((value, idx) => (
               <motion.div
                 key={idx}
-<<<<<<< HEAD
-                className="bg-white border border-gray-300 rounded-lg p-8 text-center"
-=======
                 className="bg-gray-50 rounded-lg p-10 text-center shadow-lg hover:shadow-xl transition-shadow"
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                 whileHover={{ y: -10 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
-<<<<<<< HEAD
-                <span className="text-5xl block mb-4">{value.icon}</span>
-                <h3 className="text-black font-bold text-2xl mb-4">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600">{value.desc}</p>
-=======
                 <span className="text-5xl block mb-6">{value.icon}</span>
                 <h3 className="text-black font-medium text-2xl mb-4">
                   {value.title}
                 </h3>
                 <p className="text-gray-500 leading-relaxed">{value.desc}</p>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
               </motion.div>
             ))}
           </div>
@@ -272,12 +221,6 @@ export const AboutPage: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-<<<<<<< HEAD
-          <h2 className="text-4xl font-bold text-black mb-12 text-center">
-            Why Choose Osvara?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-=======
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="text-gray-500 text-sm tracking-widest">/</div>
@@ -320,7 +263,9 @@ export const AboutPage: React.FC = () => {
                       <h3 className="text-black font-medium text-xl mt-2">
                         {milestone.title}
                       </h3>
-                      <p className="text-gray-500 mt-2">{milestone.description}</p>
+                      <p className="text-gray-500 mt-2">
+                        {milestone.description}
+                      </p>
                     </div>
                   </div>
                   <div className="hidden md:block w-4 h-4 bg-black rounded-full relative z-10" />
@@ -341,7 +286,9 @@ export const AboutPage: React.FC = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="text-gray-500 text-sm tracking-widest">/</div>
-              <div className="text-gray-500 text-sm tracking-widest">OUR TEAM</div>
+              <div className="text-gray-500 text-sm tracking-widest">
+                OUR TEAM
+              </div>
             </div>
             <h2 className="text-4xl font-light text-black">
               Meet the <span className="italic font-serif">People</span>
@@ -399,7 +346,6 @@ export const AboutPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
             {[
               {
                 title: "Premium Quality Fabrics",
@@ -440,19 +386,12 @@ export const AboutPage: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
               >
-<<<<<<< HEAD
-                <span className="text-black text-2xl">✓</span>
-                <div>
-                  <h3 className="text-black font-bold text-lg">{item.title}</h3>
-                  <p className="text-gray-600">{item.desc}</p>
-=======
                 <span className="text-3xl">{item.icon}</span>
                 <div>
                   <h3 className="text-black font-medium text-lg mb-1">
                     {item.title}
                   </h3>
                   <p className="text-gray-500 text-sm">{item.desc}</p>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
                 </div>
               </motion.div>
             ))}
@@ -461,49 +400,11 @@ export const AboutPage: React.FC = () => {
 
         {/* Store Location */}
         <motion.section
-<<<<<<< HEAD
-          className="bg-white border border-gray-300 rounded-lg p-8"
-=======
           className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-lg p-10 text-white"
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-<<<<<<< HEAD
-          <h2 className="text-3xl font-bold text-black mb-8">
-            Visit Our Store
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-black font-bold text-xl mb-4">
-                Osvara Boutique
-              </h3>
-              <p className="text-gray-700 mb-6">
-                Jl. Kemang Raya No. 123
-                <br />
-                Jakarta Selatan, 12560
-                <br />
-                Indonesia
-              </p>
-              <p className="text-gray-700 mb-4">
-                <strong className="text-black">Phone:</strong> +62 812-3456-7890
-                <br />
-                <strong className="text-black">WhatsApp:</strong> +62
-                812-3456-7890
-                <br />
-                <strong className="text-black">Email:</strong> hello@osvara.com
-              </p>
-              <p className="text-gray-700 mb-6">
-                <strong className="text-black">Hours:</strong>
-                <br />
-                Monday - Friday: 10:00 - 19:00
-                <br />
-                Saturday: 10:00 - 20:00
-                <br />
-                Sunday: 12:00 - 18:00
-              </p>
-=======
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <h2 className="text-3xl font-light mb-8">Visit Our Store</h2>
@@ -545,7 +446,6 @@ export const AboutPage: React.FC = () => {
               >
                 Get Directions
               </Link>
->>>>>>> 4e863753f46699ec8476bb2ded8ecab272a3a9dd
             </div>
 
             <div className="rounded-lg overflow-hidden shadow-xl">
